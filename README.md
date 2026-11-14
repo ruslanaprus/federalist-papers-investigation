@@ -8,6 +8,8 @@ The working environment is prepared. Corpus collection is incomplete: 15 of the 
 
 The [distance method](docs/distance_method.md) is defined and tested with invented frequencies. No profiles have been fitted to the collected essays.
 
+The [validation workflow](docs/validation.md) is implemented. Its actual run stopped before any trial because Nos. 21 and 26 are missing. `results/validation_preflight.json` records this block; no empirical validation accuracy is available.
+
 ## Set up with uv
 
 Use uv and the Python release pinned in [.python-version](.python-version), currently 3.13.15. The initial setup used uv 0.13.8 on macOS. Runtime scripts use the Python standard library, so there are no external package dependencies.
@@ -44,8 +46,8 @@ Enable Python support in IntelliJ and select the existing interpreter at `.venv/
 | `data/clean/` | Consistently prepared essay bodies |
 | `data/no_quotes/` | Separate copies for the quotation check |
 | `metadata/` | Source, preparation, and quotation records |
-| `src/` | Environment checker, corpus collector, text preparer, and future analytical scripts |
-| `tests/` | Corpus and preparation integrity tests; future numerical-method tests |
+| `src/` | Environment checks and research workflow implementations |
+| `tests/` | Corpus integrity and research-method tests |
 | `results/` | Environment record and future main-analysis outputs |
 | `results/feature_check/` | Outputs from the reduced feature set |
 | `results/quotation_check/` | Outputs after identified quotations are removed |
@@ -102,6 +104,16 @@ uv run --locked python -m src.distance_method
 
 This command checks the definition without fitting the corpus or comparing No. 49. The [method record](docs/distance_method.md) explains the formula, justification, training boundaries, and an invented worked example. The main corpus remains incomplete; full-sample fitting and validation require the missing references.
 
+## Known-author validation
+
+```sh
+uv run --locked python -m src.validate_authors --check
+```
+
+The preflight check requires the exact 16 planned reference essays, with 8 per author. It currently stops with exit code 2 because Hamilton references Nos. 21 and 26 are missing. It does not fit the available 14 essays as a substitute. No. 49's frequency values are excluded from validation.
+
+Once complete frequencies are available, `uv run --locked python -m src.validate_authors` performs all 16 leave-one-essay-out trials. Every trial refits author means, sample scaling, and constant-feature exclusions using only its 15 training essays. The outputs record correctness, both distances, gaps, exclusions, fitted quantities, baseline comparison, and provenance. The [validation record](docs/validation.md) explains the procedure and current missing-data block.
+
 ## Record evidence consistently
 
 Keep raw downloads unchanged. Do not add guessed values or placeholder essay rows to the CSV logs. Use UTF-8 and proper CSV quoting for passages containing commas or line breaks.
@@ -128,10 +140,10 @@ uv run --locked python src/check_environment.py --manifest results/environment_r
 
 The manifest records actual Python, uv, operating system, Git revision and working-tree state, configuration, and hashes of setup inputs. A Git revision with local changes does not identify the complete source state; the recorded file hashes distinguish those changes. Snapshot creation refuses to overwrite an existing file.
 
-Run the corpus, preparation, word-rule, frequency, and distance-method tests with:
+Run the corpus, preparation, word-rule, frequency, distance, and validation-workflow tests with:
 
 ```sh
 uv run --locked python -m unittest discover -s tests -v
 ```
 
-The tests check collection, extraction, preparation, tokenization, comparable frequencies, and distance arithmetic using invented examples. Tests of the corpus-validation workflow will accompany that stage. Final report generation follows interpretation of the completed investigation.
+The tests check collection, extraction, preparation, tokenization, comparable frequencies, distance arithmetic, and the validation workflow. Method tests use invented examples and do not supply empirical validation accuracy. Final report generation follows interpretation of the completed investigation.

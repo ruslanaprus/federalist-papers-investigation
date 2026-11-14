@@ -1,0 +1,48 @@
+{
+  "stage": "known_author_validation_preflight",
+  "recorded_at": "2026-11-14T23:57:24+02:00",
+  "runtime": {
+    "python": "3.13.15"
+  },
+  "status": "blocked_missing_reference_essays",
+  "expected_reference_count": 16,
+  "available_reference_count": 14,
+  "by_author": {
+    "hamilton": {
+      "expected": 8,
+      "available": 6
+    },
+    "madison": {
+      "expected": 8,
+      "available": 8
+    }
+  },
+  "missing_essays": [
+    21,
+    26
+  ],
+  "missing_source_urls": [
+    "https://guides.loc.gov/federalist-papers/text-21-30"
+  ],
+  "completed_validation_trials": 0,
+  "correct_assignments": null,
+  "accuracy": null,
+  "corpus_profiles_fitted": false,
+  "questioned_essay_compared": false,
+  "input_sha256": {
+    "docs/research_plan.md": "028809cdfe7990cb2620dd39b7d74607829e4fafe652fb0c704012c5af4780f4",
+    "config/research.toml": "c5e3b467d704fe201c8060b3cbdfc11d1e682f08e402a01b2e7dc5bc9efa17d9",
+    "metadata/word_features.json": "b2e296b2d0ff60b61a2a6008d6f1e09d6b9e89be130d5b8502f597f0b35ff712",
+    "metadata/distance_method.json": "2e472b8ed08c474f96d503e1d9bb7aca8d5788e0974dd85f07214389a322b6cb",
+    "results/frequency_manifest.json": "97db99d4393881706beac167a9ee452a21216d66417d1534913d458ef781fef8",
+    "results/frequencies.csv": "8dcce794f3094d700a553d6f18c3aeb6bce2151a86d25398df93a531a56a905d",
+    "src/validate_authors.py": "0c36fe8132c54cd75bcfe81057fb6b19fe23a731999b0e58c8140a83b0bbe635",
+    "tests/test_validation.py": "d400bfe80b6c14fb4e532d1448683ca689469110bffd4480ea9c9589cc576996"
+  },
+  "planned_baseline": {
+    "correct": 8,
+    "total": 16,
+    "is_observed_result": false
+  },
+  "resolution": "Collect, prepare, and count the missing planned reference essays before validation."
+}

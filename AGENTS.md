@@ -131,6 +131,8 @@ Save all trials in `results/validation.csv`. Report correct assignments out of 1
 
 Always choosing one author yields 8 correct out of 16. Compare performance with this baseline, without treating a small improvement as conclusive. Weak discrimination is a valid finding. These trials share training texts, so their outcomes are not independent experiments.
 
+Run `uv run --locked python -m src.validate_authors --check` to check readiness. `uv run --locked python -m src.validate_authors` performs the full workflow only when all 16 planned references are present; it has no incomplete-sample override. Missing references produce `results/validation_preflight.json` and no empirical trial scores. A completed run saves all trials, a summary, fitted training quantities, and provenance. Use `--verify` to check completed outputs. See `docs/validation.md`. Implementation tests using invented frequencies are not corpus validation results.
+
 ## 9. Compare the questioned essay
 
 After validation, fit profiles and standard deviations using all 16 reference essays. Apply them to No. 49 without letting it influence any fitted quantity. Save both distances, their signed difference `D_H - D_M`, excluded features, and the assignment in `results/questioned.csv`. A positive signed difference favors Madison; a negative one favors Hamilton.
