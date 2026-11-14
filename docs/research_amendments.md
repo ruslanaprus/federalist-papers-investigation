@@ -38,3 +38,15 @@ No wording was modernized or corrected. No. 21 retains its unusual break before 
 Before importing the two texts, the partial source and preparation logs, frequency tables, manifests, blocked-status records, collection code, and dated documentation were copied byte for byte to `results/history/partial_corpus_14_november_2026/`. Its archive manifest records every copied checksum. The active records will describe all 17 essays. The previously collected 15 raw texts and prepared copies remain unchanged.
 
 The research question, selected essay numbers, 24 words, distance formula, validation procedure, and decision threshold are unchanged. No full-reference validation accuracy or questioned-text distance had been examined when this operational addition was recorded.
+
+## 5. Operational quotation boundaries for the predefined check
+
+**Recorded:** 15 November 2026, after the main comparison and before either robustness variant was evaluated.
+
+The quotation check uses the preserved readable copies and the decisions in `metadata/quotations.csv`, with input checksums and a complete 17-essay review in `metadata/quotation_review.json`. Offsets are Unicode character positions from zero, with exclusive ends. Each removed span includes its enclosing double quotation marks and internal paragraph breaks; one space replaces it. Reporting words outside the marks remain. An embedded reporting phrase inside an outer quotation is removed with that passage. No overlapping or nested double-quote spans occur in these prepared copies.
+
+Remove clearly delimited passages presented as borrowed speech, documentary extracts, or established sayings. The 9 marked constitutional-power passages in No. 43 are treated consistently as presented documentary extracts, including shortened formulations. This is a check of the essay's presentation of quotations, not authentication of every extract against its antecedent document; some wording may be authorial adaptation.
+
+Retain titles, explicit syntheses of opponents' arguments, generic adversary speech whose direct source is uncertain, explanatory paraphrases, and unmarked reported ideas. Record ambiguous passages rather than silently treating every quotation mark as borrowed language. The review identified 33 marked spans: 27 for removal and 6 for retention. Six essays have no marked spans. This conservative check cannot remove undetected or unmarked borrowing.
+
+The main validation and No. 49 results were already known when annotation began. These decisions were fixed before either variant's scores were calculated. Annotation was therefore not blinded. The original features, corpus, counting rule, distance formula, tie rule, and validation procedure remain unchanged. The two checks are independent variants, not a combined change.

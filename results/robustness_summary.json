@@ -1,0 +1,294 @@
+{
+  "stage": "predefined_robustness_checks",
+  "status": "complete",
+  "baseline": {
+    "feature_count": 24,
+    "usable_feature_count": 24,
+    "excluded_features": [],
+    "validation": {
+      "status": "complete",
+      "correct_assignments": 16,
+      "total_trials": 16,
+      "by_author": {
+        "hamilton": {
+          "correct": 8,
+          "total": 8
+        },
+        "madison": {
+          "correct": 8,
+          "total": 8
+        }
+      },
+      "misclassified_essays": [],
+      "inconclusive_essays": [],
+      "inconclusive_counted_as_correct": false,
+      "baseline": {
+        "correct": 8,
+        "total": 16,
+        "rule": "Always choose one author"
+      },
+      "correct_assignments_above_baseline": true,
+      "absolute_gap_summary": {
+        "minimum": 0.0024764311039908726,
+        "median": 0.18982483458942012,
+        "maximum": 0.29126985689522944
+      },
+      "substantive_close_gap_threshold": null,
+      "universal_accuracy_threshold": null,
+      "trials_are_independent": false,
+      "questioned_essay_compared": false
+    },
+    "questioned": {
+      "hamilton_distance": 0.9207457347285136,
+      "madison_distance": 0.6913770970681954,
+      "signed_gap": 0.22936863766031823,
+      "prediction": "madison"
+    }
+  },
+  "feature_check": {
+    "feature_count": 20,
+    "usable_feature_count": 20,
+    "excluded_features": [],
+    "validation": {
+      "status": "complete",
+      "correct_assignments": 16,
+      "total_trials": 16,
+      "by_author": {
+        "hamilton": {
+          "correct": 8,
+          "total": 8
+        },
+        "madison": {
+          "correct": 8,
+          "total": 8
+        }
+      },
+      "misclassified_essays": [],
+      "inconclusive_essays": [],
+      "inconclusive_counted_as_correct": false,
+      "baseline": {
+        "correct": 8,
+        "total": 16,
+        "rule": "Always choose one author"
+      },
+      "correct_assignments_above_baseline": true,
+      "absolute_gap_summary": {
+        "minimum": 0.007347537449065911,
+        "median": 0.19259292570043013,
+        "maximum": 0.36285891070500786
+      },
+      "substantive_close_gap_threshold": null,
+      "universal_accuracy_threshold": null,
+      "trials_are_independent": false,
+      "questioned_essay_compared": false
+    },
+    "questioned": {
+      "hamilton_distance": 0.970150197812314,
+      "madison_distance": 0.7240491025183733,
+      "signed_gap": 0.24610109529394075,
+      "prediction": "madison"
+    }
+  },
+  "quotation_check": {
+    "feature_count": 24,
+    "usable_feature_count": 24,
+    "excluded_features": [],
+    "validation": {
+      "status": "complete",
+      "correct_assignments": 16,
+      "total_trials": 16,
+      "by_author": {
+        "hamilton": {
+          "correct": 8,
+          "total": 8
+        },
+        "madison": {
+          "correct": 8,
+          "total": 8
+        }
+      },
+      "misclassified_essays": [],
+      "inconclusive_essays": [],
+      "inconclusive_counted_as_correct": false,
+      "baseline": {
+        "correct": 8,
+        "total": 16,
+        "rule": "Always choose one author"
+      },
+      "correct_assignments_above_baseline": true,
+      "absolute_gap_summary": {
+        "minimum": 0.016317073165435958,
+        "median": 0.18199717857961645,
+        "maximum": 0.31782816800921
+      },
+      "substantive_close_gap_threshold": null,
+      "universal_accuracy_threshold": null,
+      "trials_are_independent": false,
+      "questioned_essay_compared": false
+    },
+    "questioned": {
+      "hamilton_distance": 0.9596908205612299,
+      "madison_distance": 0.7195295688401933,
+      "signed_gap": 0.24016125172103664,
+      "prediction": "madison"
+    }
+  },
+  "quotation_removals": [
+    {
+      "essay_number": 1,
+      "role": "hamilton",
+      "original_words": 1588,
+      "remaining_words": 1588,
+      "removed_words": 0,
+      "removed_spans": 0,
+      "retained_spans": 0
+    },
+    {
+      "essay_number": 6,
+      "role": "hamilton",
+      "original_words": 1943,
+      "remaining_words": 1895,
+      "removed_words": 48,
+      "removed_spans": 1,
+      "retained_spans": 0
+    },
+    {
+      "essay_number": 10,
+      "role": "madison",
+      "original_words": 2999,
+      "remaining_words": 2999,
+      "removed_words": 0,
+      "removed_spans": 0,
+      "retained_spans": 0
+    },
+    {
+      "essay_number": 14,
+      "role": "madison",
+      "original_words": 2149,
+      "remaining_words": 2149,
+      "removed_words": 0,
+      "removed_spans": 0,
+      "retained_spans": 0
+    },
+    {
+      "essay_number": 21,
+      "role": "hamilton",
+      "original_words": 1993,
+      "remaining_words": 1962,
+      "removed_words": 31,
+      "removed_spans": 2,
+      "retained_spans": 0
+    },
+    {
+      "essay_number": 26,
+      "role": "hamilton",
+      "original_words": 2375,
+      "remaining_words": 2352,
+      "removed_words": 23,
+      "removed_spans": 1,
+      "retained_spans": 0
+    },
+    {
+      "essay_number": 31,
+      "role": "hamilton",
+      "original_words": 1730,
+      "remaining_words": 1697,
+      "removed_words": 33,
+      "removed_spans": 1,
+      "retained_spans": 1
+    },
+    {
+      "essay_number": 37,
+      "role": "madison",
+      "original_words": 2709,
+      "remaining_words": 2709,
+      "removed_words": 0,
+      "removed_spans": 0,
+      "retained_spans": 0
+    },
+    {
+      "essay_number": 39,
+      "role": "madison",
+      "original_words": 2606,
+      "remaining_words": 2606,
+      "removed_words": 0,
+      "removed_spans": 0,
+      "retained_spans": 2
+    },
+    {
+      "essay_number": 41,
+      "role": "madison",
+      "original_words": 3542,
+      "remaining_words": 3469,
+      "removed_words": 73,
+      "removed_spans": 3,
+      "retained_spans": 1
+    },
+    {
+      "essay_number": 43,
+      "role": "madison",
+      "original_words": 3426,
+      "remaining_words": 3006,
+      "removed_words": 420,
+      "removed_spans": 14,
+      "retained_spans": 0
+    },
+    {
+      "essay_number": 46,
+      "role": "madison",
+      "original_words": 2614,
+      "remaining_words": 2614,
+      "removed_words": 0,
+      "removed_spans": 0,
+      "retained_spans": 0
+    },
+    {
+      "essay_number": 48,
+      "role": "madison",
+      "original_words": 1860,
+      "remaining_words": 1504,
+      "removed_words": 356,
+      "removed_spans": 2,
+      "retained_spans": 1
+    },
+    {
+      "essay_number": 49,
+      "role": "questioned",
+      "original_words": 1646,
+      "remaining_words": 1599,
+      "removed_words": 47,
+      "removed_spans": 1,
+      "retained_spans": 1
+    },
+    {
+      "essay_number": 59,
+      "role": "hamilton",
+      "original_words": 1899,
+      "remaining_words": 1855,
+      "removed_words": 44,
+      "removed_spans": 1,
+      "retained_spans": 0
+    },
+    {
+      "essay_number": 70,
+      "role": "hamilton",
+      "original_words": 3062,
+      "remaining_words": 3062,
+      "removed_words": 0,
+      "removed_spans": 0,
+      "retained_spans": 0
+    },
+    {
+      "essay_number": 78,
+      "role": "hamilton",
+      "original_words": 3016,
+      "remaining_words": 2998,
+      "removed_words": 18,
+      "removed_spans": 1,
+      "retained_spans": 0
+    }
+  ],
+  "annotation_was_blinded": false,
+  "cross_variant_distances_are_calibrated_strength_measures": false,
+  "combined_variant_run": false
+}

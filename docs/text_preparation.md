@@ -24,7 +24,7 @@ Each file in `data/clean/` contains the main running prose of one essay. Prepara
 4. Remove numeric footnote-call markers inserted by the source reader. Insert a space only if removing a marker would join adjacent words. Reject unfamiliar reader markup rather than silently deleting possible language.
 5. Remove boundary blank lines and ensure a final newline. Save UTF-8 text.
 
-Numbered arguments inside the body remain. For example, the numbered constitutional powers discussed in No. 43 are part of its argument, not appended notes. Quotations within the body remain, including their punctuation. Quotation passages are not yet annotated or removed; seeing quotation marks alone does not establish that a passage is borrowed speech.
+Numbered arguments inside the body remain. For example, the numbered constitutional powers discussed in No. 43 are part of its argument, not appended notes. Quotations within the body remain, including their punctuation. Quotation passages have since been annotated for the [separate reliability check](robustness_checks.md); the main prepared copies retain them. Seeing quotation marks alone does not establish that a passage is borrowed speech.
 
 Historical spelling and original word forms remain unchanged. No transcription correction, sentence rewriting, contraction expansion, or removal of common grammatical words has been performed.
 
@@ -57,4 +57,4 @@ uv run --locked python -m unittest discover -s tests -v
 
 Existing preparation records and differing prepared files are protected against replacement. Without the explicit incomplete-corpus option, preparation stops until all 17 planned essays have been collected. The option permits preparing available texts; it does not authorize a reduced reference sample for attribution.
 
-The tests check quotation and spelling preservation, full final paragraphs, numbered body passages, note boundaries, reader-marker removal, edit reconstruction, counting normalization, and rejection of ambiguous structural material. Frequency calculation, known-author validation, and the No. 49 resemblance comparison have since been completed. Their reports record the measured outcomes and source limitations. Robustness checks and concordance interpretation remain pending.
+The tests check quotation and spelling preservation, full final paragraphs, numbered body passages, note boundaries, reader-marker removal, edit reconstruction, counting normalization, and rejection of ambiguous structural material. Frequency calculation, known-author validation, and the No. 49 resemblance comparison have since been completed. Their reports record the measured outcomes and source limitations. Both [reliability checks](robustness_checks.md) are now complete; concordance interpretation remains pending.

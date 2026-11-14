@@ -98,7 +98,7 @@ This illustrates a smaller distance to the invented Hamilton profile. It supplie
 
 The fitted model stores immutable means and standard deviations. Comparing a query does not recompute them or use the query's reference author label. In validation, remove each held-out essay first and refit all quantities using the other 15. Including evaluation data in fitted quantities would cause [data leakage](https://scikit-learn.org/stable/common_pitfalls.html#data-leakage), making the evaluation less trustworthy.
 
-The functions accept training subsets so the same arithmetic can serve valid leave-one-out trials and the predefined robustness checks. The corpus-validation runner requires the full planned reference corpus before fitting. The completed run used all 16 references; an incomplete sample is not an alternative training set.
+The functions accept training subsets so the same arithmetic can serve valid leave-one-out trials and the predefined reliability checks. The corpus-validation runner requires the full planned reference corpus before fitting. The completed run used all 16 references; an incomplete sample is not an alternative training set.
 
 `metadata/distance_method.json` records the definition, settings, software versions, and implementation fingerprints. Verify it with:
 
@@ -113,4 +113,4 @@ The verification command reads method and implementation records, not corpus fre
 
 Distance is a similarity measure, not a probability of authorship or a confidence level. It does not establish that the features reliably distinguish these writers. That question requires the planned known-author validation before interpreting No. 49's result.
 
-Nos. 21 and 26 were subsequently supplied, prepared, and counted under the recorded transcription limitation. Full validation and the final reference-profile comparison have been completed. The original question, features, distance formula, and decision rule remain fixed. Robustness checks and concordance interpretation are the next planned stages.
+Nos. 21 and 26 were subsequently supplied, prepared, and counted under the recorded transcription limitation. Full validation and the final reference-profile comparison have been completed. The original question, features, distance formula, and decision rule remain fixed. Both reliability checks are complete and retain the same assignment. Concordance interpretation is the next planned stage.

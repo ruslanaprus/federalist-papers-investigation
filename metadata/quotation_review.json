@@ -1,0 +1,203 @@
+{
+  "stage": "quotation_annotation_before_variant_evaluation",
+  "recorded_at": "2026-11-15T00:33:34+02:00",
+  "policy": {
+    "scope": "Remove clearly delimited passages presented as borrowed speech, documentary extracts, or established sayings. This is a review of quotation presentation, not authentication against every antecedent source.",
+    "documentary_extracts": "Include the nine marked constitutional-power passages in No. 43 as presented, including shortened formulations. Their wording may include authorial adaptation; do not claim verified verbatim copying.",
+    "retain": "Retain titles, explicitly synthesized arguments, generic adversary speech whose precise source is uncertain, explanatory paraphrases, and unmarked reported ideas. This check cannot eliminate undetected borrowing.",
+    "boundaries": "Use complete opening-through-closing double-quote spans, including internal paragraph breaks and any embedded reporting phrase. Remove nested material with its outer borrowed span. Keep reporting words outside quotation marks. Do not infer boundaries by apostrophes.",
+    "offsets": "Unicode characters in the exact UTF-8 data/clean file; zero-based start, exclusive end; before normalization.",
+    "replacement": "Replace each removed span by one space, preserving all other characters. Recount all words and all original 24 features.",
+    "timing": "Main validation and No. 49 results were known. Text-based decisions were fixed before either robustness variant was evaluated. Annotation was not blinded."
+  },
+  "essays": [
+    {
+      "essay_number": 1,
+      "text_path": "data/clean/H_1.txt",
+      "sha256": "13eb4024c07b32018811349ce44d0f78b5af192e0add13773dde401849934d69",
+      "quotation_mark_count": 0,
+      "reviewed_spans": 0,
+      "remove_spans": 0,
+      "retain_spans": 0,
+      "status": "reviewed",
+      "note": "All double-quote boundaries inspected in context; unmarked allusions and paraphrases retained. No overlapping or nested double-quote spans in these copies."
+    },
+    {
+      "essay_number": 6,
+      "text_path": "data/clean/H_6.txt",
+      "sha256": "5db1aefca9b756b541506ebbfa06767928f4dbc02ac1f8ac0519429908caa5a2",
+      "quotation_mark_count": 2,
+      "reviewed_spans": 1,
+      "remove_spans": 1,
+      "retain_spans": 0,
+      "status": "reviewed",
+      "note": "All double-quote boundaries inspected in context; unmarked allusions and paraphrases retained. No overlapping or nested double-quote spans in these copies."
+    },
+    {
+      "essay_number": 10,
+      "text_path": "data/clean/M_10.txt",
+      "sha256": "6ce164b216c55b56f815380b9564a05e57863af44d3c853ecf457d1497db194b",
+      "quotation_mark_count": 0,
+      "reviewed_spans": 0,
+      "remove_spans": 0,
+      "retain_spans": 0,
+      "status": "reviewed",
+      "note": "All double-quote boundaries inspected in context; unmarked allusions and paraphrases retained. No overlapping or nested double-quote spans in these copies."
+    },
+    {
+      "essay_number": 14,
+      "text_path": "data/clean/M_14.txt",
+      "sha256": "0cb8d6e94fbe7b0fd45733192582bbf8e4df1ca67e88c686601d56fb6a0d0d37",
+      "quotation_mark_count": 0,
+      "reviewed_spans": 0,
+      "remove_spans": 0,
+      "retain_spans": 0,
+      "status": "reviewed",
+      "note": "All double-quote boundaries inspected in context; unmarked allusions and paraphrases retained. No overlapping or nested double-quote spans in these copies."
+    },
+    {
+      "essay_number": 21,
+      "text_path": "data/clean/H_21.txt",
+      "sha256": "4ebdff07fc71405bb9ada0040d7d800a39c903cc5d57ef3df77e1dce02a750d9",
+      "quotation_mark_count": 4,
+      "reviewed_spans": 2,
+      "remove_spans": 2,
+      "retain_spans": 0,
+      "status": "reviewed",
+      "note": "All double-quote boundaries inspected in context; unmarked allusions and paraphrases retained. No overlapping or nested double-quote spans in these copies."
+    },
+    {
+      "essay_number": 26,
+      "text_path": "data/clean/H_26.txt",
+      "sha256": "b115678965bf2b906490f7130b5fbf2263a25d43ee0ec09a34f4137aa44722bc",
+      "quotation_mark_count": 2,
+      "reviewed_spans": 1,
+      "remove_spans": 1,
+      "retain_spans": 0,
+      "status": "reviewed",
+      "note": "All double-quote boundaries inspected in context; unmarked allusions and paraphrases retained. No overlapping or nested double-quote spans in these copies."
+    },
+    {
+      "essay_number": 31,
+      "text_path": "data/clean/H_31.txt",
+      "sha256": "9b60e44939034ff01f8a545bce2b0dc4441e1cde78ee8e0218d025e08a5ef96b",
+      "quotation_mark_count": 4,
+      "reviewed_spans": 2,
+      "remove_spans": 1,
+      "retain_spans": 1,
+      "status": "reviewed",
+      "note": "All double-quote boundaries inspected in context; unmarked allusions and paraphrases retained. No overlapping or nested double-quote spans in these copies."
+    },
+    {
+      "essay_number": 37,
+      "text_path": "data/clean/M_37.txt",
+      "sha256": "17a325157a2b0785b4ed1080938ad537c6782f0ad05221ab07edbe38c0cc4659",
+      "quotation_mark_count": 0,
+      "reviewed_spans": 0,
+      "remove_spans": 0,
+      "retain_spans": 0,
+      "status": "reviewed",
+      "note": "All double-quote boundaries inspected in context; unmarked allusions and paraphrases retained. No overlapping or nested double-quote spans in these copies."
+    },
+    {
+      "essay_number": 39,
+      "text_path": "data/clean/M_39.txt",
+      "sha256": "77ec8a69425a52043a0ce3f18e2f067a59687b8539c125c909aae9eec765c093",
+      "quotation_mark_count": 4,
+      "reviewed_spans": 2,
+      "remove_spans": 0,
+      "retain_spans": 2,
+      "status": "reviewed",
+      "note": "All double-quote boundaries inspected in context; unmarked allusions and paraphrases retained. No overlapping or nested double-quote spans in these copies."
+    },
+    {
+      "essay_number": 41,
+      "text_path": "data/clean/M_41.txt",
+      "sha256": "b846e20861669fdf7da3d6bab2da85c5ddc49e972a8ea0f694e9c579bea27d91",
+      "quotation_mark_count": 8,
+      "reviewed_spans": 4,
+      "remove_spans": 3,
+      "retain_spans": 1,
+      "status": "reviewed",
+      "note": "All double-quote boundaries inspected in context; unmarked allusions and paraphrases retained. No overlapping or nested double-quote spans in these copies."
+    },
+    {
+      "essay_number": 43,
+      "text_path": "data/clean/M_43.txt",
+      "sha256": "2fbca84de0506cd19af2389b7e383e36d21b7a7d8f05bcd900f73f24d8b7e516",
+      "quotation_mark_count": 28,
+      "reviewed_spans": 14,
+      "remove_spans": 14,
+      "retain_spans": 0,
+      "status": "reviewed",
+      "note": "All double-quote boundaries inspected in context; unmarked allusions and paraphrases retained. No overlapping or nested double-quote spans in these copies."
+    },
+    {
+      "essay_number": 46,
+      "text_path": "data/clean/M_46.txt",
+      "sha256": "adc05e9a45161c49f9e6d2e0ce87166262695af306d3592d990382d04465d93b",
+      "quotation_mark_count": 0,
+      "reviewed_spans": 0,
+      "remove_spans": 0,
+      "retain_spans": 0,
+      "status": "reviewed",
+      "note": "All double-quote boundaries inspected in context; unmarked allusions and paraphrases retained. No overlapping or nested double-quote spans in these copies."
+    },
+    {
+      "essay_number": 48,
+      "text_path": "data/clean/M_48.txt",
+      "sha256": "7b38a52880782be53cd58b660f137d6a4c444bcec4067e5462faebaee705ffd6",
+      "quotation_mark_count": 6,
+      "reviewed_spans": 3,
+      "remove_spans": 2,
+      "retain_spans": 1,
+      "status": "reviewed",
+      "note": "All double-quote boundaries inspected in context; unmarked allusions and paraphrases retained. No overlapping or nested double-quote spans in these copies."
+    },
+    {
+      "essay_number": 49,
+      "text_path": "data/clean/Q_49.txt",
+      "sha256": "fd627a0a06a57be9dd3d7a6026403dd4bf72344af92bb5a8208509aeded4580b",
+      "quotation_mark_count": 4,
+      "reviewed_spans": 2,
+      "remove_spans": 1,
+      "retain_spans": 1,
+      "status": "reviewed",
+      "note": "All double-quote boundaries inspected in context; unmarked allusions and paraphrases retained. No overlapping or nested double-quote spans in these copies."
+    },
+    {
+      "essay_number": 59,
+      "text_path": "data/clean/H_59.txt",
+      "sha256": "9a9e86613067279c536a15031455311d12cdf2bf3c0ed4df4486e586078ddfd7",
+      "quotation_mark_count": 2,
+      "reviewed_spans": 1,
+      "remove_spans": 1,
+      "retain_spans": 0,
+      "status": "reviewed",
+      "note": "All double-quote boundaries inspected in context; unmarked allusions and paraphrases retained. No overlapping or nested double-quote spans in these copies."
+    },
+    {
+      "essay_number": 70,
+      "text_path": "data/clean/H_70.txt",
+      "sha256": "ed147178e8c4c738138f4977f381cdc0d86575c7680e26962fa070aac5f5a884",
+      "quotation_mark_count": 0,
+      "reviewed_spans": 0,
+      "remove_spans": 0,
+      "retain_spans": 0,
+      "status": "reviewed",
+      "note": "All double-quote boundaries inspected in context; unmarked allusions and paraphrases retained. No overlapping or nested double-quote spans in these copies."
+    },
+    {
+      "essay_number": 78,
+      "text_path": "data/clean/H_78.txt",
+      "sha256": "23c0d5f06163a186345f807e952854873938ed0a56820469f15bd36a9c6f17dc",
+      "quotation_mark_count": 2,
+      "reviewed_spans": 1,
+      "remove_spans": 1,
+      "retain_spans": 0,
+      "status": "reviewed",
+      "note": "All double-quote boundaries inspected in context; unmarked allusions and paraphrases retained. No overlapping or nested double-quote spans in these copies."
+    }
+  ],
+  "annotation_sha256": "dc8c50b81fed99e0452be3b49792720040a63798a7ab935e64ea26bc0296358b"
+}

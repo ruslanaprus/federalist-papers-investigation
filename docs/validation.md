@@ -49,7 +49,7 @@ No. 78 was a particularly close comparison: Hamilton distance .897162 and Madiso
 
 Across all trials, the minimum absolute gap was .002476, the median was .189825, and the maximum was .291270. No additional threshold for substantive closeness was selected. Numerical ties, wrong named-author assignments, and inconclusive assignments were all absent.
 
-These trials share training essays and are not independent experiments. The sample is small and selected for a teaching investigation. The perfect observed count should therefore be interpreted alongside the close No. 78 result, topic and edition effects, source-transcription limitations, and the pending robustness checks.
+These trials share training essays and are not independent experiments. The sample is small and selected for a teaching investigation. The perfect observed count should therefore be interpreted alongside the close No. 78 result, topic and edition effects, source-transcription limitations, and the [completed reliability checks](robustness_checks.md), which retain 16 correct assignments in each variant while exposing close individual comparisons.
 
 ## Audit and verification
 

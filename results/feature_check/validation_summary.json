@@ -1,0 +1,33 @@
+{
+  "status": "complete",
+  "correct_assignments": 16,
+  "total_trials": 16,
+  "by_author": {
+    "hamilton": {
+      "correct": 8,
+      "total": 8
+    },
+    "madison": {
+      "correct": 8,
+      "total": 8
+    }
+  },
+  "misclassified_essays": [],
+  "inconclusive_essays": [],
+  "inconclusive_counted_as_correct": false,
+  "baseline": {
+    "correct": 8,
+    "total": 16,
+    "rule": "Always choose one author"
+  },
+  "correct_assignments_above_baseline": true,
+  "absolute_gap_summary": {
+    "minimum": 0.007347537449065911,
+    "median": 0.19259292570043013,
+    "maximum": 0.36285891070500786
+  },
+  "substantive_close_gap_threshold": null,
+  "universal_accuracy_threshold": null,
+  "trials_are_independent": false,
+  "questioned_essay_compared": false
+}

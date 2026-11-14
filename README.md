@@ -8,7 +8,7 @@ All 17 planned essays are collected, prepared, and counted. Fifteen derive from 
 
 The unchanged [distance method](docs/distance_method.md) correctly classified 16 of 16 reference essays in [leave-one-essay-out validation](docs/validation.md), with 8 correct for each author. No. 49 is closer to Madison's profile: distance about `.691377`, compared with `.920746` for Hamilton. These are resemblance measures, not authorship probabilities. The [comparison report](docs/questioned_comparison.md) gives the measured results and limitations.
 
-Robustness checks and concordance interpretation remain pending. Earlier partial tables and blocked records are preserved under `results/history/partial_corpus_14_november_2026/`, with an archive manifest of checksums.
+Both [predefined reliability checks](docs/robustness_checks.md) are complete. Each retains Madison as the closer profile for No. 49 and correctly classifies all 16 references. Concordance interpretation remains pending. Earlier partial tables and blocked records are preserved under `results/history/partial_corpus_14_november_2026/`, with an archive manifest of checksums.
 
 ## Set up with uv
 
@@ -73,7 +73,7 @@ The collector rejects missing essays by default. Logged supplied sources can fil
 uv run --locked python src/prepare_texts.py --verify
 ```
 
-The shared `normalize_for_counting` function applies the fixed lowercase and apostrophe rules when counting begins. It does not rewrite the readable copies. Quotation annotations should refer to those stable readable files. See the preparation record for the explicit appended-notes rule and its limitation. No quotation-removal copies have been created yet.
+The shared `normalize_for_counting` function applies the fixed lowercase and apostrophe rules when counting begins. It does not rewrite the readable copies. Quotation annotations should refer to those stable readable files. See the preparation record for the explicit appended-notes rule and its limitation. The separate `data/no_quotes/` copies now implement the reviewed quotation decisions; the main prepared files remain unchanged.
 
 ## Fixed word features
 
@@ -123,7 +123,19 @@ uv run --locked python -m src.compare_questioned --check
 
 This check confirms the full reference sample and verified completed validation. The completed comparison gives a smaller distance to Madison. Its signed gap, Hamilton minus Madison, is about `.229369`; all 24 features were usable.
 
-`uv run --locked python -m src.compare_questioned --verify` checks the saved comparison, whose profiles and shared scaling use all 16 references. It records both distances, their signed gap, exclusions, and validation context. No. 49 is excluded from all fitting. The [comparison report](docs/questioned_comparison.md) explains the workflow, measured values, source limitations, and pending robustness checks.
+`uv run --locked python -m src.compare_questioned --verify` checks the saved comparison, whose profiles and shared scaling use all 16 references. It records both distances, their signed gap, exclusions, and validation context. No. 49 is excluded from all fitting. The [comparison report](docs/questioned_comparison.md) explains the workflow, measured values, source limitations, and the link to completed reliability checks.
+
+## Predefined reliability checks
+
+Both checks repeat all 16 validation trials before comparing No. 49. The feature check omits `the`, `a`, `of`, and `and` while preserving the original all-word denominators. The quotation check removes 27 reviewed spans across the corpus, retains 6 marked spans, and recounts the original 24 features using all remaining words. Both retain Madison as the closer profile and classify all references correctly. Some validation comparisons remain close; see the [reliability report](docs/robustness_checks.md).
+
+```sh
+uv run --locked python -m src.robustness_checks --verify
+```
+
+The normal command without `--verify` creates outputs only when they do not already exist. It requires completed quotation annotations and verifies the main analysis first. `metadata/quotation_review.json` preserves annotation policy, timing, and all 17 reviewed text hashes. The review was completed before variant evaluation, with the main result already known. Exact spans, decisions, and source URLs are in `metadata/quotations.csv`.
+
+`results/feature_check/` and `results/quotation_check/` contain separate counts, frequencies, validation trials, fitted quantities, and No. 49 comparisons. `results/robustness_summary.json` compares all 3 versions; `results/robustness_manifest.json` records reproducibility fingerprints. Main-analysis outputs remain preserved. Distances from different variants do not measure calibrated changes in evidential strength.
 
 ## Record evidence consistently
 
