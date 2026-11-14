@@ -78,6 +78,8 @@ Topic words can separate subjects rather than writers. [Mosteller and Wallace's 
 
 Count whole words, retain function words, and disable stopword removal. Do not select additional words after inspecting results.
 
+Load the validated feature specification with `load_specification` and use `tokenize_words` from `src/word_features.py` for both selected-word counts and total essay length. Verify the recorded settings with `uv run --locked python -m src.word_features`. The shared tokenizer preserves non-feature words in the token stream and does not expand contractions or group word forms. See `docs/word_features.md` and the preserved record in `metadata/word_features.json`.
+
 ## 6. Calculate comparable frequencies
 
 Save one row per essay in `results/counts.csv`, containing essay number, role, total word count, and all 24 integer counts. Save corresponding frequencies in `results/frequencies.csv`:

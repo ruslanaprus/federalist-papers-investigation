@@ -70,6 +70,16 @@ uv run --locked python src/prepare_texts.py --verify --allow-incomplete
 
 The shared `normalize_for_counting` function applies the fixed lowercase and apostrophe rules when counting begins. It does not rewrite the readable copies. Quotation annotations should refer to those stable readable files. See the preparation record for the explicit appended-notes rule and its limitation. No quotation-removal copies have been created yet.
 
+## Fixed word features
+
+The original plan's 24 words and counting rules are confirmed in the [feature specification](docs/word_features.md) and recorded with software versions in `metadata/word_features.json`. The shared `tokenize_words` function in `src/word_features.py` retains all word tokens, including common words and words outside the selected features. Future counting scripts should load the validated specification through `load_specification` and use this tokenizer for both feature counts and essay length.
+
+```sh
+uv run --locked python -m src.word_features
+```
+
+This command checks the feature list, its order, the predefined 20-word check, and implementation fingerprints without reading essay texts. It does not calculate frequencies. The feature selection remains independent of the current missing essays and any future attribution result.
+
 ## Record evidence consistently
 
 Keep raw downloads unchanged. Do not add guessed values or placeholder essay rows to the CSV logs. Use UTF-8 and proper CSV quoting for passages containing commas or line breaks.
