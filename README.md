@@ -6,6 +6,8 @@ This project compares common grammatical words in 8 Hamilton essays, 8 Madison e
 
 The working environment is prepared. Corpus collection is incomplete: 15 of the planned 17 essays are saved; Hamilton references Nos. 21 and 26 are still missing because their source page could not be retrieved. The 15 available essays have prepared copies, an exact edit log, and separate word-count and frequency tables. See the [collection record](docs/corpus_collection.md), [preparation record](docs/text_preparation.md), and [frequency calculation](docs/frequency_calculation.md). Author profiles, validation, and attribution have not started.
 
+The [distance method](docs/distance_method.md) is defined and tested with invented frequencies. No profiles have been fitted to the collected essays.
+
 ## Set up with uv
 
 Use uv and the Python release pinned in [.python-version](.python-version), currently 3.13.15. The initial setup used uv 0.13.8 on macOS. Runtime scripts use the Python standard library, so there are no external package dependencies.
@@ -90,6 +92,16 @@ uv run --locked python -m src.calculate_frequencies --verify --allow-incomplete
 
 `results/frequency_manifest.json` records the incomplete corpus, actual software versions, settings, input fingerprints, and result checksums. Rates retain their computed precision; exact ratios remain recoverable from the integer counts. The [frequency record](docs/frequency_calculation.md) explains the formula, measured totals, and an observed example. The explicit partial-corpus option does not authorize reduced-sample author profiles or validation.
 
+## Defined distance method
+
+`src/distance_method.py` implements equal-essay author means, sample standard deviations across training essays, and the mean absolute standardized distance. It excludes exactly constant features, rejects information leakage from evaluation essays, and applies the fixed `1e-12` numerical tie rule. `metadata/distance_method.json` records the unchanged definition and implementation fingerprints.
+
+```sh
+uv run --locked python -m src.distance_method
+```
+
+This command checks the definition without fitting the corpus or comparing No. 49. The [method record](docs/distance_method.md) explains the formula, justification, training boundaries, and an invented worked example. The main corpus remains incomplete; full-sample fitting and validation require the missing references.
+
 ## Record evidence consistently
 
 Keep raw downloads unchanged. Do not add guessed values or placeholder essay rows to the CSV logs. Use UTF-8 and proper CSV quoting for passages containing commas or line breaks.
@@ -116,10 +128,10 @@ uv run --locked python src/check_environment.py --manifest results/environment_r
 
 The manifest records actual Python, uv, operating system, Git revision and working-tree state, configuration, and hashes of setup inputs. A Git revision with local changes does not identify the complete source state; the recorded file hashes distinguish those changes. Snapshot creation refuses to overwrite an existing file.
 
-Run the corpus, preparation, word-rule, and frequency tests with:
+Run the corpus, preparation, word-rule, frequency, and distance-method tests with:
 
 ```sh
 uv run --locked python -m unittest discover -s tests -v
 ```
 
-The current tests check collection, extraction, preparation, tokenization, and comparable frequencies. Tests of author profiles, distance calculations, and validation will be added with those stages. Final report generation follows interpretation of the completed investigation.
+The tests check collection, extraction, preparation, tokenization, comparable frequencies, and distance arithmetic using invented examples. Tests of the corpus-validation workflow will accompany that stage. Final report generation follows interpretation of the completed investigation.

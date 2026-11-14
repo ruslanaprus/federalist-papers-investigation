@@ -111,6 +111,8 @@ Dividing by variation puts features on comparable scales. Averaging absolute dif
 
 Choose the smaller distance. If their absolute difference is at most `1e-12`, record `inconclusive` rather than choosing an author. Keep small nonzero gaps visible; the tolerance handles numerical equality and is not a threshold of evidential strength.
 
+Use `fit_reference_profiles` and `compare_essay` from `src/distance_method.py`. Fit only training references, explicitly declaring a held-out identifier during validation, and record the model's usable and excluded features. The shared functions reject evaluation essays in training and use the same fitted scaling for both authors. Verify the recorded definition with `uv run --locked python -m src.distance_method`. See `docs/distance_method.md` for the exact sample-variance denominator and invented arithmetic example. Method verification does not authorize fitting the incomplete corpus or comparing No. 49 before validation.
+
 ## 8. Validate before comparing No. 49
 
 Use leave-one-essay-out validation: temporarily treat each known-author essay as unknown, then test whether the remaining essays identify its reference author.
