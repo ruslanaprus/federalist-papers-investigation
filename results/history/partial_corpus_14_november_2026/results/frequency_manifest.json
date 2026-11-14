@@ -1,0 +1,276 @@
+{
+  "stage": "per_essay_counts_and_frequencies",
+  "recorded_at": "2026-11-14T23:39:12+02:00",
+  "status": "incomplete_corpus",
+  "planned_essay_count": 17,
+  "measured_essay_count": 15,
+  "missing_essays": [
+    21,
+    26
+  ],
+  "rows_by_role": {
+    "hamilton": 6,
+    "madison": 8,
+    "questioned": 1
+  },
+  "formula": "word_count / total_word_tokens * 1000",
+  "denominator": "All tokens from the same tokenizer used for feature counts",
+  "precision": "Python binary64; repr round-trip decimals without pre-rounding",
+  "exact_recalculation": "Integer counts and total_words preserve the exact ratios",
+  "specification": {
+    "main_features": [
+      "the",
+      "a",
+      "an",
+      "and",
+      "or",
+      "but",
+      "of",
+      "to",
+      "in",
+      "on",
+      "at",
+      "by",
+      "for",
+      "from",
+      "with",
+      "as",
+      "that",
+      "which",
+      "this",
+      "these",
+      "it",
+      "is",
+      "be",
+      "not"
+    ],
+    "token_pattern": "[a-z]+(?:'[a-z]+)*",
+    "encoding": "utf-8",
+    "lowercase_for_counting": true,
+    "normalize_curly_apostrophes": true,
+    "remove_stopwords": false,
+    "expand_contractions": false,
+    "group_word_forms": false,
+    "retain_body_quotations": true,
+    "feature_check_remove": [
+      "the",
+      "a",
+      "of",
+      "and"
+    ],
+    "feature_check_features": [
+      "an",
+      "or",
+      "but",
+      "to",
+      "in",
+      "on",
+      "at",
+      "by",
+      "for",
+      "from",
+      "with",
+      "as",
+      "that",
+      "which",
+      "this",
+      "these",
+      "it",
+      "is",
+      "be",
+      "not"
+    ],
+    "quotation_check_features": [
+      "the",
+      "a",
+      "an",
+      "and",
+      "or",
+      "but",
+      "of",
+      "to",
+      "in",
+      "on",
+      "at",
+      "by",
+      "for",
+      "from",
+      "with",
+      "as",
+      "that",
+      "which",
+      "this",
+      "these",
+      "it",
+      "is",
+      "be",
+      "not"
+    ],
+    "planned_frequency_unit_words": 1000
+  },
+  "runtime": {
+    "python": "3.13.15",
+    "uv": "uv 0.13.8 (Homebrew 2026-11-12 aarch64-apple-darwin)",
+    "operating_system": "macOS-15.7.9-arm64-arm-64bit-Mach-O"
+  },
+  "git": {
+    "revision": "bcf68713f87033ff0e991c687a124db8f145d5e9",
+    "working_tree_dirty": true,
+    "status_porcelain": [
+      "?? src/calculate_frequencies.py",
+      "?? tests/test_frequencies.py"
+    ]
+  },
+  "code_sha256": {
+    "src/assemble_corpus.py": "cc39eaa742e9f451e3f0ac26f023f4a8dfb30578aeb6f58c3a7dde95029b6959",
+    "src/calculate_frequencies.py": "951291f021b6eb59d60eb31949872a567441ee1ed6a99e3f1b44cf7aa928554b",
+    "src/check_environment.py": "7197dfc040cd5eb863ff5bfe5be35392ada14303afe2485b3fc6615b4222206d",
+    "src/prepare_texts.py": "fafa72bef74411cdcd1339abe25e2c2444d7406b569727b029f4fb377ec75541",
+    "src/word_features.py": "308e3faebb9ac1c6d17bd988306458f028ae5c9a87eac274abdad1187cd5e0a3",
+    "tests/test_corpus.py": "f5059601c3917c5cb9c38e9d6bc8c85ff3aef62714446f59029fcd0539b0c075",
+    "tests/test_frequencies.py": "2929297fb659584ddbddbfaacab1bdcfc9a61d3aac3c488f6c4307faf4664c53",
+    "tests/test_preparation.py": "584bc924747eb8327bdcaf61be082c47c998319d657c78e62c730f5d802dc4f8",
+    "tests/test_word_features.py": "4991aed138680680653c3db7607a21ecc27ab7f1cc66976a7f81b73184c8fef3"
+  },
+  "input_sha256": {
+    "docs/research_plan.md": "028809cdfe7990cb2620dd39b7d74607829e4fafe652fb0c704012c5af4780f4",
+    "config/research.toml": "c5e3b467d704fe201c8060b3cbdfc11d1e682f08e402a01b2e7dc5bc9efa17d9",
+    ".python-version": "861b3dd8083d28f336ef70f6755bc399538ddad627b1d095820ca34cb953cf14",
+    "pyproject.toml": "d23a95cd305a399357de6af25eb80245bc4c2917afabf274de47042af5a56bf6",
+    "uv.lock": "e75b80aff7ba087f107fdbf1e1ca0105002dc67e2cf8f8d9070703e7c8aa1780",
+    "metadata/sources.csv": "f6b52b650ae55ae24a2d8577565d7b90e5c91574b3d568aa7aae2bb4ac3b9ee1",
+    "metadata/preparation.csv": "cf1b008b0f42147bdda54c5e7b6b7cdf4ba15aa9314ae3cfd22509376b8e5180",
+    "metadata/word_features.json": "b2e296b2d0ff60b61a2a6008d6f1e09d6b9e89be130d5b8502f597f0b35ff712",
+    "results/corpus_collection_manifest.json": "47881f7155dad99085aa1e441f147748dc180e5ff0f5b3eb6e494ec852567ff2",
+    "results/preparation_manifest.json": "ee76256efb7eea9565487b476121ea11ce3ae7ac467bf6723b96c399299b43b7",
+    "data/clean/H_1.txt": "13eb4024c07b32018811349ce44d0f78b5af192e0add13773dde401849934d69",
+    "data/clean/H_31.txt": "9b60e44939034ff01f8a545bce2b0dc4441e1cde78ee8e0218d025e08a5ef96b",
+    "data/clean/H_59.txt": "9a9e86613067279c536a15031455311d12cdf2bf3c0ed4df4486e586078ddfd7",
+    "data/clean/H_6.txt": "5db1aefca9b756b541506ebbfa06767928f4dbc02ac1f8ac0519429908caa5a2",
+    "data/clean/H_70.txt": "ed147178e8c4c738138f4977f381cdc0d86575c7680e26962fa070aac5f5a884",
+    "data/clean/H_78.txt": "23c0d5f06163a186345f807e952854873938ed0a56820469f15bd36a9c6f17dc",
+    "data/clean/M_10.txt": "6ce164b216c55b56f815380b9564a05e57863af44d3c853ecf457d1497db194b",
+    "data/clean/M_14.txt": "0cb8d6e94fbe7b0fd45733192582bbf8e4df1ca67e88c686601d56fb6a0d0d37",
+    "data/clean/M_37.txt": "17a325157a2b0785b4ed1080938ad537c6782f0ad05221ab07edbe38c0cc4659",
+    "data/clean/M_39.txt": "77ec8a69425a52043a0ce3f18e2f067a59687b8539c125c909aae9eec765c093",
+    "data/clean/M_41.txt": "b846e20861669fdf7da3d6bab2da85c5ddc49e972a8ea0f694e9c579bea27d91",
+    "data/clean/M_43.txt": "2fbca84de0506cd19af2389b7e383e36d21b7a7d8f05bcd900f73f24d8b7e516",
+    "data/clean/M_46.txt": "adc05e9a45161c49f9e6d2e0ce87166262695af306d3592d990382d04465d93b",
+    "data/clean/M_48.txt": "7b38a52880782be53cd58b660f137d6a4c444bcec4067e5462faebaee705ffd6",
+    "data/clean/Q_49.txt": "fd627a0a06a57be9dd3d7a6026403dd4bf72344af92bb5a8208509aeded4580b"
+  },
+  "output_sha256": {
+    "results/counts.csv": "355c8909544143d7dac3b49ee959da96a410b75fed4cb536d2fdd7b0c6b96a4e",
+    "results/frequencies.csv": "8dcce794f3094d700a553d6f18c3aeb6bce2151a86d25398df93a531a56a905d"
+  },
+  "essays": [
+    {
+      "essay_number": 1,
+      "role": "hamilton",
+      "total_words": 1588,
+      "prepared_path": "data/clean/H_1.txt",
+      "prepared_sha256": "13eb4024c07b32018811349ce44d0f78b5af192e0add13773dde401849934d69"
+    },
+    {
+      "essay_number": 6,
+      "role": "hamilton",
+      "total_words": 1943,
+      "prepared_path": "data/clean/H_6.txt",
+      "prepared_sha256": "5db1aefca9b756b541506ebbfa06767928f4dbc02ac1f8ac0519429908caa5a2"
+    },
+    {
+      "essay_number": 10,
+      "role": "madison",
+      "total_words": 2999,
+      "prepared_path": "data/clean/M_10.txt",
+      "prepared_sha256": "6ce164b216c55b56f815380b9564a05e57863af44d3c853ecf457d1497db194b"
+    },
+    {
+      "essay_number": 14,
+      "role": "madison",
+      "total_words": 2149,
+      "prepared_path": "data/clean/M_14.txt",
+      "prepared_sha256": "0cb8d6e94fbe7b0fd45733192582bbf8e4df1ca67e88c686601d56fb6a0d0d37"
+    },
+    {
+      "essay_number": 31,
+      "role": "hamilton",
+      "total_words": 1730,
+      "prepared_path": "data/clean/H_31.txt",
+      "prepared_sha256": "9b60e44939034ff01f8a545bce2b0dc4441e1cde78ee8e0218d025e08a5ef96b"
+    },
+    {
+      "essay_number": 37,
+      "role": "madison",
+      "total_words": 2709,
+      "prepared_path": "data/clean/M_37.txt",
+      "prepared_sha256": "17a325157a2b0785b4ed1080938ad537c6782f0ad05221ab07edbe38c0cc4659"
+    },
+    {
+      "essay_number": 39,
+      "role": "madison",
+      "total_words": 2606,
+      "prepared_path": "data/clean/M_39.txt",
+      "prepared_sha256": "77ec8a69425a52043a0ce3f18e2f067a59687b8539c125c909aae9eec765c093"
+    },
+    {
+      "essay_number": 41,
+      "role": "madison",
+      "total_words": 3542,
+      "prepared_path": "data/clean/M_41.txt",
+      "prepared_sha256": "b846e20861669fdf7da3d6bab2da85c5ddc49e972a8ea0f694e9c579bea27d91"
+    },
+    {
+      "essay_number": 43,
+      "role": "madison",
+      "total_words": 3426,
+      "prepared_path": "data/clean/M_43.txt",
+      "prepared_sha256": "2fbca84de0506cd19af2389b7e383e36d21b7a7d8f05bcd900f73f24d8b7e516"
+    },
+    {
+      "essay_number": 46,
+      "role": "madison",
+      "total_words": 2614,
+      "prepared_path": "data/clean/M_46.txt",
+      "prepared_sha256": "adc05e9a45161c49f9e6d2e0ce87166262695af306d3592d990382d04465d93b"
+    },
+    {
+      "essay_number": 48,
+      "role": "madison",
+      "total_words": 1860,
+      "prepared_path": "data/clean/M_48.txt",
+      "prepared_sha256": "7b38a52880782be53cd58b660f137d6a4c444bcec4067e5462faebaee705ffd6"
+    },
+    {
+      "essay_number": 49,
+      "role": "questioned",
+      "total_words": 1646,
+      "prepared_path": "data/clean/Q_49.txt",
+      "prepared_sha256": "fd627a0a06a57be9dd3d7a6026403dd4bf72344af92bb5a8208509aeded4580b"
+    },
+    {
+      "essay_number": 59,
+      "role": "hamilton",
+      "total_words": 1899,
+      "prepared_path": "data/clean/H_59.txt",
+      "prepared_sha256": "9a9e86613067279c536a15031455311d12cdf2bf3c0ed4df4486e586078ddfd7"
+    },
+    {
+      "essay_number": 70,
+      "role": "hamilton",
+      "total_words": 3062,
+      "prepared_path": "data/clean/H_70.txt",
+      "prepared_sha256": "ed147178e8c4c738138f4977f381cdc0d86575c7680e26962fa070aac5f5a884"
+    },
+    {
+      "essay_number": 78,
+      "role": "hamilton",
+      "total_words": 3016,
+      "prepared_path": "data/clean/H_78.txt",
+      "prepared_sha256": "23c0d5f06163a186345f807e952854873938ed0a56820469f15bd36a9c6f17dc"
+    }
+  ],
+  "author_profiles_calculated": false,
+  "known_author_validation_performed": false,
+  "authorship_comparison_performed": false
+}

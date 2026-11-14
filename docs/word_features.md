@@ -58,11 +58,11 @@ uv run --locked python -m unittest discover -s tests -v
 
 The checker reads the plan, configuration, and implementation files. It does not read essay texts. Tests use invented text to check word boundaries, apostrophes, contractions, historical forms, retention of all tokens, and rejection of altered feature rules.
 
-No essay counts, frequencies, distances, or predictions have been calculated. Feature specification is complete even though the fixed corpus is still missing Nos. 21 and 26; that gap must be resolved before the planned full-corpus analysis.
+At the time this feature specification was recorded, no essay counts, frequencies, distances, or predictions had been calculated. The feature record is preserved unchanged. The corpus was completed on 15 November 2026 using the two supplied reference transcriptions.
 
 ## Subsequent frequency calculation
 
-After this feature record was fixed, Step 6 calculated separate counts and frequencies for the 15 available essays on 14 November 2026. The selection and rules above remained unchanged. See the [frequency calculation record](frequency_calculation.md). Author profiles and comparisons remain later stages.
+After this feature record was fixed, Step 6 first counted 15 essays on 14 November 2026 and expanded to all 17 on 15 November 2026. The selection and rules above remained unchanged. See the [frequency calculation record](frequency_calculation.md), followed by full validation and the questioned-text comparison. The earlier partial record is archived.
 
 ## Reference
 

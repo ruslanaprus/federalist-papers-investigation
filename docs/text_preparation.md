@@ -1,14 +1,14 @@
 # Text preparation record
 
-**Date:** 14 November 2026.
+**Updated:** 15 November 2026.
 
 **Scope:** Step 4, preservation of one edition and consistent preparation.
 
-**Status:** Prepared copies of the 15 collected essays; the fixed corpus remains incomplete because Nos. 21 and 26 are missing.
+**Status:** Prepared copies of all 17 planned essays. The earlier 15-essay preparation record is preserved in the historical snapshot.
 
 ## Edition and source preservation
 
-Every prepared text derives from the same Library of Congress presentation, identified in its [edition note](https://guides.loc.gov/federalist-papers/full-text) as a Project Gutenberg compilation. No text from another collection was added. The [collection record](corpus_collection.md) documents the original source URLs, author-label checks, and incomplete retrieval.
+The intended edition is the Library of Congress presentation, identified in its [edition note](https://guides.loc.gov/federalist-papers/full-text) as a Project Gutenberg compilation. Fifteen texts come from archived reader representations; Nos. 21 and 26 are user-supplied copies associated with the requested page. Their full wording has not been independently compared with the live edition. No alternate edition was deliberately introduced. The [collection record](corpus_collection.md) documents the original source URLs, author-label checks, and incomplete retrieval.
 
 The raw `.txt` files and archived reader responses remain unchanged. They are preserved separately from the prepared files. Their SHA-256 checksums, a fingerprint of each file's bytes, are recorded in `results/preparation_manifest.json` and checked before and after preparation. The existing source log and collection manifest are also preserved.
 
@@ -42,19 +42,19 @@ The shared `normalize_for_counting` function in `src/prepare_texts.py` lowercase
 
 `results/preparation_manifest.json` records missing essays, raw and prepared checksums, source and collection-log fingerprints, software versions, code fingerprints, and the decisions used. It records whether double quotation characters are present without claiming that quotation passages have been identified.
 
-Create prepared copies from the verified available material with:
+Create prepared copies from the verified source records with:
 
 ```sh
-uv run --locked python src/prepare_texts.py --allow-incomplete
+uv run --locked python src/prepare_texts.py
 ```
 
 After creation, verify them without rewriting files:
 
 ```sh
-uv run --locked python src/prepare_texts.py --verify --allow-incomplete
+uv run --locked python src/prepare_texts.py --verify
 uv run --locked python -m unittest discover -s tests -v
 ```
 
 Existing preparation records and differing prepared files are protected against replacement. Without the explicit incomplete-corpus option, preparation stops until all 17 planned essays have been collected. The option permits preparing available texts; it does not authorize a reduced reference sample for attribution.
 
-The tests check quotation and spelling preservation, full final paragraphs, numbered body passages, note boundaries, reader-marker removal, edit reconstruction, counting normalization, and rejection of ambiguous structural material. Frequency calculation, known-author validation, and attribution remain later stages.
+The tests check quotation and spelling preservation, full final paragraphs, numbered body passages, note boundaries, reader-marker removal, edit reconstruction, counting normalization, and rejection of ambiguous structural material. Frequency calculation, known-author validation, and the No. 49 resemblance comparison have since been completed. Their reports record the measured outcomes and source limitations. Robustness checks and concordance interpretation remain pending.

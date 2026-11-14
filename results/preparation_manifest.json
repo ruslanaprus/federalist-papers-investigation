@@ -1,37 +1,37 @@
 {
   "stage": "text_preparation",
-  "status": "incomplete_corpus",
-  "recorded_at": "2026-11-14T23:22:10+02:00",
-  "prepared_essay_count": 15,
-  "missing_essays": [
-    {
-      "essay_number": 21,
-      "role": "hamilton",
-      "reason": "No complete retrieval: https://guides.loc.gov/federalist-papers/text-21-30"
-    },
-    {
-      "essay_number": 26,
-      "role": "hamilton",
-      "reason": "No complete retrieval: https://guides.loc.gov/federalist-papers/text-21-30"
-    }
-  ],
+  "status": "complete",
+  "recorded_at": "2026-11-15T00:21:48+02:00",
+  "prepared_essay_count": 17,
+  "missing_essays": [],
   "edition": "Library of Congress online presentation, Project Gutenberg compilation",
   "runtime": {
     "python": "3.13.15",
     "uv": "uv 0.13.8 (Homebrew 2026-11-12 aarch64-apple-darwin)"
   },
-  "git_revision": "4b84c6ccbf28e017610622d9930fcba33b61d493",
+  "git_revision": "843f08e2ee5b8051d1ca29d03b886461355ab0bb",
   "code_sha256": {
-    "src/assemble_corpus.py": "cc39eaa742e9f451e3f0ac26f023f4a8dfb30578aeb6f58c3a7dde95029b6959",
+    "src/assemble_corpus.py": "727b7d840f47e35cbf662472d9190d504cb22aff6fb05796ffa15aae9dfb8618",
+    "src/calculate_frequencies.py": "951291f021b6eb59d60eb31949872a567441ee1ed6a99e3f1b44cf7aa928554b",
     "src/check_environment.py": "7197dfc040cd5eb863ff5bfe5be35392ada14303afe2485b3fc6615b4222206d",
+    "src/compare_questioned.py": "d6a5c26a2caff8e04c6b636b4dac4ad1d93b5a694252fdfe423e5eac5eb4d001",
+    "src/distance_method.py": "d8ceeeb5519f760046f51d44610617640849e0b66f619df5925562856d3cea33",
     "src/prepare_texts.py": "fafa72bef74411cdcd1339abe25e2c2444d7406b569727b029f4fb377ec75541",
+    "src/validate_authors.py": "0c36fe8132c54cd75bcfe81057fb6b19fe23a731999b0e58c8140a83b0bbe635",
+    "src/word_features.py": "308e3faebb9ac1c6d17bd988306458f028ae5c9a87eac274abdad1187cd5e0a3",
     "tests/test_corpus.py": "f5059601c3917c5cb9c38e9d6bc8c85ff3aef62714446f59029fcd0539b0c075",
-    "tests/test_preparation.py": "584bc924747eb8327bdcaf61be082c47c998319d657c78e62c730f5d802dc4f8"
+    "tests/test_distance_method.py": "d507b89285d932da1633055c2c13ffed767dc437ba45f6603a31af7436ee0829",
+    "tests/test_frequencies.py": "2929297fb659584ddbddbfaacab1bdcfc9a61d3aac3c488f6c4307faf4664c53",
+    "tests/test_preparation.py": "584bc924747eb8327bdcaf61be082c47c998319d657c78e62c730f5d802dc4f8",
+    "tests/test_questioned.py": "d0ab2dbcc6a19ab767bf87bdab6194dd8861b637f826dfb7eef7be49af31e6bb",
+    "tests/test_supplied_sources.py": "6cc1e45b90c19e1fcc2598bed88643d5cbb46ffea27dfe07d4bba68dd1b70c42",
+    "tests/test_validation.py": "d400bfe80b6c14fb4e532d1448683ca689469110bffd4480ea9c9589cc576996",
+    "tests/test_word_features.py": "4991aed138680680653c3db7607a21ecc27ab7f1cc66976a7f81b73184c8fef3"
   },
   "research_plan_sha256": "028809cdfe7990cb2620dd39b7d74607829e4fafe652fb0c704012c5af4780f4",
   "config_sha256": "c5e3b467d704fe201c8060b3cbdfc11d1e682f08e402a01b2e7dc5bc9efa17d9",
-  "sources_log_sha256": "f6b52b650ae55ae24a2d8577565d7b90e5c91574b3d568aa7aae2bb4ac3b9ee1",
-  "collection_manifest_sha256": "47881f7155dad99085aa1e441f147748dc180e5ff0f5b3eb6e494ec852567ff2",
+  "sources_log_sha256": "7a601a999a763a6a4cfe3c5f874f5fe87ef696aeaf1c8911ef8d019441a53579",
+  "collection_manifest_sha256": "bd822924e98c703d73d0a77fcc451ef75f1f4f2fb80781e8c26f63a821b5e882",
   "raw_sha256": {
     "data/raw/pages/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "data/raw/pages/loc_index.reader.json": "eab714dc31beb8fa5931f4a13f8128145653d818af920bd3184e224af0a02da7",
@@ -43,8 +43,12 @@
     "data/raw/pages/loc_text-51-60.reader.json": "7f190216e1248df4a52bbeddb43784ba94e24e8b3740d223d41405dad8541343",
     "data/raw/pages/loc_text-61-70.reader.json": "27ec7f1df03c21fbde9c1b67e98d0fc8acadf48d703cfea1c2dd48ca9f9f6522",
     "data/raw/pages/loc_text-71-80.reader.json": "ef8206ad9e7144ea37043e4c4f48ab7e797fcce95253d82bb1722afbd7e7b8dd",
+    "data/raw/supplied/H_21.txt": "afe68c1848bcbcd957c27a1b5726e7d293a8925630fbe8e9a7d68d8015f616e8",
+    "data/raw/supplied/H_26.txt": "c7922f77895b20ce7eedfa47c57d6143ecba76b9258664892370c790dfa3d2e2",
     "data/raw/texts/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "data/raw/texts/H_1.txt": "95375f1eb542e12fdc157dee75a084fe6209e0d811bdd3a6c0a6732a472a4658",
+    "data/raw/texts/H_21.txt": "afe68c1848bcbcd957c27a1b5726e7d293a8925630fbe8e9a7d68d8015f616e8",
+    "data/raw/texts/H_26.txt": "c7922f77895b20ce7eedfa47c57d6143ecba76b9258664892370c790dfa3d2e2",
     "data/raw/texts/H_31.txt": "c2ecfbfd6df4cce0bf5953b80676570cece93dbf2539b591fcf16d56ce62ae2f",
     "data/raw/texts/H_59.txt": "bc70733c2fd5af6dd8efd65361e2364a8a4412e6f956f28fe988bbe931f4ea6e",
     "data/raw/texts/H_6.txt": "0c9898bd19d8a205b0e9a1e23c651ec2de14e6e3725e5bc4199fd4ddbd38e493",
@@ -60,7 +64,7 @@
     "data/raw/texts/M_48.txt": "d1dd565644da249be58a078cf9952834ed884348cd08dea5d6fd6d742caeaf66",
     "data/raw/texts/Q_49.txt": "99bd928150a4264d6779d785546907466c1695bd8ac6f684d68328cf54667f09"
   },
-  "preparation_log_sha256": "cf1b008b0f42147bdda54c5e7b6b7cdf4ba15aa9314ae3cfd22509376b8e5180",
+  "preparation_log_sha256": "b029d804b73448beb196ccfd95e653becd7d13eea0f9fad799f373525e968ce1",
   "prepared_copies_preserve_case_and_apostrophes": true,
   "counting_normalization_applied_to_saved_copies": false,
   "counting_normalization_helper": "src/prepare_texts.py:normalize_for_counting",
@@ -91,6 +95,32 @@
       "prepared_path": "data/clean/H_6.txt",
       "prepared_sha256": "5db1aefca9b756b541506ebbfa06767928f4dbc02ac1f8ac0519429908caa5a2",
       "edit_count": 14,
+      "contains_double_quote_characters": true,
+      "quotation_passages_removed": false,
+      "quotation_annotation_status": "not_yet_performed",
+      "spelling_corrections": []
+    },
+    {
+      "essay_number": 21,
+      "role": "hamilton",
+      "raw_path": "data/raw/texts/H_21.txt",
+      "raw_sha256": "afe68c1848bcbcd957c27a1b5726e7d293a8925630fbe8e9a7d68d8015f616e8",
+      "prepared_path": "data/clean/H_21.txt",
+      "prepared_sha256": "4ebdff07fc71405bb9ada0040d7d800a39c903cc5d57ef3df77e1dce02a750d9",
+      "edit_count": 3,
+      "contains_double_quote_characters": true,
+      "quotation_passages_removed": false,
+      "quotation_annotation_status": "not_yet_performed",
+      "spelling_corrections": []
+    },
+    {
+      "essay_number": 26,
+      "role": "hamilton",
+      "raw_path": "data/raw/texts/H_26.txt",
+      "raw_sha256": "c7922f77895b20ce7eedfa47c57d6143ecba76b9258664892370c790dfa3d2e2",
+      "prepared_path": "data/clean/H_26.txt",
+      "prepared_sha256": "b115678965bf2b906490f7130b5fbf2263a25d43ee0ec09a34f4137aa44722bc",
+      "edit_count": 3,
       "contains_double_quote_characters": true,
       "quotation_passages_removed": false,
       "quotation_annotation_status": "not_yet_performed",

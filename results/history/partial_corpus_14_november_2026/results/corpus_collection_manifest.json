@@ -1,0 +1,277 @@
+{
+  "stage": "corpus_collection",
+  "status": "incomplete",
+  "recorded_at": "2026-11-14T23:05:03+02:00",
+  "runtime": {
+    "python_version": "3.13.15",
+    "uv_version": "uv 0.13.8 (Homebrew 2026-11-12 aarch64-apple-darwin)",
+    "operating_system": "macOS-15.7.9-arm64-arm-64bit-Mach-O"
+  },
+  "planned_essay_count": 17,
+  "collected_essay_count": 15,
+  "missing_essays": [
+    {
+      "essay_number": 21,
+      "role": "hamilton",
+      "reason": "No complete retrieval: https://guides.loc.gov/federalist-papers/text-21-30"
+    },
+    {
+      "essay_number": 26,
+      "role": "hamilton",
+      "reason": "No complete retrieval: https://guides.loc.gov/federalist-papers/text-21-30"
+    }
+  ],
+  "retrieval_method": "archived_web_reader_responses",
+  "original_html_bytes_preserved": false,
+  "linguistic_preparation_performed": false,
+  "authorship_analysis_performed": false,
+  "research_plan_sha256": "028809cdfe7990cb2620dd39b7d74607829e4fafe652fb0c704012c5af4780f4",
+  "script_sha256": "cc39eaa742e9f451e3f0ac26f023f4a8dfb30578aeb6f58c3a7dde95029b6959",
+  "config_sha256": "c5e3b467d704fe201c8060b3cbdfc11d1e682f08e402a01b2e7dc5bc9efa17d9",
+  "index_sha256": "eab714dc31beb8fa5931f4a13f8128145653d818af920bd3184e224af0a02da7",
+  "source_log_sha256": "f6b52b650ae55ae24a2d8577565d7b90e5c91574b3d568aa7aae2bb4ac3b9ee1",
+  "page_snapshots": {
+    "data/raw/pages/loc_text-1-10.reader.json": {
+      "sha256": "06cc9c3816e431702f1ae9bb1b0317d8fce5a79e174eb0e0149eb28936dc93fc",
+      "verified_line_count": 477,
+      "resolved_shortened_reader_lines": []
+    },
+    "data/raw/pages/loc_text-31-40.reader.json": {
+      "sha256": "c3d2f88adffeb165cbcbca515329a9ff9bbc9b63649fa7261bea0dd64d78c833",
+      "verified_line_count": 509,
+      "resolved_shortened_reader_lines": [
+        252,
+        360
+      ]
+    },
+    "data/raw/pages/loc_text-51-60.reader.json": {
+      "sha256": "7f190216e1248df4a52bbeddb43784ba94e24e8b3740d223d41405dad8541343",
+      "verified_line_count": 447,
+      "resolved_shortened_reader_lines": [
+        275,
+        396
+      ]
+    },
+    "data/raw/pages/loc_text-61-70.reader.json": {
+      "sha256": "27ec7f1df03c21fbde9c1b67e98d0fc8acadf48d703cfea1c2dd48ca9f9f6522",
+      "verified_line_count": 519,
+      "resolved_shortened_reader_lines": []
+    },
+    "data/raw/pages/loc_text-71-80.reader.json": {
+      "sha256": "ef8206ad9e7144ea37043e4c4f48ab7e797fcce95253d82bb1722afbd7e7b8dd",
+      "verified_line_count": 463,
+      "resolved_shortened_reader_lines": []
+    },
+    "data/raw/pages/loc_text-11-20.reader.json": {
+      "sha256": "27a514ecb2b38780cc8eb375bb998987ad7e753263a38cbd4d5a5f2da0ecde9f",
+      "verified_line_count": 504,
+      "resolved_shortened_reader_lines": []
+    },
+    "data/raw/pages/loc_text-41-50.reader.json": {
+      "sha256": "63afd5080a4695fe6e82949f7a58aabb644cd94938b38210cc8ad92c8f0dc76a",
+      "verified_line_count": 523,
+      "resolved_shortened_reader_lines": [
+        233,
+        353,
+        481
+      ]
+    }
+  },
+  "source_records": [
+    {
+      "essay_number": 1,
+      "role": "hamilton",
+      "source_attribution": "Hamilton",
+      "url": "https://guides.loc.gov/federalist-papers/text-1-10",
+      "edition": "Library of Congress online presentation, Project Gutenberg compilation",
+      "retrieved_date": "14 November 2026",
+      "raw_page_path": "data/raw/pages/loc_text-1-10.reader.json",
+      "raw_page_sha256": "06cc9c3816e431702f1ae9bb1b0317d8fce5a79e174eb0e0149eb28936dc93fc",
+      "raw_text_path": "data/raw/texts/H_1.txt",
+      "raw_text_sha256": "95375f1eb542e12fdc157dee75a084fe6209e0d811bdd3a6c0a6732a472a4658",
+      "preparation_notes": "Reader representation, source lines L11-L47. Source page: Author: Alexander Hamilton. Structural extraction only; headings, publication details, address, signature if present, quotations, and footnotes retained. No linguistic normalization. Original HTML bytes unavailable; exact retrieval responses archived in snapshot."
+    },
+    {
+      "essay_number": 6,
+      "role": "hamilton",
+      "source_attribution": "Hamilton",
+      "url": "https://guides.loc.gov/federalist-papers/text-1-10",
+      "edition": "Library of Congress online presentation, Project Gutenberg compilation",
+      "retrieved_date": "14 November 2026",
+      "raw_page_path": "data/raw/pages/loc_text-1-10.reader.json",
+      "raw_page_sha256": "06cc9c3816e431702f1ae9bb1b0317d8fce5a79e174eb0e0149eb28936dc93fc",
+      "raw_text_path": "data/raw/texts/H_6.txt",
+      "raw_text_sha256": "0c9898bd19d8a205b0e9a1e23c651ec2de14e6e3725e5bc4199fd4ddbd38e493",
+      "preparation_notes": "Reader representation, source lines L192-L242. Source page: Author: Alexander Hamilton. Structural extraction only; headings, publication details, address, signature if present, quotations, and footnotes retained. No linguistic normalization. Original HTML bytes unavailable; exact retrieval responses archived in snapshot."
+    },
+    {
+      "essay_number": 31,
+      "role": "hamilton",
+      "source_attribution": "Hamilton",
+      "url": "https://guides.loc.gov/federalist-papers/text-31-40",
+      "edition": "Library of Congress online presentation, Project Gutenberg compilation",
+      "retrieved_date": "14 November 2026",
+      "raw_page_path": "data/raw/pages/loc_text-31-40.reader.json",
+      "raw_page_sha256": "c3d2f88adffeb165cbcbca515329a9ff9bbc9b63649fa7261bea0dd64d78c833",
+      "raw_text_path": "data/raw/texts/H_31.txt",
+      "raw_text_sha256": "c2ecfbfd6df4cce0bf5953b80676570cece93dbf2539b591fcf16d56ce62ae2f",
+      "preparation_notes": "Reader representation, source lines L13-L52. Source page: Author: Alexander Hamilton. Structural extraction only; headings, publication details, address, signature if present, quotations, and footnotes retained. No linguistic normalization. Original HTML bytes unavailable; exact retrieval responses archived in snapshot."
+    },
+    {
+      "essay_number": 59,
+      "role": "hamilton",
+      "source_attribution": "Hamilton",
+      "url": "https://guides.loc.gov/federalist-papers/text-51-60",
+      "edition": "Library of Congress online presentation, Project Gutenberg compilation",
+      "retrieved_date": "14 November 2026",
+      "raw_page_path": "data/raw/pages/loc_text-51-60.reader.json",
+      "raw_page_sha256": "7f190216e1248df4a52bbeddb43784ba94e24e8b3740d223d41405dad8541343",
+      "raw_text_path": "data/raw/texts/H_59.txt",
+      "raw_text_sha256": "bc70733c2fd5af6dd8efd65361e2364a8a4412e6f956f28fe988bbe931f4ea6e",
+      "preparation_notes": "Reader representation, source lines L338-L380. Source page: Author: Alexander Hamilton. Structural extraction only; headings, publication details, address, signature if present, quotations, and footnotes retained. No linguistic normalization. Original HTML bytes unavailable; exact retrieval responses archived in snapshot."
+    },
+    {
+      "essay_number": 70,
+      "role": "hamilton",
+      "source_attribution": "Hamilton",
+      "url": "https://guides.loc.gov/federalist-papers/text-61-70",
+      "edition": "Library of Congress online presentation, Project Gutenberg compilation",
+      "retrieved_date": "14 November 2026",
+      "raw_page_path": "data/raw/pages/loc_text-61-70.reader.json",
+      "raw_page_sha256": "27ec7f1df03c21fbde9c1b67e98d0fc8acadf48d703cfea1c2dd48ca9f9f6522",
+      "raw_text_path": "data/raw/texts/H_70.txt",
+      "raw_text_sha256": "c62e4222caeef821c89074ad581ff319285eb40d99517ce9f3b2b28f85cefdd0",
+      "preparation_notes": "Reader representation, source lines L429-L495. Source page: Author: Alexander Hamilton. Structural extraction only; headings, publication details, address, signature if present, quotations, and footnotes retained. No linguistic normalization. Original HTML bytes unavailable; exact retrieval responses archived in snapshot."
+    },
+    {
+      "essay_number": 78,
+      "role": "hamilton",
+      "source_attribution": "Hamilton",
+      "url": "https://guides.loc.gov/federalist-papers/text-71-80",
+      "edition": "Library of Congress online presentation, Project Gutenberg compilation",
+      "retrieved_date": "14 November 2026",
+      "raw_page_path": "data/raw/pages/loc_text-71-80.reader.json",
+      "raw_page_sha256": "ef8206ad9e7144ea37043e4c4f48ab7e797fcce95253d82bb1722afbd7e7b8dd",
+      "raw_text_path": "data/raw/texts/H_78.txt",
+      "raw_text_sha256": "b5f35ca205bb635d2a776f83e0f6f48127ada4e57fbe22f2461b18d62f66514a",
+      "preparation_notes": "Reader representation, source lines L295-L356. Source page: Author: Alexander Hamilton. Structural extraction only; headings, publication details, address, signature if present, quotations, and footnotes retained. No linguistic normalization. Original HTML bytes unavailable; exact retrieval responses archived in snapshot."
+    },
+    {
+      "essay_number": 10,
+      "role": "madison",
+      "source_attribution": "Madison",
+      "url": "https://guides.loc.gov/federalist-papers/text-1-10",
+      "edition": "Library of Congress online presentation, Project Gutenberg compilation",
+      "retrieved_date": "14 November 2026",
+      "raw_page_path": "data/raw/pages/loc_text-1-10.reader.json",
+      "raw_page_sha256": "06cc9c3816e431702f1ae9bb1b0317d8fce5a79e174eb0e0149eb28936dc93fc",
+      "raw_text_path": "data/raw/texts/M_10.txt",
+      "raw_text_sha256": "c8557861e81db9973caa6bed939b3f3fa6f0004965c7298c0c42b742e57c22ae",
+      "preparation_notes": "Reader representation, source lines L389-L453. Source page: Author: James Madison. Structural extraction only; headings, publication details, address, signature if present, quotations, and footnotes retained. No linguistic normalization. Original HTML bytes unavailable; exact retrieval responses archived in snapshot."
+    },
+    {
+      "essay_number": 14,
+      "role": "madison",
+      "source_attribution": "Madison",
+      "url": "https://guides.loc.gov/federalist-papers/text-11-20",
+      "edition": "Library of Congress online presentation, Project Gutenberg compilation",
+      "retrieved_date": "14 November 2026",
+      "raw_page_path": "data/raw/pages/loc_text-11-20.reader.json",
+      "raw_page_sha256": "27a514ecb2b38780cc8eb375bb998987ad7e753263a38cbd4d5a5f2da0ecde9f",
+      "raw_text_path": "data/raw/texts/M_14.txt",
+      "raw_text_sha256": "d2f201f5e50d2b10b32208e02573a3a0877a0bc2fa9c3826413443109e4cb375",
+      "preparation_notes": "Reader representation, source lines L135-L180. Source page: Author: James Madison. Structural extraction only; headings, publication details, address, signature if present, quotations, and footnotes retained. No linguistic normalization. Original HTML bytes unavailable; exact retrieval responses archived in snapshot."
+    },
+    {
+      "essay_number": 37,
+      "role": "madison",
+      "source_attribution": "Madison",
+      "url": "https://guides.loc.gov/federalist-papers/text-31-40",
+      "edition": "Library of Congress online presentation, Project Gutenberg compilation",
+      "retrieved_date": "14 November 2026",
+      "raw_page_path": "data/raw/pages/loc_text-31-40.reader.json",
+      "raw_page_sha256": "c3d2f88adffeb165cbcbca515329a9ff9bbc9b63649fa7261bea0dd64d78c833",
+      "raw_text_path": "data/raw/texts/M_37.txt",
+      "raw_text_sha256": "9b8df97891b9285dd9b51918f0b88dc2ebe470bc62faa380e1b8d1c259957014",
+      "preparation_notes": "Reader representation, source lines L259-L318. Source page: Author: James Madison. Structural extraction only; headings, publication details, address, signature if present, quotations, and footnotes retained. No linguistic normalization. Original HTML bytes unavailable; exact retrieval responses archived in snapshot."
+    },
+    {
+      "essay_number": 39,
+      "role": "madison",
+      "source_attribution": "Madison",
+      "url": "https://guides.loc.gov/federalist-papers/text-31-40",
+      "edition": "Library of Congress online presentation, Project Gutenberg compilation",
+      "retrieved_date": "14 November 2026",
+      "raw_page_path": "data/raw/pages/loc_text-31-40.reader.json",
+      "raw_page_sha256": "c3d2f88adffeb165cbcbca515329a9ff9bbc9b63649fa7261bea0dd64d78c833",
+      "raw_text_path": "data/raw/texts/M_39.txt",
+      "raw_text_sha256": "33b550a94fa5c61e61b09573a4010d1b1c94c22fad604913a634671df116ae45",
+      "preparation_notes": "Reader representation, source lines L377-L432. Source page: Author: James Madison. Structural extraction only; headings, publication details, address, signature if present, quotations, and footnotes retained. No linguistic normalization. Original HTML bytes unavailable; exact retrieval responses archived in snapshot."
+    },
+    {
+      "essay_number": 41,
+      "role": "madison",
+      "source_attribution": "Madison",
+      "url": "https://guides.loc.gov/federalist-papers/text-41-50",
+      "edition": "Library of Congress online presentation, Project Gutenberg compilation",
+      "retrieved_date": "14 November 2026",
+      "raw_page_path": "data/raw/pages/loc_text-41-50.reader.json",
+      "raw_page_sha256": "63afd5080a4695fe6e82949f7a58aabb644cd94938b38210cc8ad92c8f0dc76a",
+      "raw_text_path": "data/raw/texts/M_41.txt",
+      "raw_text_sha256": "1a810d7bab19bd42f483569a00ea4ac4365930359e171cb936126129a944d7e4",
+      "preparation_notes": "Reader representation, source lines L13-L73. Source page: Author: James Madison. Structural extraction only; headings, publication details, address, signature if present, quotations, and footnotes retained. No linguistic normalization. Original HTML bytes unavailable; exact retrieval responses archived in snapshot."
+    },
+    {
+      "essay_number": 43,
+      "role": "madison",
+      "source_attribution": "Madison",
+      "url": "https://guides.loc.gov/federalist-papers/text-41-50",
+      "edition": "Library of Congress online presentation, Project Gutenberg compilation",
+      "retrieved_date": "14 November 2026",
+      "raw_page_path": "data/raw/pages/loc_text-41-50.reader.json",
+      "raw_page_sha256": "63afd5080a4695fe6e82949f7a58aabb644cd94938b38210cc8ad92c8f0dc76a",
+      "raw_text_path": "data/raw/texts/M_43.txt",
+      "raw_text_sha256": "76406b82c456afec93157463424fa488cfc9ad9ef8b275332bb6a757d7c68618",
+      "preparation_notes": "Reader representation, source lines L132-L189. Source page: Author: James Madison. Structural extraction only; headings, publication details, address, signature if present, quotations, and footnotes retained. No linguistic normalization. Original HTML bytes unavailable; exact retrieval responses archived in snapshot."
+    },
+    {
+      "essay_number": 46,
+      "role": "madison",
+      "source_attribution": "Madison",
+      "url": "https://guides.loc.gov/federalist-papers/text-41-50",
+      "edition": "Library of Congress online presentation, Project Gutenberg compilation",
+      "retrieved_date": "14 November 2026",
+      "raw_page_path": "data/raw/pages/loc_text-41-50.reader.json",
+      "raw_page_sha256": "63afd5080a4695fe6e82949f7a58aabb644cd94938b38210cc8ad92c8f0dc76a",
+      "raw_text_path": "data/raw/texts/M_46.txt",
+      "raw_text_sha256": "3b01aff421c44bf77d682b750042d2afab403a64a7448f7efe219baf99e59984",
+      "preparation_notes": "Reader representation, source lines L288-L339. Source page: Author: James Madison. Structural extraction only; headings, publication details, address, signature if present, quotations, and footnotes retained. No linguistic normalization. Original HTML bytes unavailable; exact retrieval responses archived in snapshot."
+    },
+    {
+      "essay_number": 48,
+      "role": "madison",
+      "source_attribution": "Madison",
+      "url": "https://guides.loc.gov/federalist-papers/text-41-50",
+      "edition": "Library of Congress online presentation, Project Gutenberg compilation",
+      "retrieved_date": "14 November 2026",
+      "raw_page_path": "data/raw/pages/loc_text-41-50.reader.json",
+      "raw_page_sha256": "63afd5080a4695fe6e82949f7a58aabb644cd94938b38210cc8ad92c8f0dc76a",
+      "raw_text_path": "data/raw/texts/M_48.txt",
+      "raw_text_sha256": "d1dd565644da249be58a078cf9952834ed884348cd08dea5d6fd6d742caeaf66",
+      "preparation_notes": "Reader representation, source lines L394-L433. Source page: Author: James Madison. Structural extraction only; headings, publication details, address, signature if present, quotations, and footnotes retained. No linguistic normalization. Original HTML bytes unavailable; exact retrieval responses archived in snapshot."
+    },
+    {
+      "essay_number": 49,
+      "role": "questioned",
+      "source_attribution": "Hamilton or Madison",
+      "url": "https://guides.loc.gov/federalist-papers/text-41-50",
+      "edition": "Library of Congress online presentation, Project Gutenberg compilation",
+      "retrieved_date": "14 November 2026",
+      "raw_page_path": "data/raw/pages/loc_text-41-50.reader.json",
+      "raw_page_sha256": "63afd5080a4695fe6e82949f7a58aabb644cd94938b38210cc8ad92c8f0dc76a",
+      "raw_text_path": "data/raw/texts/Q_49.txt",
+      "raw_text_sha256": "99bd928150a4264d6779d785546907466c1695bd8ac6f684d68328cf54667f09",
+      "preparation_notes": "Reader representation, source lines L434-L469. Source page: Author: Alexander Hamilton or James Madison. Structural extraction only; headings, publication details, address, signature if present, quotations, and footnotes retained. No linguistic normalization. Original HTML bytes unavailable; exact retrieval responses archived in snapshot."
+    }
+  ]
+}

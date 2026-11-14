@@ -1,0 +1,31 @@
+{
+  "stage": "questioned_essay_comparison_preflight",
+  "recorded_at": "2026-11-15T00:15:12+02:00",
+  "status": "blocked_validation_incomplete",
+  "questioned_essay": 49,
+  "reason": "Planned references are missing; the 16-trial validation has not run.",
+  "missing_reference_essays": [
+    21,
+    26
+  ],
+  "available_reference_count": 14,
+  "required_reference_count": 16,
+  "completed_validation_trials": 0,
+  "hamilton_distance": null,
+  "madison_distance": null,
+  "signed_gap": null,
+  "predicted_author": null,
+  "corpus_profiles_fitted_by_this_command": false,
+  "questioned_essay_compared": false,
+  "input_sha256": {
+    "docs/research_plan.md": "028809cdfe7990cb2620dd39b7d74607829e4fafe652fb0c704012c5af4780f4",
+    "config/research.toml": "c5e3b467d704fe201c8060b3cbdfc11d1e682f08e402a01b2e7dc5bc9efa17d9",
+    "metadata/word_features.json": "b2e296b2d0ff60b61a2a6008d6f1e09d6b9e89be130d5b8502f597f0b35ff712",
+    "metadata/distance_method.json": "2e472b8ed08c474f96d503e1d9bb7aca8d5788e0974dd85f07214389a322b6cb",
+    "results/frequency_manifest.json": "97db99d4393881706beac167a9ee452a21216d66417d1534913d458ef781fef8",
+    "results/frequencies.csv": "8dcce794f3094d700a553d6f18c3aeb6bce2151a86d25398df93a531a56a905d",
+    "src/compare_questioned.py": "d6a5c26a2caff8e04c6b636b4dac4ad1d93b5a694252fdfe423e5eac5eb4d001",
+    "tests/test_questioned.py": "d0ab2dbcc6a19ab767bf87bdab6194dd8861b637f826dfb7eef7be49af31e6bb"
+  },
+  "validation_preflight_sha256": "5adb2ec299a7ec6752e021eb76aea9f6219993f5b9f2cce18d84005cd6bb7646"
+}

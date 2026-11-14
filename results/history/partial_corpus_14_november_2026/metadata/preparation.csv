@@ -1,0 +1,239 @@
+essay_number,input_path,output_path,operation,source_location,original_text,replacement_text,reason
+1,data/raw/texts/H_1.txt,data/clean/H_1.txt,remove_header,"characters [0, 141); raw lines 1-9","## Federalist No. 1
+
+General Introduction
+
+For the Independent Journal.
+
+Author: Alexander Hamilton
+
+To the People of the State of New York:
+",,"Remove essay heading, title, publication details, author label, and shared reader address."
+1,data/raw/texts/H_1.txt,data/clean/H_1.txt,remove_note_reference,"characters [8857, 8866); raw lines 33-33",【13†^{1}】,,Remove a reader-rendered numeric footnote reference; preserve any word boundary.
+1,data/raw/texts/H_1.txt,data/clean/H_1.txt,remove_signature,"characters [9436, 9445); raw lines 35-35","PUBLIUS.
+",,"Remove the shared standalone closing signature, not occurrences inside prose."
+1,data/raw/texts/H_1.txt,data/clean/H_1.txt,exclude_appended_notes,"characters [9445, 9607); raw lines 36-37","
+  1. The same idea, tracing the arguments to their consequences, is held out in several of the late publications against the new Constitution. 【14†Back to text】
+",,Exclude the separately numbered source notes from the main running prose; this structural rule does not claim all notes are editorial.
+6,data/raw/texts/H_6.txt,data/clean/H_6.txt,remove_header,"characters [0, 175); raw lines 1-9","## Federalist No. 6
+
+Concerning Dangers from Dissensions Between the States
+
+For the Independent Journal.
+
+Author: Alexander Hamilton
+
+To the People of the State of New York:
+",,"Remove essay heading, title, publication details, author label, and shared reader address."
+6,data/raw/texts/H_6.txt,data/clean/H_6.txt,remove_note_reference,"characters [2499, 2508); raw lines 17-17",【15†^{1}】,,Remove a reader-rendered numeric footnote reference; preserve any word boundary.
+6,data/raw/texts/H_6.txt,data/clean/H_6.txt,remove_note_reference,"characters [2707, 2716); raw lines 18-18",【16†^{2}】,,Remove a reader-rendered numeric footnote reference; preserve any word boundary.
+6,data/raw/texts/H_6.txt,data/clean/H_6.txt,remove_note_reference,"characters [2860, 2869); raw lines 18-18",【17†^{3}】,,Remove a reader-rendered numeric footnote reference; preserve any word boundary.
+6,data/raw/texts/H_6.txt,data/clean/H_6.txt,remove_note_reference,"characters [3007, 3016); raw lines 18-18",【18†^{4}】,,Remove a reader-rendered numeric footnote reference; preserve any word boundary.
+6,data/raw/texts/H_6.txt,data/clean/H_6.txt,remove_note_reference,"characters [3422, 3431); raw lines 19-19",【19†^{5}】,,Remove a reader-rendered numeric footnote reference; preserve any word boundary.
+6,data/raw/texts/H_6.txt,data/clean/H_6.txt,remove_note_reference,"characters [4094, 4103); raw lines 21-21",【20†^{6}】,,Remove a reader-rendered numeric footnote reference; preserve any word boundary.
+6,data/raw/texts/H_6.txt,data/clean/H_6.txt,remove_note_reference,"characters [4130, 4139); raw lines 21-21",【21†^{7}】,,Remove a reader-rendered numeric footnote reference; preserve any word boundary.
+6,data/raw/texts/H_6.txt,data/clean/H_6.txt,remove_note_reference,"characters [4166, 4175); raw lines 21-21",【22†^{8}】,,Remove a reader-rendered numeric footnote reference; preserve any word boundary.
+6,data/raw/texts/H_6.txt,data/clean/H_6.txt,remove_note_reference,"characters [8297, 8306); raw lines 30-30",【23†^{9}】,,Remove a reader-rendered numeric footnote reference; preserve any word boundary.
+6,data/raw/texts/H_6.txt,data/clean/H_6.txt,remove_note_reference,"characters [9625, 9635); raw lines 34-34",【24†^{10}】,,Remove a reader-rendered numeric footnote reference; preserve any word boundary.
+6,data/raw/texts/H_6.txt,data/clean/H_6.txt,remove_note_reference,"characters [11989, 11999); raw lines 39-39",【25†^{11}】,,Remove a reader-rendered numeric footnote reference; preserve any word boundary.
+6,data/raw/texts/H_6.txt,data/clean/H_6.txt,remove_signature,"characters [12077, 12086); raw lines 40-40","PUBLIUS.
+",,"Remove the shared standalone closing signature, not occurrences inside prose."
+6,data/raw/texts/H_6.txt,data/clean/H_6.txt,exclude_appended_notes,"characters [12086, 12840); raw lines 41-51","  1. Aspasia, vide ""Plutarch's Life of Pericles."" 【26†Back to text】
+  2. Ibid. 【27†Back to text】
+  3. Ibid. 【28†Back to text】
+  4. Ibid. Phidias was supposed to have stolen some public gold, with the connivance of Pericles, for the embellishment of the statue of Minerva. 【29†Back to text】
+  5. P Worn by the popes. 【30†Back to text】
+  6. Madame de Maintenon. 【31†Back to text】
+  7. Duchess of Marlborough. 【32†Back to text】
+  8. Madame de Pompadour. 【33†Back to text】
+  9. The League of Cambray, comprehending the Emperor, the King of France, the King of Aragon, and most of the Italian princes and states. 【34†Back to text】
+  10. The Duke of Marlborough. 【35†Back to text】
+  11. Vide ""Principes des Negociations"" par 1'Abbe de Mably. 【36†Back to text】
+",,Exclude the separately numbered source notes from the main running prose; this structural rule does not claim all notes are editorial.
+31,data/raw/texts/H_31.txt,data/clean/H_31.txt,remove_header,"characters [0, 212); raw lines 1-10","## Federalist No. 31
+
+The Same Subject Continued: Concerning the General Power of Taxation
+
+From the New York Packet
+Tuesday, January 1, 1788.
+
+Author: Alexander Hamilton
+
+To the People of the State of New York:
+",,"Remove essay heading, title, publication details, author label, and shared reader address."
+31,data/raw/texts/H_31.txt,data/clean/H_31.txt,remove_signature,"characters [10413, 10422); raw lines 40-40","PUBLIUS.
+",,"Remove the shared standalone closing signature, not occurrences inside prose."
+59,data/raw/texts/H_59.txt,data/clean/H_59.txt,remove_header,"characters [0, 213); raw lines 1-10","## Federalist No. 59
+
+Concerning the Power of Congress to Regulate the Election of Members
+
+From the New York Packet
+Friday, February 22, 1788.
+
+Author: Alexander Hamilton
+
+To the People of the State of New York:
+",,"Remove essay heading, title, publication details, author label, and shared reader address."
+59,data/raw/texts/H_59.txt,data/clean/H_59.txt,remove_note_reference,"characters [716, 725); raw lines 12-12",【13†^{1}】,,Remove a reader-rendered numeric footnote reference; preserve any word boundary.
+59,data/raw/texts/H_59.txt,data/clean/H_59.txt,remove_signature,"characters [11348, 11357); raw lines 41-41","PUBLIUS.
+",,"Remove the shared standalone closing signature, not occurrences inside prose."
+59,data/raw/texts/H_59.txt,data/clean/H_59.txt,exclude_appended_notes,"characters [11357, 11427); raw lines 42-43","
+  1. 1st clause, 4th section, of the List article. 【14†Back to text】
+",,Exclude the separately numbered source notes from the main running prose; this structural rule does not claim all notes are editorial.
+70,data/raw/texts/H_70.txt,data/clean/H_70.txt,remove_header,"characters [0, 186); raw lines 1-10","## Federalist No. 70
+
+The Executive Department Further Considered
+
+From the New York Packet
+Tuesday, March 18, 1788.
+
+Author: Alexander Hamilton
+
+To the People of the State of New York:
+",,"Remove essay heading, title, publication details, author label, and shared reader address."
+70,data/raw/texts/H_70.txt,data/clean/H_70.txt,remove_note_reference,"characters [4000, 4009); raw lines 23-23",【27†^{1}】,,Remove a reader-rendered numeric footnote reference; preserve any word boundary.
+70,data/raw/texts/H_70.txt,data/clean/H_70.txt,remove_note_reference,"characters [15963, 15972); raw lines 56-56",【28†^{2}】,,Remove a reader-rendered numeric footnote reference; preserve any word boundary.
+70,data/raw/texts/H_70.txt,data/clean/H_70.txt,remove_note_reference,"characters [17132, 17141); raw lines 59-59",【29†^{3}】,,Remove a reader-rendered numeric footnote reference; preserve any word boundary.
+70,data/raw/texts/H_70.txt,data/clean/H_70.txt,remove_signature,"characters [18487, 18496); raw lines 63-63","PUBLIUS.
+",,"Remove the shared standalone closing signature, not occurrences inside prose."
+70,data/raw/texts/H_70.txt,data/clean/H_70.txt,exclude_appended_notes,"characters [18496, 18801); raw lines 64-67","
+  1. New York has no council except for the single purpose of appointing to offices; New Jersey has a council whom the governor may consult. But I think, from the terms of the constitution, their resolutions do not bind him. 【30†Back to text】
+  2. De Lolme. 【31†Back to text】
+  3. Ten. 【32†Back to text】
+",,Exclude the separately numbered source notes from the main running prose; this structural rule does not claim all notes are editorial.
+78,data/raw/texts/H_78.txt,data/clean/H_78.txt,remove_header,"characters [0, 150); raw lines 1-9","## Federalist No. 78
+
+The Judiciary Department
+From McLEAN'S Edition, New York.
+
+Author: Alexander Hamilton
+
+To the People of the State of New York:
+
+",,"Remove essay heading, title, publication details, author label, and shared reader address."
+78,data/raw/texts/H_78.txt,data/clean/H_78.txt,remove_note_reference,"characters [3469, 3478); raw lines 21-21",【17†^{1}】,,Remove a reader-rendered numeric footnote reference; preserve any word boundary.
+78,data/raw/texts/H_78.txt,data/clean/H_78.txt,remove_note_reference,"characters [4043, 4052); raw lines 23-23",【18†^{2}】,,Remove a reader-rendered numeric footnote reference; preserve any word boundary.
+78,data/raw/texts/H_78.txt,data/clean/H_78.txt,remove_note_reference,"characters [11848, 11857); raw lines 43-43",【19†^{3}】,,Remove a reader-rendered numeric footnote reference; preserve any word boundary.
+78,data/raw/texts/H_78.txt,data/clean/H_78.txt,remove_boundary_blank_lines,"characters [18123, 18124); raw lines 58-58","
+",,Remove blank lines between the main prose and closing apparatus.
+78,data/raw/texts/H_78.txt,data/clean/H_78.txt,remove_signature,"characters [18124, 18133); raw lines 59-59","PUBLIUS.
+",,"Remove the shared standalone closing signature, not occurrences inside prose."
+78,data/raw/texts/H_78.txt,data/clean/H_78.txt,exclude_appended_notes,"characters [18133, 18468); raw lines 60-62","  1. The celebrated Montesquieu, speaking of them, says: ""Of the three powers above mentioned, the judiciary is next to nothing."" ""Spirit of Laws."" vol. i., page 186. 【20†Back to text】
+  2. Idem, page 181. 【21†Back to text】
+  3. Vide ""Protest of the Minority of the Convention of Pennsylvania,"" Martin's Speech, etc. 【22†Back to text】
+",,Exclude the separately numbered source notes from the main running prose; this structural rule does not claim all notes are editorial.
+10,data/raw/texts/M_10.txt,data/clean/M_10.txt,remove_header,"characters [0, 234); raw lines 1-10","## Federalist No. 10
+
+The Same Subject Continued: The Union as a Safeguard Against Domestic Faction and Insurrection
+
+From the New York Packet
+Friday, November 23, 1787.
+
+Author: James Madison
+
+To the People of the State of New York:
+",,"Remove essay heading, title, publication details, author label, and shared reader address."
+14,data/raw/texts/M_14.txt,data/clean/M_14.txt,remove_header,"characters [0, 213); raw lines 1-10","## Federalist No. 14
+
+Objections to the Proposed Constitution From Extent of Territory Answered
+
+From the New York Packet
+Friday, November 30, 1787.
+
+Author: James Madison
+
+To the People of the State of New York:
+",,"Remove essay heading, title, publication details, author label, and shared reader address."
+14,data/raw/texts/M_14.txt,data/clean/M_14.txt,remove_signature,"characters [12866, 12875); raw lines 46-46","PUBLIUS.
+",,"Remove the shared standalone closing signature, not occurrences inside prose."
+37,data/raw/texts/M_37.txt,data/clean/M_37.txt,remove_header,"characters [0, 225); raw lines 1-10","## Federalist No. 37
+
+Concerning the Difficulties of the Convention in Devising a Proper Form of Government
+
+From the Daily Advertiser
+Friday, January 11, 1788.
+
+Author: James Madison
+
+To the People of the State of New York:
+",,"Remove essay heading, title, publication details, author label, and shared reader address."
+37,data/raw/texts/M_37.txt,data/clean/M_37.txt,remove_signature,"characters [16837, 16846); raw lines 60-60","PUBLIUS.
+",,"Remove the shared standalone closing signature, not occurrences inside prose."
+39,data/raw/texts/M_39.txt,data/clean/M_39.txt,remove_header,"characters [0, 169); raw lines 1-10","## Federalist No. 39
+
+The Conformity of the Plan to Republican Principles
+
+For the Independent Journal.
+
+Author: James Madison
+
+To the People of the State of New York:
+
+",,"Remove essay heading, title, publication details, author label, and shared reader address."
+39,data/raw/texts/M_39.txt,data/clean/M_39.txt,remove_signature,"characters [15693, 15702); raw lines 56-56","PUBLIUS.
+",,"Remove the shared standalone closing signature, not occurrences inside prose."
+41,data/raw/texts/M_41.txt,data/clean/M_41.txt,remove_header,"characters [0, 173); raw lines 1-9","## Federalist No. 41
+
+General View of the Powers Conferred by the Constitution
+
+For the Independent Journal.
+
+Author: James Madison
+
+To the People of the State of New York:
+",,"Remove essay heading, title, publication details, author label, and shared reader address."
+41,data/raw/texts/M_41.txt,data/clean/M_41.txt,remove_signature,"characters [21184, 21193); raw lines 61-61","PUBLIUS.
+",,"Remove the shared standalone closing signature, not occurrences inside prose."
+43,data/raw/texts/M_43.txt,data/clean/M_43.txt,remove_header,"characters [0, 204); raw lines 1-9","## Federalist No. 43
+
+The Same Subject Continued: The Powers Conferred by the Constitution Further Considered
+
+For the Independent Journal.
+
+Author: James Madison
+
+To the People of the State of New York:
+",,"Remove essay heading, title, publication details, author label, and shared reader address."
+43,data/raw/texts/M_43.txt,data/clean/M_43.txt,remove_signature,"characters [20842, 20851); raw lines 58-58","PUBLIUS.
+",,"Remove the shared standalone closing signature, not occurrences inside prose."
+46,data/raw/texts/M_46.txt,data/clean/M_46.txt,remove_header,"characters [0, 199); raw lines 1-10","## Federalist No. 46
+
+The Influence of the State and Federal Governments Compared
+
+From the New York Packet
+Tuesday, January 29, 1788.
+
+Author: James Madison
+
+To the People of the State of New York:
+",,"Remove essay heading, title, publication details, author label, and shared reader address."
+46,data/raw/texts/M_46.txt,data/clean/M_46.txt,remove_signature,"characters [15925, 15934); raw lines 52-52","PUBLIUS.
+",,"Remove the shared standalone closing signature, not occurrences inside prose."
+48,data/raw/texts/M_48.txt,data/clean/M_48.txt,remove_header,"characters [0, 240); raw lines 1-10","## Federalist No. 48
+
+These Departments Should Not Be So Far Separated as to Have No Constitutional Control Over Each Other
+
+From the New York Packet
+Friday, February 1, 1788.
+
+Author: James Madison
+
+To the People of the State of New York:
+",,"Remove essay heading, title, publication details, author label, and shared reader address."
+48,data/raw/texts/M_48.txt,data/clean/M_48.txt,remove_boundary_blank_lines,"characters [11699, 11700); raw lines 39-39","
+",,Remove blank lines between the main prose and closing apparatus.
+48,data/raw/texts/M_48.txt,data/clean/M_48.txt,remove_signature,"characters [11700, 11709); raw lines 40-40","PUBLIUS.
+",,"Remove the shared standalone closing signature, not occurrences inside prose."
+49,data/raw/texts/Q_49.txt,data/clean/Q_49.txt,remove_header,"characters [0, 290); raw lines 1-10","## Federalist No. 49
+
+Method of Guarding Against the Encroachments of Any One Department of Government by Appealing to the People Through a Convention
+
+From the New York Packet
+Tuesday, February 5, 1788.
+
+Author: Alexander Hamilton or James Madison
+
+To the People of the State of New York:
+",,"Remove essay heading, title, publication details, author label, and shared reader address."
+49,data/raw/texts/Q_49.txt,data/clean/Q_49.txt,remove_signature,"characters [10168, 10177); raw lines 36-36","PUBLIUS.
+",,"Remove the shared standalone closing signature, not occurrences inside prose."

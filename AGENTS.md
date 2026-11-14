@@ -52,6 +52,8 @@ The 8 essays per author form a manageable classroom comparison across several su
 
 For every essay, log its number, role, source attribution, exact essay URL, edition, retrieval date, filename, SHA-256 checksum, and preparation decisions. Use dates such as `14 November 2026`. A missing or conflicting attribution requires investigation and documentation, not silent replacement of an essay.
 
+Nos. 21 and 26 were supplied by the user after the source page proved inaccessible. Preserve those exact payloads in `data/raw/supplied/` and their registry in `metadata/supplied_sources.json`. The collector checks hashes, identity, author labels, and boundaries. Their association with the requested edition is inferred from delivery context; do not claim independently verified live wording. The original partial corpus and blocked records are archived under `results/history/partial_corpus_14_november_2026/`.
+
 ## 4. Preserve one edition and prepare consistent copies
 
 Collect all texts from the Library of Congress presentation. Its [edition note](https://guides.loc.gov/federalist-papers/full-text) explains that the online text comes from a Project Gutenberg compilation and that wording, numbering, and attributions can differ between editions. Conclusions apply to this edition.
@@ -60,7 +62,7 @@ Preserve original downloads and untouched text copies. Decode page markup before
 
 Retain the essay body, historical spelling, and quotations for the main analysis. Do not modernize spelling or rewrite sentences. Investigate apparent transcription problems against the saved source and log any justified correction.
 
-Apply the documented clarification in `docs/research_amendments.md`: exclude separately numbered notes appended after the closing signature, retaining numbered arguments within the main prose. Preserve readable case and apostrophes in `data/clean/` for quotation annotation. Use `normalize_for_counting` in `src/prepare_texts.py` for the already fixed counting normalization. Verify prepared copies and exact edit logs with `uv run --locked python src/prepare_texts.py --verify --allow-incomplete` while the corpus remains incomplete; the explicit flag does not permit attribution with a reduced sample.
+Apply the documented clarification in `docs/research_amendments.md`: exclude separately numbered notes appended after the closing signature, retaining numbered arguments within the main prose. Preserve readable case and apostrophes in `data/clean/` for quotation annotation. Use `normalize_for_counting` in `src/prepare_texts.py` for the already fixed counting normalization. Verify prepared copies and exact edit logs with `uv run --locked python src/prepare_texts.py --verify`. The corpus now contains all 17 essays. An incomplete-corpus flag does not permit attribution with a reduced reference sample.
 
 For counting, lowercase the text and normalize curly single apostrophes to straight apostrophes. Define a word as a match of `[a-z]+(?:'[a-z]+)*` after normalization. This rule keeps internal apostrophes, splits hyphenated forms, and ignores numbers and punctuation. Do not expand contractions or group different grammatical forms together.
 
@@ -92,7 +94,7 @@ Invented example: 20 occurrences in a 2,000-word essay produce 10 occurrences pe
 
 Use the total number of all words as the denominator, not the sum of selected-word counts. Reject empty texts. Keep full computational precision and round only displayed results. Do not pool essays into one document: each essay must have equal weight when calculating its author's average.
 
-Use `uv run --locked python -m src.calculate_frequencies --allow-incomplete` to create per-essay tables for explicitly recorded available texts. Verify saved results with the same command plus `--verify`. The command validates the prepared copies and feature record, preserves existing result files, and records missing essays in `results/frequency_manifest.json`. No placeholder rows are permitted for missing texts. Only the 24 word columns are attribution features; essay number, role, and total words are metadata. See `docs/frequency_calculation.md`.
+Use `uv run --locked python -m src.calculate_frequencies` to create per-essay tables for the complete corpus. Verify saved results with the same command plus `--verify`. The command validates the prepared copies and feature record, preserves existing result files, and records missing essays in `results/frequency_manifest.json`. No placeholder rows are permitted for missing texts. Only the 24 word columns are attribution features; essay number, role, and total words are metadata. See `docs/frequency_calculation.md`.
 
 ## 7. Define the distance precisely
 
@@ -138,6 +140,8 @@ Run `uv run --locked python -m src.validate_authors --check` to check readiness.
 After validation, fit profiles and standard deviations using all 16 reference essays. Apply them to No. 49 without letting it influence any fitted quantity. Save both distances, their signed difference `D_H - D_M`, excluded features, and the assignment in `results/questioned.csv`. A positive signed difference favors Madison; a negative one favors Hamilton.
 
 Interpret the comparison in light of validation. Do not convert a distance or gap into an authorship percentage. If the method is revised after evaluation, retain all earlier outputs and label the revision as development. A fresh evaluation then requires additional known-author essays not previously examined.
+
+Use `uv run --locked python -m src.compare_questioned --check` to check prerequisites. The normal command without `--check` verifies completed validation, fits all 16 references, and records the comparison. If complete data are ready but validation is absent, it performs that prerequisite first. Missing references or incomplete validation block comparison; there is no reduced-sample override. A blocked attempt writes `results/questioned_preflight.json` without empirical distances. After a completed run, use `--verify` to recalculate saved outputs without replacing them. See `docs/questioned_comparison.md`.
 
 ## 10. Run both predefined robustness checks
 

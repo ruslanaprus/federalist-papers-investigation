@@ -1,40 +1,40 @@
 {
   "stage": "corpus_collection",
-  "status": "incomplete",
-  "recorded_at": "2026-11-14T23:05:03+02:00",
+  "status": "complete",
+  "recorded_at": "2026-11-15T00:21:48+02:00",
   "runtime": {
     "python_version": "3.13.15",
     "uv_version": "uv 0.13.8 (Homebrew 2026-11-12 aarch64-apple-darwin)",
     "operating_system": "macOS-15.7.9-arm64-arm-64bit-Mach-O"
   },
   "planned_essay_count": 17,
-  "collected_essay_count": 15,
-  "missing_essays": [
-    {
-      "essay_number": 21,
-      "role": "hamilton",
-      "reason": "No complete retrieval: https://guides.loc.gov/federalist-papers/text-21-30"
-    },
-    {
-      "essay_number": 26,
-      "role": "hamilton",
-      "reason": "No complete retrieval: https://guides.loc.gov/federalist-papers/text-21-30"
-    }
-  ],
-  "retrieval_method": "archived_web_reader_responses",
+  "collected_essay_count": 17,
+  "missing_essays": [],
+  "retrieval_method": "archived_web_reader_responses_and_logged_user_transcriptions",
+  "supplied_sources_sha256": "d739e39feb3bd054addf04682e632719177c658f12214cccc20f9ab0f02a5735",
   "original_html_bytes_preserved": false,
   "linguistic_preparation_performed": false,
   "authorship_analysis_performed": false,
   "research_plan_sha256": "028809cdfe7990cb2620dd39b7d74607829e4fafe652fb0c704012c5af4780f4",
-  "script_sha256": "cc39eaa742e9f451e3f0ac26f023f4a8dfb30578aeb6f58c3a7dde95029b6959",
+  "script_sha256": "727b7d840f47e35cbf662472d9190d504cb22aff6fb05796ffa15aae9dfb8618",
   "config_sha256": "c5e3b467d704fe201c8060b3cbdfc11d1e682f08e402a01b2e7dc5bc9efa17d9",
   "index_sha256": "eab714dc31beb8fa5931f4a13f8128145653d818af920bd3184e224af0a02da7",
-  "source_log_sha256": "f6b52b650ae55ae24a2d8577565d7b90e5c91574b3d568aa7aae2bb4ac3b9ee1",
+  "source_log_sha256": "7a601a999a763a6a4cfe3c5f874f5fe87ef696aeaf1c8911ef8d019441a53579",
   "page_snapshots": {
     "data/raw/pages/loc_text-1-10.reader.json": {
       "sha256": "06cc9c3816e431702f1ae9bb1b0317d8fce5a79e174eb0e0149eb28936dc93fc",
       "verified_line_count": 477,
       "resolved_shortened_reader_lines": []
+    },
+    "data/raw/supplied/H_21.txt": {
+      "sha256": "afe68c1848bcbcd957c27a1b5726e7d293a8925630fbe8e9a7d68d8015f616e8",
+      "retrieval_method": "user_supplied_transcription",
+      "independently_compared_with_live_page": false
+    },
+    "data/raw/supplied/H_26.txt": {
+      "sha256": "c7922f77895b20ce7eedfa47c57d6143ecba76b9258664892370c790dfa3d2e2",
+      "retrieval_method": "user_supplied_transcription",
+      "independently_compared_with_live_page": false
     },
     "data/raw/pages/loc_text-31-40.reader.json": {
       "sha256": "c3d2f88adffeb165cbcbca515329a9ff9bbc9b63649fa7261bea0dd64d78c833",
@@ -103,6 +103,32 @@
       "raw_text_path": "data/raw/texts/H_6.txt",
       "raw_text_sha256": "0c9898bd19d8a205b0e9a1e23c651ec2de14e6e3725e5bc4199fd4ddbd38e493",
       "preparation_notes": "Reader representation, source lines L192-L242. Source page: Author: Alexander Hamilton. Structural extraction only; headings, publication details, address, signature if present, quotations, and footnotes retained. No linguistic normalization. Original HTML bytes unavailable; exact retrieval responses archived in snapshot."
+    },
+    {
+      "essay_number": 21,
+      "role": "hamilton",
+      "source_attribution": "Hamilton",
+      "url": "https://guides.loc.gov/federalist-papers/text-21-30",
+      "edition": "Library of Congress online presentation, Project Gutenberg compilation",
+      "retrieved_date": "15 November 2026",
+      "raw_page_path": "data/raw/supplied/H_21.txt",
+      "raw_page_sha256": "afe68c1848bcbcd957c27a1b5726e7d293a8925630fbe8e9a7d68d8015f616e8",
+      "raw_text_path": "data/raw/texts/H_21.txt",
+      "raw_text_sha256": "afe68c1848bcbcd957c27a1b5726e7d293a8925630fbe8e9a7d68d8015f616e8",
+      "preparation_notes": "User-supplied text received in response to the requested Library of Congress page; edition association inferred from that context, not independently verified against the live wording. Author label checked against the saved Library of Congress index. Payload preserved without code fences or lexical changes; original line breaks retained. See metadata/supplied_sources.json."
+    },
+    {
+      "essay_number": 26,
+      "role": "hamilton",
+      "source_attribution": "Hamilton",
+      "url": "https://guides.loc.gov/federalist-papers/text-21-30",
+      "edition": "Library of Congress online presentation, Project Gutenberg compilation",
+      "retrieved_date": "15 November 2026",
+      "raw_page_path": "data/raw/supplied/H_26.txt",
+      "raw_page_sha256": "c7922f77895b20ce7eedfa47c57d6143ecba76b9258664892370c790dfa3d2e2",
+      "raw_text_path": "data/raw/texts/H_26.txt",
+      "raw_text_sha256": "c7922f77895b20ce7eedfa47c57d6143ecba76b9258664892370c790dfa3d2e2",
+      "preparation_notes": "User-supplied text received in response to the requested Library of Congress page; edition association inferred from that context, not independently verified against the live wording. Author label checked against the saved Library of Congress index. Payload preserved without code fences or lexical changes; original line breaks retained. See metadata/supplied_sources.json."
     },
     {
       "essay_number": 31,

@@ -1,15 +1,12 @@
 {
   "stage": "per_essay_counts_and_frequencies",
-  "recorded_at": "2026-11-14T23:39:12+02:00",
-  "status": "incomplete_corpus",
+  "recorded_at": "2026-11-15T00:21:48+02:00",
+  "status": "complete",
   "planned_essay_count": 17,
-  "measured_essay_count": 15,
-  "missing_essays": [
-    21,
-    26
-  ],
+  "measured_essay_count": 17,
+  "missing_essays": [],
   "rows_by_role": {
-    "hamilton": 6,
+    "hamilton": 8,
     "madison": 8,
     "questioned": 1
   },
@@ -114,22 +111,70 @@
     "operating_system": "macOS-15.7.9-arm64-arm-64bit-Mach-O"
   },
   "git": {
-    "revision": "bcf68713f87033ff0e991c687a124db8f145d5e9",
+    "revision": "843f08e2ee5b8051d1ca29d03b886461355ab0bb",
     "working_tree_dirty": true,
     "status_porcelain": [
-      "?? src/calculate_frequencies.py",
-      "?? tests/test_frequencies.py"
+      " M AGENTS.md",
+      " M README.md",
+      " M docs/research_amendments.md",
+      " M metadata/preparation.csv",
+      " M metadata/sources.csv",
+      " M results/corpus_collection_manifest.json",
+      " D results/counts.csv",
+      " D results/frequencies.csv",
+      " D results/frequency_manifest.json",
+      " M results/preparation_manifest.json",
+      " D results/validation_preflight.json",
+      " M src/assemble_corpus.py",
+      "?? data/clean/H_21.txt",
+      "?? data/clean/H_26.txt",
+      "?? data/raw/supplied/H_21.txt",
+      "?? data/raw/supplied/H_26.txt",
+      "?? data/raw/texts/H_21.txt",
+      "?? data/raw/texts/H_26.txt",
+      "?? docs/questioned_comparison.md",
+      "?? metadata/supplied_sources.json",
+      "?? results/history/partial_corpus_14_november_2026/AGENTS.md",
+      "?? results/history/partial_corpus_14_november_2026/README.md",
+      "?? results/history/partial_corpus_14_november_2026/archive_manifest.json",
+      "?? results/history/partial_corpus_14_november_2026/docs/corpus_collection.md",
+      "?? results/history/partial_corpus_14_november_2026/docs/frequency_calculation.md",
+      "?? results/history/partial_corpus_14_november_2026/docs/questioned_comparison.md",
+      "?? results/history/partial_corpus_14_november_2026/docs/research_amendments.md",
+      "?? results/history/partial_corpus_14_november_2026/docs/text_preparation.md",
+      "?? results/history/partial_corpus_14_november_2026/docs/validation.md",
+      "?? results/history/partial_corpus_14_november_2026/docs/word_features.md",
+      "?? results/history/partial_corpus_14_november_2026/metadata/preparation.csv",
+      "?? results/history/partial_corpus_14_november_2026/metadata/sources.csv",
+      "?? results/history/partial_corpus_14_november_2026/results/corpus_collection_manifest.json",
+      "?? results/history/partial_corpus_14_november_2026/results/counts.csv",
+      "?? results/history/partial_corpus_14_november_2026/results/frequencies.csv",
+      "?? results/history/partial_corpus_14_november_2026/results/frequency_manifest.json",
+      "?? results/history/partial_corpus_14_november_2026/results/preparation_manifest.json",
+      "?? results/history/partial_corpus_14_november_2026/results/questioned_preflight.json",
+      "?? results/history/partial_corpus_14_november_2026/results/validation_preflight.json",
+      "?? results/history/partial_corpus_14_november_2026/src/assemble_corpus.py",
+      "?? src/compare_questioned.py",
+      "?? tests/test_questioned.py",
+      "?? tests/test_supplied_sources.py"
     ]
   },
   "code_sha256": {
-    "src/assemble_corpus.py": "cc39eaa742e9f451e3f0ac26f023f4a8dfb30578aeb6f58c3a7dde95029b6959",
+    "src/assemble_corpus.py": "727b7d840f47e35cbf662472d9190d504cb22aff6fb05796ffa15aae9dfb8618",
     "src/calculate_frequencies.py": "951291f021b6eb59d60eb31949872a567441ee1ed6a99e3f1b44cf7aa928554b",
     "src/check_environment.py": "7197dfc040cd5eb863ff5bfe5be35392ada14303afe2485b3fc6615b4222206d",
+    "src/compare_questioned.py": "d6a5c26a2caff8e04c6b636b4dac4ad1d93b5a694252fdfe423e5eac5eb4d001",
+    "src/distance_method.py": "d8ceeeb5519f760046f51d44610617640849e0b66f619df5925562856d3cea33",
     "src/prepare_texts.py": "fafa72bef74411cdcd1339abe25e2c2444d7406b569727b029f4fb377ec75541",
+    "src/validate_authors.py": "0c36fe8132c54cd75bcfe81057fb6b19fe23a731999b0e58c8140a83b0bbe635",
     "src/word_features.py": "308e3faebb9ac1c6d17bd988306458f028ae5c9a87eac274abdad1187cd5e0a3",
     "tests/test_corpus.py": "f5059601c3917c5cb9c38e9d6bc8c85ff3aef62714446f59029fcd0539b0c075",
+    "tests/test_distance_method.py": "d507b89285d932da1633055c2c13ffed767dc437ba45f6603a31af7436ee0829",
     "tests/test_frequencies.py": "2929297fb659584ddbddbfaacab1bdcfc9a61d3aac3c488f6c4307faf4664c53",
     "tests/test_preparation.py": "584bc924747eb8327bdcaf61be082c47c998319d657c78e62c730f5d802dc4f8",
+    "tests/test_questioned.py": "d0ab2dbcc6a19ab767bf87bdab6194dd8861b637f826dfb7eef7be49af31e6bb",
+    "tests/test_supplied_sources.py": "6cc1e45b90c19e1fcc2598bed88643d5cbb46ffea27dfe07d4bba68dd1b70c42",
+    "tests/test_validation.py": "d400bfe80b6c14fb4e532d1448683ca689469110bffd4480ea9c9589cc576996",
     "tests/test_word_features.py": "4991aed138680680653c3db7607a21ecc27ab7f1cc66976a7f81b73184c8fef3"
   },
   "input_sha256": {
@@ -138,12 +183,14 @@
     ".python-version": "861b3dd8083d28f336ef70f6755bc399538ddad627b1d095820ca34cb953cf14",
     "pyproject.toml": "d23a95cd305a399357de6af25eb80245bc4c2917afabf274de47042af5a56bf6",
     "uv.lock": "e75b80aff7ba087f107fdbf1e1ca0105002dc67e2cf8f8d9070703e7c8aa1780",
-    "metadata/sources.csv": "f6b52b650ae55ae24a2d8577565d7b90e5c91574b3d568aa7aae2bb4ac3b9ee1",
-    "metadata/preparation.csv": "cf1b008b0f42147bdda54c5e7b6b7cdf4ba15aa9314ae3cfd22509376b8e5180",
+    "metadata/sources.csv": "7a601a999a763a6a4cfe3c5f874f5fe87ef696aeaf1c8911ef8d019441a53579",
+    "metadata/preparation.csv": "b029d804b73448beb196ccfd95e653becd7d13eea0f9fad799f373525e968ce1",
     "metadata/word_features.json": "b2e296b2d0ff60b61a2a6008d6f1e09d6b9e89be130d5b8502f597f0b35ff712",
-    "results/corpus_collection_manifest.json": "47881f7155dad99085aa1e441f147748dc180e5ff0f5b3eb6e494ec852567ff2",
-    "results/preparation_manifest.json": "ee76256efb7eea9565487b476121ea11ce3ae7ac467bf6723b96c399299b43b7",
+    "results/corpus_collection_manifest.json": "bd822924e98c703d73d0a77fcc451ef75f1f4f2fb80781e8c26f63a821b5e882",
+    "results/preparation_manifest.json": "052779619ff73e13a9c465e510f123112ff1b0bf582a1417f62bb88f02433263",
     "data/clean/H_1.txt": "13eb4024c07b32018811349ce44d0f78b5af192e0add13773dde401849934d69",
+    "data/clean/H_21.txt": "4ebdff07fc71405bb9ada0040d7d800a39c903cc5d57ef3df77e1dce02a750d9",
+    "data/clean/H_26.txt": "b115678965bf2b906490f7130b5fbf2263a25d43ee0ec09a34f4137aa44722bc",
     "data/clean/H_31.txt": "9b60e44939034ff01f8a545bce2b0dc4441e1cde78ee8e0218d025e08a5ef96b",
     "data/clean/H_59.txt": "9a9e86613067279c536a15031455311d12cdf2bf3c0ed4df4486e586078ddfd7",
     "data/clean/H_6.txt": "5db1aefca9b756b541506ebbfa06767928f4dbc02ac1f8ac0519429908caa5a2",
@@ -160,8 +207,8 @@
     "data/clean/Q_49.txt": "fd627a0a06a57be9dd3d7a6026403dd4bf72344af92bb5a8208509aeded4580b"
   },
   "output_sha256": {
-    "results/counts.csv": "355c8909544143d7dac3b49ee959da96a410b75fed4cb536d2fdd7b0c6b96a4e",
-    "results/frequencies.csv": "8dcce794f3094d700a553d6f18c3aeb6bce2151a86d25398df93a531a56a905d"
+    "results/counts.csv": "1d819831fe333d2b489036ba9b704a9f20b9820b85d9db7531c8c354bdbcf0a0",
+    "results/frequencies.csv": "ebc6985c5cb861c92da8b55ae713c2b3411cf7bc2919ae27cb814c936ad01f1b"
   },
   "essays": [
     {
@@ -191,6 +238,20 @@
       "total_words": 2149,
       "prepared_path": "data/clean/M_14.txt",
       "prepared_sha256": "0cb8d6e94fbe7b0fd45733192582bbf8e4df1ca67e88c686601d56fb6a0d0d37"
+    },
+    {
+      "essay_number": 21,
+      "role": "hamilton",
+      "total_words": 1993,
+      "prepared_path": "data/clean/H_21.txt",
+      "prepared_sha256": "4ebdff07fc71405bb9ada0040d7d800a39c903cc5d57ef3df77e1dce02a750d9"
+    },
+    {
+      "essay_number": 26,
+      "role": "hamilton",
+      "total_words": 2375,
+      "prepared_path": "data/clean/H_26.txt",
+      "prepared_sha256": "b115678965bf2b906490f7130b5fbf2263a25d43ee0ec09a34f4137aa44722bc"
     },
     {
       "essay_number": 31,

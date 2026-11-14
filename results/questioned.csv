@@ -1,0 +1,2 @@
+essay_number,role,hamilton_distance,madison_distance,signed_gap,absolute_gap,predicted_author,usable_feature_count,excluded_features,validation_correct,validation_total
+49,questioned,.9207457347285136,.6913770970681954,.22936863766031823,.22936863766031823,madison,24,,16,16

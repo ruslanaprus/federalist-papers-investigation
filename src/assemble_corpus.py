@@ -110,6 +110,31 @@ def extract_section(lines, number, expected_author):
     return ("\n".join(section) + "\n").encode("utf-8"), start, start + len(section) - 1
 
 
+def supplied_source(root, number, expected_author):
+    """Read an explicitly logged user transcription without inventing a page retrieval."""
+    log = root / "metadata/supplied_sources.json"
+    if not log.exists():
+        return None
+    entries = json.loads(log.read_text("utf-8"))["sources"]
+    matches = [entry for entry in entries if entry["essay_number"] == number]
+    if not matches:
+        return None
+    if len(matches) != 1:
+        raise ValueError(f"Duplicate supplied-source records for No. {number}.")
+    entry = matches[0]
+    content = (root / entry["raw_path"]).read_bytes()
+    if digest(content) != entry["sha256"]:
+        raise ValueError(f"Supplied source checksum mismatch: No. {number}.")
+    lines = content.decode("utf-8").splitlines()
+    if lines[0] != f"Federalist No. {number}":
+        raise ValueError(f"Supplied essay heading mismatch: No. {number}.")
+    if [line for line in lines if line.startswith("Author:")] != [expected_author]:
+        raise ValueError(f"Supplied author label mismatch: No. {number}.")
+    if "To the People of the State of New York:" not in lines or lines[-1] != "PUBLIUS.":
+        raise ValueError(f"Supplied essay boundaries require review: No. {number}.")
+    return entry, content
+
+
 def build_corpus(root):
     settings = tomllib.loads((root / "config/research.toml").read_text("utf-8"))
     plan = settings["research"]
@@ -140,7 +165,28 @@ def build_corpus(root):
         try:
             lines, resolved = project_lines(snapshot)
         except UnavailablePage as error:
-            missing.append({"essay_number": number, "role": role, "reason": str(error)})
+            supplied = supplied_source(root, number, expected_page)
+            if supplied is None:
+                missing.append({"essay_number": number, "role": role, "reason": str(error)})
+                continue
+            entry, content = supplied
+            source_path = entry["raw_path"]
+            text_path = f"data/raw/texts/{prefix}_{number}.txt"
+            outputs[text_path] = content
+            pages[source_path] = {
+                "sha256": digest(content), "retrieval_method": "user_supplied_transcription",
+                "independently_compared_with_live_page": False,
+            }
+            records.append(dict(zip(SOURCE_FIELDS, (
+                number, role, authors[number], entry["associated_source_url"],
+                "Library of Congress online presentation, Project Gutenberg compilation",
+                entry["received_date"], source_path, digest(content), text_path, digest(content),
+                "User-supplied text received in response to the requested Library of Congress "
+                "page; edition association inferred from that context, not independently "
+                "verified against the live wording. Author label checked against the saved "
+                "Library of Congress index. Payload preserved without code fences or lexical "
+                "changes; original line breaks retained. See metadata/supplied_sources.json.",
+            ))))
             continue
         content, start, end = extract_section(lines, number, expected_page)
         text_path = f"data/raw/texts/{prefix}_{number}.txt"
@@ -233,7 +279,11 @@ def main():
                 "planned_essay_count": 17,
                 "collected_essay_count": len(records),
                 "missing_essays": missing,
-                "retrieval_method": "archived_web_reader_responses",
+                "retrieval_method": "archived_web_reader_responses_and_logged_user_transcriptions",
+                "supplied_sources_sha256": (
+                    digest((ROOT / "metadata/supplied_sources.json").read_bytes())
+                    if (ROOT / "metadata/supplied_sources.json").exists() else None
+                ),
                 "original_html_bytes_preserved": False,
                 "linguistic_preparation_performed": False,
                 "authorship_analysis_performed": False,

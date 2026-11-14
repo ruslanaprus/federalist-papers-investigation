@@ -1,0 +1,53 @@
+{
+  "stage": "known_author_validation",
+  "status": "complete",
+  "recorded_at": "2026-11-15T00:21:49+02:00",
+  "runtime": {
+    "python": "3.13.15"
+  },
+  "feature_order": [
+    "the",
+    "a",
+    "an",
+    "and",
+    "or",
+    "but",
+    "of",
+    "to",
+    "in",
+    "on",
+    "at",
+    "by",
+    "for",
+    "from",
+    "with",
+    "as",
+    "that",
+    "which",
+    "this",
+    "these",
+    "it",
+    "is",
+    "be",
+    "not"
+  ],
+  "input_sha256": {
+    "docs/research_plan.md": "028809cdfe7990cb2620dd39b7d74607829e4fafe652fb0c704012c5af4780f4",
+    "config/research.toml": "c5e3b467d704fe201c8060b3cbdfc11d1e682f08e402a01b2e7dc5bc9efa17d9",
+    "metadata/word_features.json": "b2e296b2d0ff60b61a2a6008d6f1e09d6b9e89be130d5b8502f597f0b35ff712",
+    "metadata/distance_method.json": "2e472b8ed08c474f96d503e1d9bb7aca8d5788e0974dd85f07214389a322b6cb",
+    "results/frequency_manifest.json": "e926689e6533e728126ab91a8d7d410293e7746b335bb3db0d23edc84bacf684",
+    "results/frequencies.csv": "ebc6985c5cb861c92da8b55ae713c2b3411cf7bc2919ae27cb814c936ad01f1b",
+    "src/validate_authors.py": "0c36fe8132c54cd75bcfe81057fb6b19fe23a731999b0e58c8140a83b0bbe635",
+    "tests/test_validation.py": "d400bfe80b6c14fb4e532d1448683ca689469110bffd4480ea9c9589cc576996"
+  },
+  "output_sha256": {
+    "results/validation.csv": "db17dae488af0c9c08a18d27f152419e3ebaaec7e8b2278b537c3fb7afd44856",
+    "results/validation_summary.json": "f0a2c5cadfd5d308cd2f18a0847fa49c8ec0ad3a359692ec3031f33f3425cfc2",
+    "results/validation_fits.json": "fe12621d7db4d4b742aa5982ba5dc9db814407171239fcb65f7d25b23b0bfb19"
+  },
+  "trial_count": 16,
+  "training_essays_per_trial": 15,
+  "questioned_essay_excluded": 49,
+  "questioned_essay_compared": false
+}

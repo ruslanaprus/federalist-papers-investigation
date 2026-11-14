@@ -1,80 +1,67 @@
-# Known-author validation: implementation and readiness
+# Known-author validation
 
-**Checked:** 14 November 2026.
+**Completed:** 15 November 2026.
 
-**Status:** Step 8 is blocked by missing reference texts. The validation workflow is implemented and tested, but no corpus validation trials have been performed. No. 49 has not been compared or assigned.
+**Result:** 16 correct assignments out of 16. Hamilton: 8 of 8. Madison: 8 of 8. There were no misclassified or inconclusive essays.
 
-## Reference-corpus readiness
+## Corpus and source provenance
 
-The [original research plan](research_plan.md) requires 8 reference essays for each author. The current frequency table contains:
+All 16 references specified in the [original plan](research_plan.md) are now available. The user supplied Nos. 21 and 26 after the Library of Congress page could not be retrieved. Their author labels agree with the saved Library of Congress index. Their wording has not been independently compared with the live page; their association with that edition is inferred from the context in which they were supplied. See [supplied_sources.json](../metadata/supplied_sources.json) and [research amendments](research_amendments.md).
 
-| Reference author | Required | Available | Missing essays |
-| --- | --- | --- | --- |
-| Hamilton | 8 | 6 | 21, 26 |
-| Madison | 8 | 8 | None |
-| Total | 16 | 14 | 21, 26 |
+Earlier partial tables, blocked records, and documentation are preserved with checksums in `results/history/partial_corpus_14_november_2026/`. The active tables describe the complete fixed corpus. No essays, features, or comparison rules were substituted.
 
-No. 49 is a separate questioned text and does not fill a reference-sample gap. Its role is checked, but its feature values are not parsed or used by the validation workflow.
+## Procedure and justification
 
-The [Library of Congress page containing Nos. 21 and 26](https://guides.loc.gov/federalist-papers/text-21-30) again returned an access error during this step. No substitutes, reconstructed passages, or zero-filled rows were added. The existing corpus and frequency files remain unchanged.
+Each reference essay was temporarily treated as unknown. Its trial used the other 15 references to calculate both author means, the shared sample standard deviations, and constant-feature exclusions. One author therefore had 7 training essays and the other had 8. Each training essay had equal weight. The sample variance denominator was 14.
 
-The actual run stopped before fitting its first model. [validation_preflight.json](../results/validation_preflight.json) records the 14 available references, the missing essays, and the input fingerprints. Completed corpus trials are zero; correct assignments and accuracy are unavailable. These missing results are recorded as null, not as a score of zero.
+The held-out essay contributed to none of its own fitted quantities. This avoids [data leakage](https://scikit-learn.org/stable/common_pitfalls.html#data-leakage), where evaluation data influence the model being evaluated. No. 49 was excluded from all validation fitting and scoring. Its distances were calculated only after the completed validation was recorded.
 
-## Planned 16-trial procedure
+The [fixed distance method](distance_method.md) was used unchanged. All 24 features had nonzero training variation in every trial, so no feature was excluded. The original numerical tie tolerance remained `1e-12`.
 
-For each known-author reference essay:
+## All 16 results
 
-1. Set that essay aside as the text being evaluated.
-2. Use the other 15 references to calculate both author means and sample standard deviations.
-3. Determine constant-feature exclusions from those training essays alone.
-4. Apply the unchanged [distance method](distance_method.md) to the held-out essay.
-5. Compare its predicted author with its reference author and record the result.
+Distances and gaps below are rounded to 3 decimal places for reading. Because the columns are rounded separately, subtracting the displayed distances can differ slightly from the displayed gap. The [CSV](../results/validation.csv) preserves full computed precision.
 
-The procedure repeats for all 16 references. In each trial, one author contributes 7 training essays and the other contributes 8. The shared sample standard deviation uses all 15 training essays, with variance denominator 14. No. 49 contributes to none of these quantities.
+| Held-out essay | Reference author | Predicted author | Correct? | Hamilton distance | Madison distance | Absolute gap |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | Hamilton | Hamilton | Yes | .910 | 1.119 | .209 |
+| 6 | Hamilton | Hamilton | Yes | 1.208 | 1.314 | .106 |
+| 10 | Madison | Madison | Yes | 1.027 | .823 | .204 |
+| 14 | Madison | Madison | Yes | .914 | .683 | .231 |
+| 21 | Hamilton | Hamilton | Yes | 1.215 | 1.290 | .076 |
+| 26 | Hamilton | Hamilton | Yes | .813 | 1.041 | .228 |
+| 31 | Hamilton | Hamilton | Yes | .680 | .899 | .219 |
+| 37 | Madison | Madison | Yes | .923 | .722 | .201 |
+| 39 | Madison | Madison | Yes | 1.007 | .948 | .058 |
+| 41 | Madison | Madison | Yes | .694 | .530 | .165 |
+| 43 | Madison | Madison | Yes | .956 | .753 | .204 |
+| 46 | Madison | Madison | Yes | 1.222 | 1.086 | .136 |
+| 48 | Madison | Madison | Yes | .820 | .641 | .179 |
+| 59 | Hamilton | Hamilton | Yes | .785 | 1.077 | .291 |
+| 70 | Hamilton | Hamilton | Yes | .742 | .889 | .148 |
+| 78 | Hamilton | Hamilton | Yes | .897 | .900 | .002 |
 
-*Held-out* means excluded from the material used to build that trial's profiles and scaling. Keeping the evaluation essay out of these calculations avoids [data leakage](https://scikit-learn.org/stable/common_pitfalls.html#data-leakage). The method must distinguish a text using information available from the other essays.
+## Baseline, errors, and close comparisons
 
-The program checks the exact planned reference identities and labels before fitting. It has no reduced-sample override. A constant feature is reconsidered in each trial; an essay's unusual value cannot give that feature variation in its own training set. If a trial has no usable features, validation stops with an explicit error rather than inventing a distance or assignment.
+Always choosing one author would give 8 correct assignments out of 16. The observed 16 out of 16 exceeds that baseline in this sample. It does not establish that the method will classify other texts equally well.
 
-## Results to record when the sample is complete
+No. 78 was a particularly close comparison: Hamilton distance .897162 and Madison distance .899638, with a gap of .002476. Its assignment was correct, but the near tie matters when judging the apparent strength of the overall result.
 
-| Output | Contents |
-| --- | --- |
-| `results/validation.csv` | All 16 held-out essays, reference and predicted authors, correctness, both distances, signed and absolute gaps, usable feature count, exclusions, and training group sizes |
-| `results/validation_summary.json` | Correct assignments out of 16 and out of 8 for each author, misclassified and inconclusive essays, the baseline, and gap summaries |
-| `results/validation_fits.json` | Each trial's training identifiers, author means, standard deviations, usable features, and exclusions |
-| `results/validation_manifest.json` | Completed-run provenance, input and output fingerprints, and confirmation that No. 49 was excluded |
+Across all trials, the minimum absolute gap was .002476, the median was .189825, and the maximum was .291270. No additional threshold for substantive closeness was selected. Numerical ties, wrong named-author assignments, and inconclusive assignments were all absent.
 
-These empirical files have not been created. A preflight record does not stand in for completed validation.
+These trials share training essays and are not independent experiments. The sample is small and selected for a teaching investigation. The perfect observed count should therefore be interpreted alongside the close No. 78 result, topic and edition effects, source-transcription limitations, and the pending robustness checks.
 
-The fixed tie rule remains an absolute distance difference at most `1e-12`. An inconclusive assignment counts as unsuccessful and is listed separately from a wrong named-author assignment. Poor accuracy is a valid finding and does not prevent recording all trials.
+## Audit and verification
 
-Always choosing one author would classify 8 of the 16 references correctly. This is the planned baseline, not an observed result. Compare completed validation with it, reporting counts and errors rather than treating a small improvement as conclusive.
+- [validation.csv](../results/validation.csv) records all trial results, both distances, signed and absolute gaps, feature counts, exclusions, and training group sizes.
+- [validation_summary.json](../results/validation_summary.json) records accuracy counts, the baseline, errors, inconclusive cases, and gap summaries.
+- [validation_fits.json](../results/validation_fits.json) records the exact training identifiers, author means, and standard deviations for every trial.
+- [validation_manifest.json](../results/validation_manifest.json) records inputs, output fingerprints, and exclusion of No. 49.
 
-Report both distances and every absolute gap. Minimum, median, and maximum gaps provide descriptive context. No additional threshold for a substantively close comparison is introduced. The numerical tie tolerance does not measure evidential strength. The trials share training texts, and the small sample restricts generalization.
-
-## Commands and verification
-
-Check readiness without fitting any profiles:
-
-```sh
-uv run --locked python -m src.validate_authors --check
-```
-
-Run the full validation once all planned references have complete, verified frequencies:
+Verify the completed run without replacing records:
 
 ```sh
-uv run --locked python -m src.validate_authors
+uv run --locked python -m src.validate_authors --verify
 ```
 
-Both commands currently stop with exit code 2 and identify Nos. 21 and 26 as missing. Repeating the same blocked check preserves its original record. Invalid provenance or an inconsistent table produces an error. Existing completed result files are protected against replacement.
-
-After a completed run, recalculate and verify its saved artifacts with `uv run --locked python -m src.validate_authors --verify`.
-
-The implementation tests use invented frequencies attached to the planned reference identifiers. They check all 16 training splits, refitting of scaling and exclusions, rejection of missing or duplicate references, independence of a held-out essay's fitted quantities from its own values, exclusion of No. 49, tie reporting, poor-performance reporting, and CSV completeness. Their outcomes are software checks, not measured validation results for the Federalist corpus.
-
-## Required next action
-
-Recover the complete Library of Congress text for Nos. 21 and 26, preserve it, and prepare and count both essays under the existing rules. Preserve earlier partial records when creating a complete corpus and frequency record. Then rerun the 16-trial validation before interpreting or comparing No. 49.
-
-If the source page opens in a local browser, save its complete HTML as `data/raw/pages/text-21-30.html` for inspection and extraction. This is the missing source material needed to continue the investigation as planned.
+The software tests additionally exercise invented examples of training separation, constant features, ties, and poor performance. The empirical validation count above comes from the completed corpus run, not from those software tests.

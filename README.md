@@ -4,11 +4,11 @@
 
 This project compares common grammatical words in 8 Hamilton essays, 8 Madison essays, and the questioned No. 49. The [fixed research plan](docs/research_plan.md) defines the corpus and methods. Preserve that plan and record methodological amendments separately.
 
-The working environment is prepared. Corpus collection is incomplete: 15 of the planned 17 essays are saved; Hamilton references Nos. 21 and 26 are still missing because their source page could not be retrieved. The 15 available essays have prepared copies, an exact edit log, and separate word-count and frequency tables. See the [collection record](docs/corpus_collection.md), [preparation record](docs/text_preparation.md), and [frequency calculation](docs/frequency_calculation.md). Author profiles, validation, and attribution have not started.
+All 17 planned essays are collected, prepared, and counted. Fifteen derive from archived Library of Congress reader representations; Nos. 21 and 26 are user-supplied transcriptions associated with the requested page. Their full wording was not independently compared with the live edition. See the [collection record](docs/corpus_collection.md), [preparation record](docs/text_preparation.md), and [frequency calculation](docs/frequency_calculation.md).
 
-The [distance method](docs/distance_method.md) is defined and tested with invented frequencies. No profiles have been fitted to the collected essays.
+The unchanged [distance method](docs/distance_method.md) correctly classified 16 of 16 reference essays in [leave-one-essay-out validation](docs/validation.md), with 8 correct for each author. No. 49 is closer to Madison's profile: distance about `.691377`, compared with `.920746` for Hamilton. These are resemblance measures, not authorship probabilities. The [comparison report](docs/questioned_comparison.md) gives the measured results and limitations.
 
-The [validation workflow](docs/validation.md) is implemented. Its actual run stopped before any trial because Nos. 21 and 26 are missing. `results/validation_preflight.json` records this block; no empirical validation accuracy is available.
+Robustness checks and concordance interpretation remain pending. Earlier partial tables and blocked records are preserved under `results/history/partial_corpus_14_november_2026/`, with an archive manifest of checksums.
 
 ## Set up with uv
 
@@ -42,13 +42,14 @@ Enable Python support in IntelliJ and select the existing interpreter at `.venv/
 | --- | --- |
 | `config/research.toml` | Machine-readable settings copied from the fixed plan |
 | `data/raw/pages/` | Archived source-reader responses and retrieval evidence; original HTML is unavailable |
+| `data/raw/supplied/` | Untouched user-provided copies of Nos. 21 and 26 |
 | `data/raw/texts/` | Untouched extracted copies, one essay per file |
 | `data/clean/` | Consistently prepared essay bodies |
 | `data/no_quotes/` | Separate copies for the quotation check |
 | `metadata/` | Source, preparation, and quotation records |
 | `src/` | Environment checks and research workflow implementations |
 | `tests/` | Corpus integrity and research-method tests |
-| `results/` | Environment record and future main-analysis outputs |
+| `results/` | Provenance, counts, frequencies, validation, comparison, and historical records |
 | `results/feature_check/` | Outputs from the reduced feature set |
 | `results/quotation_check/` | Outputs after identified quotations are removed |
 | `docs/` | Original research plan and later documentation |
@@ -56,43 +57,43 @@ Enable Python support in IntelliJ and select the existing interpreter at `.venv/
 
 Empty directories contain `.gitkeep` files so their layout can be committed. These files are not corpus texts. Research scripts must select actual essay files rather than treating every directory entry as evidence. Use filenames such as `H_1.txt`, `M_10.txt`, and `Q_49.txt`, without leading zeros.
 
-The raw essay files retain headings and source apparatus. They are not prepared analysis copies. `metadata/sources.csv` identifies the exact stored representation and checksums; `results/corpus_collection_manifest.json` records the current incomplete collection. Verify available material with:
+The raw essay files retain headings and source apparatus. `metadata/sources.csv` identifies the exact stored representation and checksums; `results/corpus_collection_manifest.json` records the complete collection and the supplied-text provenance. The source supplement is registered in `metadata/supplied_sources.json`. Verify available material with:
 
 ```sh
-uv run --locked python src/assemble_corpus.py --verify --allow-incomplete
+uv run --locked python src/assemble_corpus.py --verify
 ```
 
-The collector rejects missing essays by default. The explicit partial-verification option does not authorize changing the fixed sample or running analysis on fewer reference essays. Recovery instructions and the retrieval limitation are documented in the collection record.
+The collector rejects missing essays by default. Logged supplied sources can fill an unavailable page after their identity, label, boundaries, and checksum are checked. Their wording is not represented as independently verified against the live page. Prior partial records remain in the historical snapshot.
 
 ## Prepared copies
 
 `data/clean/` contains readable essay bodies with headers, closing signatures, appended notes, and numeric reader-reference markers removed. Body quotations, historical spelling, case, and apostrophes are retained. Numbered passages within the argument remain. `metadata/preparation.csv` records each changed raw-text span and its reason; `results/preparation_manifest.json` records source and output checksums.
 
 ```sh
-uv run --locked python src/prepare_texts.py --verify --allow-incomplete
+uv run --locked python src/prepare_texts.py --verify
 ```
 
 The shared `normalize_for_counting` function applies the fixed lowercase and apostrophe rules when counting begins. It does not rewrite the readable copies. Quotation annotations should refer to those stable readable files. See the preparation record for the explicit appended-notes rule and its limitation. No quotation-removal copies have been created yet.
 
 ## Fixed word features
 
-The original plan's 24 words and counting rules are confirmed in the [feature specification](docs/word_features.md) and recorded with software versions in `metadata/word_features.json`. The shared `tokenize_words` function in `src/word_features.py` retains all word tokens, including common words and words outside the selected features. Future counting scripts should load the validated specification through `load_specification` and use this tokenizer for both feature counts and essay length.
+The original plan's 24 words and counting rules are confirmed in the [feature specification](docs/word_features.md) and recorded with software versions in `metadata/word_features.json`. The shared `tokenize_words` function in `src/word_features.py` retains all word tokens, including common words and words outside the selected features. The counting command loads the validated specification through `load_specification` and uses this tokenizer for both feature counts and essay length.
 
 ```sh
 uv run --locked python -m src.word_features
 ```
 
-This command checks the feature list, its order, the predefined 20-word check, and implementation fingerprints without reading essay texts. It does not calculate frequencies. The feature selection remains independent of the current missing essays and any future attribution result.
+This command checks the feature list, its order, the predefined 20-word check, and implementation fingerprints without reading essay texts. It does not calculate frequencies. The feature selection was fixed before the observed validation and comparison results.
 
 ## Comparable frequencies
 
-`results/counts.csv` contains one row per available essay with its total word count and all 24 feature counts. `results/frequencies.csv` expresses those feature counts per 1,000 total words, retaining the denominator in `total_words`. All word tokens contribute to essay length. Each essay remains separate, including questioned No. 49. Missing essays have no placeholder rows.
+`results/counts.csv` contains one row per planned essay with its total word count and all 24 feature counts. `results/frequencies.csv` expresses those feature counts per 1,000 total words, retaining the denominator in `total_words`. All word tokens contribute to essay length. Each essay remains separate, including questioned No. 49. Missing essays have no placeholder rows.
 
 ```sh
-uv run --locked python -m src.calculate_frequencies --verify --allow-incomplete
+uv run --locked python -m src.calculate_frequencies --verify
 ```
 
-`results/frequency_manifest.json` records the incomplete corpus, actual software versions, settings, input fingerprints, and result checksums. Rates retain their computed precision; exact ratios remain recoverable from the integer counts. The [frequency record](docs/frequency_calculation.md) explains the formula, measured totals, and an observed example. The explicit partial-corpus option does not authorize reduced-sample author profiles or validation.
+`results/frequency_manifest.json` records all 17 essays, actual software versions, settings, input fingerprints, and result checksums. Rates retain their computed precision; exact ratios remain recoverable from the integer counts. The [frequency record](docs/frequency_calculation.md) explains the formula, measured totals, and an observed example. The completed analysis uses all 16 reference essays.
 
 ## Defined distance method
 
@@ -102,7 +103,7 @@ uv run --locked python -m src.calculate_frequencies --verify --allow-incomplete
 uv run --locked python -m src.distance_method
 ```
 
-This command checks the definition without fitting the corpus or comparing No. 49. The [method record](docs/distance_method.md) explains the formula, justification, training boundaries, and an invented worked example. The main corpus remains incomplete; full-sample fitting and validation require the missing references.
+This command checks the definition without fitting the corpus or comparing No. 49. The [method record](docs/distance_method.md) explains the formula, justification, training boundaries, and an invented worked example. Full-sample fitting, validation, and the No. 49 comparison have now been completed using the original formula.
 
 ## Known-author validation
 
@@ -110,15 +111,25 @@ This command checks the definition without fitting the corpus or comparing No. 4
 uv run --locked python -m src.validate_authors --check
 ```
 
-The preflight check requires the exact 16 planned reference essays, with 8 per author. It currently stops with exit code 2 because Hamilton references Nos. 21 and 26 are missing. It does not fit the available 14 essays as a substitute. No. 49's frequency values are excluded from validation.
+The preflight check confirms the exact 16 planned reference essays, with 8 per author. Completed validation classified all 16 correctly. No. 49's frequency values were excluded from every trial. Detailed results, including the near tie for No. 78, are in `results/validation.csv` and `docs/validation.md`.
 
-Once complete frequencies are available, `uv run --locked python -m src.validate_authors` performs all 16 leave-one-essay-out trials. Every trial refits author means, sample scaling, and constant-feature exclusions using only its 15 training essays. The outputs record correctness, both distances, gaps, exclusions, fitted quantities, baseline comparison, and provenance. The [validation record](docs/validation.md) explains the procedure and current missing-data block.
+`uv run --locked python -m src.validate_authors --verify` checks all 16 leave-one-essay-out trials. Every trial refits author means, sample scaling, and constant-feature exclusions using only its 15 training essays. The outputs record correctness, both distances, gaps, exclusions, fitted quantities, baseline comparison, and provenance. The [validation record](docs/validation.md) explains the procedure, observed results, and limitations.
+
+## Questioned-essay comparison
+
+```sh
+uv run --locked python -m src.compare_questioned --check
+```
+
+This check confirms the full reference sample and verified completed validation. The completed comparison gives a smaller distance to Madison. Its signed gap, Hamilton minus Madison, is about `.229369`; all 24 features were usable.
+
+`uv run --locked python -m src.compare_questioned --verify` checks the saved comparison, whose profiles and shared scaling use all 16 references. It records both distances, their signed gap, exclusions, and validation context. No. 49 is excluded from all fitting. The [comparison report](docs/questioned_comparison.md) explains the workflow, measured values, source limitations, and pending robustness checks.
 
 ## Record evidence consistently
 
 Keep raw downloads unchanged. Do not add guessed values or placeholder essay rows to the CSV logs. Use UTF-8 and proper CSV quoting for passages containing commas or line breaks.
 
-- `metadata/sources.csv`: record role (`hamilton`, `madison`, or `questioned`), the source's own attribution, exact URL, edition, retrieval date, raw page and essay paths, and their SHA-256 checksums. Dates should read, for example, `14 November 2026`.
+- `metadata/sources.csv`: record role (`hamilton`, `madison`, or `questioned`), the source's own attribution, exact URL, edition, retrieval date, archived source-artifact and essay paths, and their SHA-256 checksums. For user-supplied texts, record receipt as the date and identify the transcription in the notes. Dates should read, for example, `14 November 2026`.
 - `metadata/preparation.csv`: record each transformation, input and output paths, source location, original and replacement text, and reason. Locations should identify the saved source being edited.
 - `metadata/quotations.csv`: record each passage, its text-file path, location, decision, reason, and source. Offsets count Unicode characters from zero, with the end position excluded, in that exact file. Use `remove` or `retain` for decisions. Annotate prepared text before counting-time normalization; preserve the annotated file so offsets remain valid. Document ambiguity and retain ambiguous passages.
 
@@ -140,10 +151,10 @@ uv run --locked python src/check_environment.py --manifest results/environment_r
 
 The manifest records actual Python, uv, operating system, Git revision and working-tree state, configuration, and hashes of setup inputs. A Git revision with local changes does not identify the complete source state; the recorded file hashes distinguish those changes. Snapshot creation refuses to overwrite an existing file.
 
-Run the corpus, preparation, word-rule, frequency, distance, and validation-workflow tests with:
+Run the corpus, preparation, word-rule, frequency, distance, validation, and comparison tests with:
 
 ```sh
 uv run --locked python -m unittest discover -s tests -v
 ```
 
-The tests check collection, extraction, preparation, tokenization, comparable frequencies, distance arithmetic, and the validation workflow. Method tests use invented examples and do not supply empirical validation accuracy. Final report generation follows interpretation of the completed investigation.
+The tests check collection, extraction, preparation, tokenization, comparable frequencies, distance arithmetic, validation, and questioned-text comparison. Method tests use invented examples and do not supply empirical validation accuracy or an attribution finding. Final report generation follows interpretation of the completed investigation.

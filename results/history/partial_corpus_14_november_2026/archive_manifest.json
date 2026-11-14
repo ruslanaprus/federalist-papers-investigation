@@ -1,0 +1,25 @@
+{
+  "archived_at": "2026-11-15T00:19:09+02:00",
+  "reason": "Preserve the partial corpus and blocked records before importing the two user-supplied reference texts.",
+  "original_path_sha256": {
+    "metadata/sources.csv": "f6b52b650ae55ae24a2d8577565d7b90e5c91574b3d568aa7aae2bb4ac3b9ee1",
+    "metadata/preparation.csv": "cf1b008b0f42147bdda54c5e7b6b7cdf4ba15aa9314ae3cfd22509376b8e5180",
+    "results/corpus_collection_manifest.json": "47881f7155dad99085aa1e441f147748dc180e5ff0f5b3eb6e494ec852567ff2",
+    "results/preparation_manifest.json": "ee76256efb7eea9565487b476121ea11ce3ae7ac467bf6723b96c399299b43b7",
+    "results/counts.csv": "355c8909544143d7dac3b49ee959da96a410b75fed4cb536d2fdd7b0c6b96a4e",
+    "results/frequencies.csv": "8dcce794f3094d700a553d6f18c3aeb6bce2151a86d25398df93a531a56a905d",
+    "results/frequency_manifest.json": "97db99d4393881706beac167a9ee452a21216d66417d1534913d458ef781fef8",
+    "results/validation_preflight.json": "5adb2ec299a7ec6752e021eb76aea9f6219993f5b9f2cce18d84005cd6bb7646",
+    "results/questioned_preflight.json": "004cee476d46bdfb8ea4d5e1e1250ea51ca1048556be8c3fef6ccdd8f52ff24c",
+    "src/assemble_corpus.py": "cc39eaa742e9f451e3f0ac26f023f4a8dfb30578aeb6f58c3a7dde95029b6959",
+    "README.md": "854bdcc2e3e1b9fb7b0d6b33fc1a40bf3a59cd7717679bdb7c34c48d832ec822",
+    "AGENTS.md": "6c577289690aff7933cc9d528ad0f1bb1054b6810b5d94e5a49b7b0a62b971f3",
+    "docs/corpus_collection.md": "88790136188531df82ee399669495f1c9427b5ce2e389cab30a972f71e626d7a",
+    "docs/text_preparation.md": "3821ce4e1f8c886f1d42e6259a8989773a6d09982327628be73d6b032527d53d",
+    "docs/word_features.md": "8c40614fc943e18c2c6ad88af6007d33de11016e1e0f0dc773298ce03010cf5b",
+    "docs/frequency_calculation.md": "75c54f5b300cdcc9508d06d7eeb504aa97364694de59e9de0b32a7edf7fc7bf0",
+    "docs/validation.md": "9db41aaa0ff76d737256ac735842041d3f9bc07a9bea48f1e3098c00f40fafa0",
+    "docs/questioned_comparison.md": "588231cb37ba0ef72f1c0ffba06a4edbbd670e8910919a59c526204a355f5443",
+    "docs/research_amendments.md": "d8d546d1fe835604479e5ed1c3ce84dffd0c3e215a271fa69c4d5b026aef3fee"
+  }
+}

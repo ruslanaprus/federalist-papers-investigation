@@ -2,7 +2,7 @@
 
 **Defined and checked:** 14 November 2026.
 
-**Status:** Step 7 complete. The method is unchanged from the [original research plan](research_plan.md). Its arithmetic has been tested with invented examples. No profiles have been fitted to the Federalist corpus, and No. 49 has not been compared or assigned.
+**Status:** The method was defined before corpus fitting and remains unchanged from the [original research plan](research_plan.md). Full-sample [validation](validation.md) and the [No. 49 comparison](questioned_comparison.md) were subsequently completed on 15 November 2026. The invented examples below demonstrate arithmetic and are separate from those measured results.
 
 ## Inputs and training texts
 
@@ -98,7 +98,7 @@ This illustrates a smaller distance to the invented Hamilton profile. It supplie
 
 The fitted model stores immutable means and standard deviations. Comparing a query does not recompute them or use the query's reference author label. In validation, remove each held-out essay first and refit all quantities using the other 15. Including evaluation data in fitted quantities would cause [data leakage](https://scikit-learn.org/stable/common_pitfalls.html#data-leakage), making the evaluation less trustworthy.
 
-The functions accept training subsets so the same arithmetic can serve valid leave-one-out trials and the predefined robustness checks. A future corpus-validation runner must first require the full planned reference corpus. The current incomplete sample is not a replacement training set.
+The functions accept training subsets so the same arithmetic can serve valid leave-one-out trials and the predefined robustness checks. The corpus-validation runner requires the full planned reference corpus before fitting. The completed run used all 16 references; an incomplete sample is not an alternative training set.
 
 `metadata/distance_method.json` records the definition, settings, software versions, and implementation fingerprints. Verify it with:
 
@@ -113,4 +113,4 @@ The verification command reads method and implementation records, not corpus fre
 
 Distance is a similarity measure, not a probability of authorship or a confidence level. It does not establish that the features reliably distinguish these writers. That question requires the planned known-author validation before interpreting No. 49's result.
 
-Nos. 21 and 26 remain missing. Their collection, preparation, and frequency calculation must be completed before the full reference-sample validation and final comparison. The original question, features, distance formula, and decision rule remain fixed.
+Nos. 21 and 26 were subsequently supplied, prepared, and counted under the recorded transcription limitation. Full validation and the final reference-profile comparison have been completed. The original question, features, distance formula, and decision rule remain fixed. Robustness checks and concordance interpretation are the next planned stages.

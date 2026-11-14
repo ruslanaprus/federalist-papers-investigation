@@ -1,0 +1,27 @@
+{
+  "sources": [
+    {
+      "essay_number": 21,
+      "raw_path": "data/raw/supplied/H_21.txt",
+      "sha256": "afe68c1848bcbcd957c27a1b5726e7d293a8925630fbe8e9a7d68d8015f616e8",
+      "received_date": "15 November 2026",
+      "origin": "User-provided plain-text code block in the project conversation",
+      "associated_source_url": "https://guides.loc.gov/federalist-papers/text-21-30",
+      "edition_association": "Inferred from response to the request for this Library of Congress page; live text not independently compared",
+      "original_html_available": false,
+      "lexical_corrections": []
+    },
+    {
+      "essay_number": 26,
+      "raw_path": "data/raw/supplied/H_26.txt",
+      "sha256": "c7922f77895b20ce7eedfa47c57d6143ecba76b9258664892370c790dfa3d2e2",
+      "received_date": "15 November 2026",
+      "origin": "User-provided plain-text code block in the project conversation",
+      "associated_source_url": "https://guides.loc.gov/federalist-papers/text-21-30",
+      "edition_association": "Inferred from response to the request for this Library of Congress page; live text not independently compared",
+      "original_html_available": false,
+      "lexical_corrections": []
+    }
+  ],
+  "note": "Code fences are excluded from the payload. No. 21 retains the blank line before the closing punctuation after four. No. 26 retains wellinformed and calamaties exactly as supplied and has no final newline."
+}

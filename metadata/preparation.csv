@@ -50,6 +50,33 @@ To the People of the State of New York:
   10. The Duke of Marlborough. 【35†Back to text】
   11. Vide ""Principes des Negociations"" par 1'Abbe de Mably. 【36†Back to text】
 ",,Exclude the separately numbered source notes from the main running prose; this structural rule does not claim all notes are editorial.
+21,data/raw/texts/H_21.txt,data/clean/H_21.txt,remove_header,"characters [0, 161); raw lines 1-9","Federalist No. 21
+Other Defects of the Present Confederation
+
+For the Independent Journal.
+
+Author: Alexander Hamilton
+
+To the People of the State of New York:
+
+",,"Remove essay heading, title, publication details, author label, and shared reader address."
+21,data/raw/texts/H_21.txt,data/clean/H_21.txt,remove_boundary_blank_lines,"characters [12071, 12072); raw lines 35-35","
+",,Remove blank lines between the main prose and closing apparatus.
+21,data/raw/texts/H_21.txt,data/clean/H_21.txt,remove_signature,"characters [12072, 12081); raw lines 36-36","PUBLIUS.
+",,"Remove the shared standalone closing signature, not occurrences inside prose."
+26,data/raw/texts/H_26.txt,data/clean/H_26.txt,remove_header,"characters [0, 211); raw lines 1-9","Federalist No. 26
+The Idea of Restraining the Legislative Authority in Regard to the Common Defense Considered
+
+For the Independent Journal.
+
+Author: Alexander Hamilton
+
+To the People of the State of New York:
+
+",,"Remove essay heading, title, publication details, author label, and shared reader address."
+26,data/raw/texts/H_26.txt,data/clean/H_26.txt,remove_boundary_blank_lines,"characters [14069, 14070); raw lines 37-37","
+",,Remove blank lines between the main prose and closing apparatus.
+26,data/raw/texts/H_26.txt,data/clean/H_26.txt,remove_signature,"characters [14070, 14078); raw lines 38-38",PUBLIUS.,,"Remove the shared standalone closing signature, not occurrences inside prose."
 31,data/raw/texts/H_31.txt,data/clean/H_31.txt,remove_header,"characters [0, 212); raw lines 1-10","## Federalist No. 31
 
 The Same Subject Continued: Concerning the General Power of Taxation

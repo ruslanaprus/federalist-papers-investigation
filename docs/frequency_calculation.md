@@ -1,8 +1,8 @@
 # Comparable frequencies
 
-**Calculated:** 14 November 2026.
+**Calculated:** 15 November 2026; the earlier partial tables are archived.
 
-**Status:** Step 6 completed for the 15 available essays. The fixed 17-essay corpus is still missing Hamilton references Nos. 21 and 26. These are partial descriptive results, not an attribution finding.
+**Status:** Counts and comparable frequencies are complete for all 17 planned essays. Source provenance includes two user-supplied transcriptions whose live wording was not independently verified. Frequency tables alone do not determine authorship.
 
 ## Method and justification
 
@@ -30,7 +30,7 @@ An essay with no word tokens is rejected because its frequency has no valid deno
 
 Both CSV files use the original feature order. The `total_words` column remains the integer essay length in both tables. Only the 24 word columns contain normalized frequencies in `frequencies.csv`. Essay number, role, and total words are descriptive metadata, not additional attribution features. The `questioned` role for No. 49 is retained.
 
-The files contain 6 Hamilton references, 8 Madison references, and the questioned essay. The following totals are measured from the prepared copies:
+The files contain 8 Hamilton references, 8 Madison references, and the questioned essay. The following totals are measured from the prepared copies:
 
 | Essay | Role | Total words |
 | --- | --- | --- |
@@ -38,6 +38,8 @@ The files contain 6 Hamilton references, 8 Madison references, and the questione
 | 6 | Hamilton reference | 1,943 |
 | 10 | Madison reference | 2,999 |
 | 14 | Madison reference | 2,149 |
+| 21 | Hamilton reference | 1,993 |
+| 26 | Hamilton reference | 2,375 |
 | 31 | Hamilton reference | 1,730 |
 | 37 | Madison reference | 2,709 |
 | 39 | Madison reference | 2,606 |
@@ -66,16 +68,16 @@ This is about 79.975 occurrences per 1,000 words, rounded here only for explanat
 
 Integer counts and denominators are preserved, so the exact mathematical ratios can always be recovered. Computation uses Python's standard floating-point arithmetic. Frequencies are exported using round-trip decimal representations without preliminary rounding; reading them back preserves the computed values. For displayed decimal values below 1, the leading zero is omitted, such as `.5`. A genuine zero is written `0`.
 
-Creation command for the explicitly incomplete corpus:
+Creation command for the complete corpus:
 
 ```sh
-uv run --locked python -m src.calculate_frequencies --allow-incomplete
+uv run --locked python -m src.calculate_frequencies
 ```
 
 Verify the saved tables by recalculating them without rewriting files:
 
 ```sh
-uv run --locked python -m src.calculate_frequencies --verify --allow-incomplete
+uv run --locked python -m src.calculate_frequencies --verify
 uv run --locked python -m unittest discover -s tests -v
 ```
 
@@ -83,6 +85,6 @@ The command first checks the fixed feature record and prepared-text integrity. E
 
 ## Limits and next stage
 
-These tables implement the frequency measure specified in the [original research plan](research_plan.md). They do not estimate author averages, standard deviations, distances, validation accuracy, or authorship probabilities. No. 49 has been counted under the same rules as every reference essay, but no comparison or assignment has been made.
+These tables implement the frequency measure specified in the [original research plan](research_plan.md). All 17 essays use the same counting rules. Author profiles and distances were subsequently calculated in the separate [validation](validation.md) and [questioned-text comparison](questioned_comparison.md) stages.
 
-The missing reference essays must be collected, prepared, and counted under the same rules before the planned full-sample author profiles and validation can be completed. The partial tables do not redefine the fixed corpus or justify using fewer reference essays.
+The 15-essay partial tables are preserved under `results/history/partial_corpus_14_november_2026/`. Their values for the original 15 essays remain identical in the expanded tables. No author averages or predictions were used to alter the features or preparation rules. The two supplied transcription limitations described in the collection record remain relevant to interpretation.
