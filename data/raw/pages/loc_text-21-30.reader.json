@@ -1,0 +1,106 @@
+{
+  "source_url": "https://guides.loc.gov/federalist-papers/text-21-30",
+  "retrieval_method": "web_reader",
+  "retrieved_date": "14 November 2026",
+  "retrieval_started_at": "2026-11-14 20:55:08 UTC",
+  "retrieval_completed_at": "2026-11-14 21:01:31 UTC",
+  "total_lines": null,
+  "responses": [
+    {
+      "request": {
+        "open": [
+          {
+            "ref_id": "https://guides.loc.gov/federalist-papers/text-21-30",
+            "lineno": 0
+          }
+        ],
+        "response_length": "long"
+      },
+      "response": "Internal Error ()\nciteturn13view0 [wordlim: 200] Source: open({\"ref_id\":\"https://guides.loc.gov/federalist-papers/text-21-30\",\"lineno\":0}); \nFailed to fetch https://guides.loc.gov/federalist-papers/text-21-30: (429) Too Many Requests"
+    },
+    {
+      "request": {
+        "open": [
+          {
+            "ref_id": "https://guides.loc.gov/federalist-papers/text-21-30",
+            "lineno": 0
+          }
+        ],
+        "response_length": "long"
+      },
+      "response": "Internal Error ()\nciteturn19view0 [wordlim: 200] Source: open({\"ref_id\":\"https://guides.loc.gov/federalist-papers/text-21-30\",\"lineno\":0}); \nFailed to fetch https://guides.loc.gov/federalist-papers/text-21-30: (429) Too Many Requests"
+    },
+    {
+      "request": {
+        "click": [
+          {
+            "ref_id": "turn7view0",
+            "id": 23
+          }
+        ],
+        "response_length": "long"
+      },
+      "response": "Internal Error ()\nciteturn23view0 [wordlim: 200] Source: click({\"ref_id\":\"turn7view0\",\"id\":23}); \nFailed to fetch https://guides.loc.gov/federalist-papers/text-21-30: (429) Too Many Requests"
+    },
+    {
+      "request": {
+        "open": [
+          {
+            "ref_id": "https://guides.loc.gov/federalist-papers/text-21-30?format=html",
+            "lineno": 0
+          }
+        ],
+        "response_length": "long"
+      },
+      "response": "Internal Error ()\nciteturn45view0 [wordlim: 200] Source: open({\"ref_id\":\"https://guides.loc.gov/federalist-papers/text-21-30?format=html\",\"lineno\":0}); \nURL https://guides.loc.gov/federalist-papers/text-21-30?format=html is not accessible via this tool."
+    },
+    {
+      "request": {
+        "open": [
+          {
+            "ref_id": "turn46search0",
+            "lineno": 0
+          }
+        ],
+        "response_length": "long"
+      },
+      "response": "Internal Error ()\nciteturn47view0 [wordlim: 200] Source: open({\"ref_id\":\"turn46search0\",\"lineno\":0}); \nFailed to fetch https://guides.loc.gov/federalist-papers/text-21-30: (429) Too Many Requests"
+    },
+    {
+      "request": {
+        "open": [
+          {
+            "ref_id": "https://guides.loc.gov/federalist-papers/text-21-30/",
+            "lineno": 0
+          }
+        ],
+        "response_length": "long"
+      },
+      "response": "Internal Error ()\nciteturn48view0 [wordlim: 200] Source: open({\"ref_id\":\"https://guides.loc.gov/federalist-papers/text-21-30/\",\"lineno\":0}); \nFailed to fetch https://guides.loc.gov/federalist-papers/text-21-30/: (521) Unknown Status Code"
+    },
+    {
+      "request": {
+        "open": [
+          {
+            "ref_id": "https://guides.loc.gov/federalist-papers/text-21-30?print=1",
+            "lineno": 0
+          }
+        ],
+        "response_length": "long"
+      },
+      "response": "Internal Error ()\nciteturn50view0 [wordlim: 200] Source: open({\"ref_id\":\"https://guides.loc.gov/federalist-papers/text-21-30?print=1\",\"lineno\":0}); \nURL https://guides.loc.gov/federalist-papers/text-21-30?print=1 is not accessible via this tool."
+    },
+    {
+      "request": {
+        "open": [
+          {
+            "ref_id": "https://guides.loc.gov/federalist-papers/text%2D21%2D30",
+            "lineno": 0
+          }
+        ],
+        "response_length": "long"
+      },
+      "response": "Internal Error ()\nciteturn51view0 [wordlim: 200] Source: open({\"ref_id\":\"https://guides.loc.gov/federalist-papers/text%2D21%2D30\",\"lineno\":0}); \nFailed to fetch https://guides.loc.gov/federalist-papers/text-21-30: (429) Too Many Requests"
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 
 This project compares common grammatical words in 8 Hamilton essays, 8 Madison essays, and the questioned No. 49. The [fixed research plan](docs/research_plan.md) defines the corpus and methods. Preserve that plan and record methodological amendments separately.
 
-The working environment is prepared. Corpus collection, counting, validation, and attribution have not started. The metadata files contain column headings only; no research findings have been produced.
+The working environment is prepared. Corpus collection is incomplete: 15 of the planned 17 essays are saved; Hamilton references Nos. 21 and 26 are still missing because their source page could not be retrieved. See the [collection record](docs/corpus_collection.md). Text preparation, counting, validation, and attribution have not started.
 
 ## Set up with uv
 
@@ -37,13 +37,13 @@ Enable Python support in IntelliJ and select the existing interpreter at `.venv/
 | Path | Contents |
 | --- | --- |
 | `config/research.toml` | Machine-readable settings copied from the fixed plan |
-| `data/raw/pages/` | Untouched source-page downloads |
+| `data/raw/pages/` | Archived source-reader responses and retrieval evidence; original HTML is unavailable |
 | `data/raw/texts/` | Untouched extracted copies, one essay per file |
 | `data/clean/` | Consistently prepared essay bodies |
 | `data/no_quotes/` | Separate copies for the quotation check |
 | `metadata/` | Source, preparation, and quotation records |
-| `src/` | Environment checker and future research scripts |
-| `tests/` | Future tests of counting and analytical correctness |
+| `src/` | Environment checker, corpus collector, and future analytical scripts |
+| `tests/` | Corpus-integrity tests and future analytical tests |
 | `results/` | Environment record and future main-analysis outputs |
 | `results/feature_check/` | Outputs from the reduced feature set |
 | `results/quotation_check/` | Outputs after identified quotations are removed |
@@ -51,6 +51,14 @@ Enable Python support in IntelliJ and select the existing interpreter at `.venv/
 | `report/` | Final report, to be written after analysis |
 
 Empty directories contain `.gitkeep` files so their layout can be committed. These files are not corpus texts. Research scripts must select actual essay files rather than treating every directory entry as evidence. Use filenames such as `H_1.txt`, `M_10.txt`, and `Q_49.txt`, without leading zeros.
+
+The raw essay files retain headings and source apparatus. They are not prepared analysis copies. `metadata/sources.csv` identifies the exact stored representation and checksums; `results/corpus_collection_manifest.json` records the current incomplete collection. Verify available material with:
+
+```sh
+uv run --locked python src/assemble_corpus.py --verify --allow-incomplete
+```
+
+The collector rejects missing essays by default. The explicit partial-verification option does not authorize changing the fixed sample or running analysis on fewer reference essays. Recovery instructions and the retrieval limitation are documented in the collection record.
 
 ## Record evidence consistently
 
@@ -78,10 +86,10 @@ uv run --locked python src/check_environment.py --manifest results/environment_r
 
 The manifest records actual Python, uv, operating system, Git revision and working-tree state, configuration, and hashes of setup inputs. A Git revision with local changes does not identify the complete source state; the recorded file hashes distinguish those changes. Snapshot creation refuses to overwrite an existing file.
 
-When analytical tests are added, run them with:
+Run the corpus-integrity tests with:
 
 ```sh
 uv run --locked python -m unittest discover -s tests -v
 ```
 
-There are no automated analytical tests yet. A discovery run reporting zero tests is not evidence that the planned method has been verified. There is no analysis or report-generation command until those scripts are implemented.
+The current tests check collection and extraction integrity. Automated tests of the planned numerical method will be added with its implementation. There is no analysis or report-generation command yet.
