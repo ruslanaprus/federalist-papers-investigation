@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "corpus_integrity": {
+    "reference_essays": 16,
+    "questioned_essays": 1,
+    "raw_files_including_layout_markers": 30,
+    "source_records": 17,
+    "historical_artifacts": 19,
+    "provenance_hash_references": 280
+  },
+  "versions": 3,
+  "count_cells_checked": 1156,
+  "frequency_cells_checked": 1156,
+  "validation_trials_checked": 48,
+  "questioned_comparisons_checked": 3,
+  "distance_values_checked": 102,
+  "fitted_models_checked": 51,
+  "decimal_precision": 50,
+  "absolute_audit_tolerance": "1E-12",
+  "audit_tolerance_is_not_an_evidence_threshold": true,
+  "numeric_quantities_checked": 5148,
+  "maximum_observed_absolute_error": "1.4260336063525451895957881312945166E-14",
+  "contexts": {
+    "ranked_features": 24,
+    "concordance_occurrences": 1414,
+    "distribution_rows": 68,
+    "annotated_examples": 96
+  }
+}

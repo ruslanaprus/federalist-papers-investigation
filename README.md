@@ -10,6 +10,8 @@ The unchanged [distance method](docs/distance_method.md) correctly classified 16
 
 Both [predefined reliability checks](docs/robustness_checks.md) are complete. Each retains Madison as the closer profile for No. 49 and correctly classifies all 16 references. The [language inspection](docs/language_inspection.md) is also complete: `on`, `in`, `at`, and `these` lead the fixed contribution ranking, with shared constructions and counterexamples documented. The final presentation report remains to be written. Earlier partial tables and blocked records are preserved under `results/history/partial_corpus_14_november_2026/`, with an archive manifest of checksums.
 
+The [implementation verification](docs/implementation_verification.md) is complete: all 95 tests passed, independent arithmetic agreed with all 48 validation trials and 3 questioned-essay comparisons, and all 51 data-separation probes passed. Earlier evidence and analytical outputs remain unchanged.
+
 ## Set up with uv
 
 Use uv and the Python release pinned in [.python-version](.python-version), currently 3.13.15. The initial setup used uv 0.13.8 on macOS. Runtime scripts use the Python standard library, so there are no external package dependencies.
@@ -160,6 +162,18 @@ Keep raw downloads unchanged. Do not add guessed values or placeholder essay row
 - `metadata/quotations.csv`: record each passage, its text-file path, location, decision, reason, and source. Offsets count Unicode characters from zero, with the end position excluded, in that exact file. Use `remove` or `retain` for decisions. Annotate prepared text before counting-time normalization; preserve the annotated file so offsets remain valid. Document ambiguity and retain ambiguous passages.
 
 Use `config/research.toml` as the shared settings source when implementing the analysis. Its research-plan checksum records the unchanged original. Altering methods requires an amendment, not an undocumented configuration edit.
+
+## Verify the implementation
+
+```sh
+uv run --locked python -m src.verification --verify
+```
+
+The command runs the complete software suite and established workflow verifiers, checks corpus and archive integrity, independently recounts words and recalculates fitted quantities with 50-digit decimal arithmetic, and tests every held-out essay and No. 49 for information leakage. It repeats the production and independent numerical checks, preserving all earlier results.
+
+The [verification report](docs/implementation_verification.md) explains the checks and limits. `results/verification/` contains all 95 test outcomes, command logs, independent distances, 51 data-separation probes, a summary, and a provenance manifest. The largest observed arithmetic discrepancy was about `1.43e-14`, within the separate audit tolerance of `1e-12`. Passing software checks does not establish accuracy on other texts or verify the supplied transcriptions against the live edition.
+
+For a first run without `results/verification/`, omit `--verify`; creation refuses to replace existing records. The script and audit tests occupy separate subdirectories so the preserved earlier implementation records remain valid.
 
 ## Verify and record the environment
 

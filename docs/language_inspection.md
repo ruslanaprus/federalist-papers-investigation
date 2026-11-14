@@ -128,3 +128,5 @@ uv run --locked python -m unittest discover -s tests -v
 ```
 
 Without `--verify`, the command creates outputs only when none already exist. It first verifies the main and reliability analyses. All 89 tests passed. Independent recalculation checked all 24 ranks and signs, all 1,414 unique source locations and context windows, quotation membership, reference distributions, and both complete provenance manifests.
+
+The subsequent [implementation verification](implementation_verification.md) passed all 95 tests and repeated the numerical and source-integrity checks. Its separate report preserves the complete verification evidence.

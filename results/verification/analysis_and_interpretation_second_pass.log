@@ -1,0 +1,14 @@
+Verified 24 main features and the predefined 20-feature check.
+Features: the, a, an, and, or, but, of, to, in, on, at, by, for, from, with, as, that, which, this, these, it, is, be, not
+No corpus texts read; no essay word counts or attribution calculated.
+Verified equal-essay means, training-only sample scaling, absolute distance, and tie rule.
+No corpus profiles fitted, validation performed, or No. 49 comparison calculated.
+Validation: 16 correct out of 16; baseline 8 out of 16.
+No. 49 was excluded from all trials and has not been compared.
+No. 49: Hamilton distance .9207457347285136, Madison distance .6913770970681954; madison.
+Known-author validation: 16 correct out of 16.
+Distances describe resemblance under the fixed method, not an authorship probability.
+feature_check: 16/16 correct; No. 49 closer to madison.
+quotation_check: 16/16 correct; No. 49 closer to madison.
+Inspected features: on, in, at, these.
+Saved or verified 1414 concordance occurrences across 17 essays and 96 annotated examples.
