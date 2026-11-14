@@ -1,0 +1,68 @@
+# macOS metadata and resource forks
+.DS_Store
+.AppleDouble/
+.LSOverride
+._*
+.Spotlight-V100/
+.Trashes/
+.fseventsd/
+.TemporaryItems/
+
+# IntelliJ IDEA project files and local build output
+.idea/
+*.iml
+*.ipr
+*.iws
+/out/
+
+# Python environments and optional repository-local uv caches
+.venv
+/venv/
+/.uv-cache/
+/.cache/uv/
+.direnv/
+
+# Python bytecode and packaging artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+/build/
+/dist/
+.eggs/
+*.egg-info/
+*.egg
+*.whl
+
+# Test, lint, type-checking, and notebook caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.pytype/
+.pyre/
+.hypothesis/
+.tox/
+.nox/
+.ipynb_checkpoints/
+
+# Coverage output; keep coverage configuration trackable
+.coverage
+.coverage.*
+/coverage.xml
+/htmlcov/
+
+# Local secrets; keep sanitized example configurations trackable
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+!.env.*.example
+
+# Editor swap files and backup copies
+*.swp
+*.swo
+*~
+
+# Keep reproducibility inputs and research evidence in version control:
+# pyproject.toml, uv.toml, uv.lock, .python-version, dependency exports,
+# data/, metadata/, results/, docs/, report/, and research notebooks.
