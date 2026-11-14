@@ -4,7 +4,7 @@
 
 This project compares common grammatical words in 8 Hamilton essays, 8 Madison essays, and the questioned No. 49. The [fixed research plan](docs/research_plan.md) defines the corpus and methods. Preserve that plan and record methodological amendments separately.
 
-The working environment is prepared. Corpus collection is incomplete: 15 of the planned 17 essays are saved; Hamilton references Nos. 21 and 26 are still missing because their source page could not be retrieved. The 15 available essays have consistently prepared copies and an exact edit log. See the [collection record](docs/corpus_collection.md) and [text preparation record](docs/text_preparation.md). Counting, validation, and attribution have not started.
+The working environment is prepared. Corpus collection is incomplete: 15 of the planned 17 essays are saved; Hamilton references Nos. 21 and 26 are still missing because their source page could not be retrieved. The 15 available essays have prepared copies, an exact edit log, and separate word-count and frequency tables. See the [collection record](docs/corpus_collection.md), [preparation record](docs/text_preparation.md), and [frequency calculation](docs/frequency_calculation.md). Author profiles, validation, and attribution have not started.
 
 ## Set up with uv
 
@@ -80,6 +80,16 @@ uv run --locked python -m src.word_features
 
 This command checks the feature list, its order, the predefined 20-word check, and implementation fingerprints without reading essay texts. It does not calculate frequencies. The feature selection remains independent of the current missing essays and any future attribution result.
 
+## Comparable frequencies
+
+`results/counts.csv` contains one row per available essay with its total word count and all 24 feature counts. `results/frequencies.csv` expresses those feature counts per 1,000 total words, retaining the denominator in `total_words`. All word tokens contribute to essay length. Each essay remains separate, including questioned No. 49. Missing essays have no placeholder rows.
+
+```sh
+uv run --locked python -m src.calculate_frequencies --verify --allow-incomplete
+```
+
+`results/frequency_manifest.json` records the incomplete corpus, actual software versions, settings, input fingerprints, and result checksums. Rates retain their computed precision; exact ratios remain recoverable from the integer counts. The [frequency record](docs/frequency_calculation.md) explains the formula, measured totals, and an observed example. The explicit partial-corpus option does not authorize reduced-sample author profiles or validation.
+
 ## Record evidence consistently
 
 Keep raw downloads unchanged. Do not add guessed values or placeholder essay rows to the CSV logs. Use UTF-8 and proper CSV quoting for passages containing commas or line breaks.
@@ -106,10 +116,10 @@ uv run --locked python src/check_environment.py --manifest results/environment_r
 
 The manifest records actual Python, uv, operating system, Git revision and working-tree state, configuration, and hashes of setup inputs. A Git revision with local changes does not identify the complete source state; the recorded file hashes distinguish those changes. Snapshot creation refuses to overwrite an existing file.
 
-Run the corpus and preparation integrity tests with:
+Run the corpus, preparation, word-rule, and frequency tests with:
 
 ```sh
 uv run --locked python -m unittest discover -s tests -v
 ```
 
-The current tests check collection, extraction, and preparation integrity. Automated tests of the planned numerical method will be added with its implementation. There is no analysis or report-generation command yet.
+The current tests check collection, extraction, preparation, tokenization, and comparable frequencies. Tests of author profiles, distance calculations, and validation will be added with those stages. Final report generation follows interpretation of the completed investigation.

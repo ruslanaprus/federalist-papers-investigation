@@ -92,6 +92,8 @@ Invented example: 20 occurrences in a 2,000-word essay produce 10 occurrences pe
 
 Use the total number of all words as the denominator, not the sum of selected-word counts. Reject empty texts. Keep full computational precision and round only displayed results. Do not pool essays into one document: each essay must have equal weight when calculating its author's average.
 
+Use `uv run --locked python -m src.calculate_frequencies --allow-incomplete` to create per-essay tables for explicitly recorded available texts. Verify saved results with the same command plus `--verify`. The command validates the prepared copies and feature record, preserves existing result files, and records missing essays in `results/frequency_manifest.json`. No placeholder rows are permitted for missing texts. Only the 24 word columns are attribution features; essay number, role, and total words are metadata. See `docs/frequency_calculation.md`.
+
 ## 7. Define the distance precisely
 
 For each word, calculate each author's average essay frequency. Calculate its sample standard deviation across all training essays together, using denominator `n - 1`. Standard deviation describes how much the essay frequencies vary around their overall average.

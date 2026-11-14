@@ -60,6 +60,10 @@ The checker reads the plan, configuration, and implementation files. It does not
 
 No essay counts, frequencies, distances, or predictions have been calculated. Feature specification is complete even though the fixed corpus is still missing Nos. 21 and 26; that gap must be resolved before the planned full-corpus analysis.
 
+## Subsequent frequency calculation
+
+After this feature record was fixed, Step 6 calculated separate counts and frequencies for the 15 available essays on 14 November 2026. The selection and rules above remained unchanged. See the [frequency calculation record](frequency_calculation.md). Author profiles and comparisons remain later stages.
+
 ## Reference
 
 Mosteller, F., and Wallace, D. L. (1963). [Inference in an Authorship Problem: A Comparative Study of Discrimination Methods Applied to the Authorship of the Disputed Federalist Papers](https://doi.org/10.1080/01621459.1963.10500849). *Journal of the American Statistical Association*, 58(302), 275–309.
