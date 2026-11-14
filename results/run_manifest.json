@@ -1,0 +1,167 @@
+{
+  "activity": "environment_setup_check",
+  "recorded_at": "2026-11-14T22:41:45+02:00",
+  "analysis_performed_by_this_command": false,
+  "python": {
+    "implementation": "CPython",
+    "version": "3.13.15",
+    "executable": "/Users/ruslanaprus/Documents/Projects/federalist-papers/.venv/bin/python"
+  },
+  "uv_version": "uv 0.13.8 (Homebrew 2026-11-12 aarch64-apple-darwin)",
+  "platform": {
+    "system": "Darwin",
+    "release": "24.6.0",
+    "machine": "arm64",
+    "macos_version": "15.7.9"
+  },
+  "git": {
+    "commit": "62a54fcd608e775498f7deebbcefa7dc64b71569",
+    "working_tree_dirty": true,
+    "status_porcelain": [
+      " M AGENTS.md",
+      "?? .python-version",
+      "?? README.md",
+      "?? config/research.toml",
+      "?? data/clean/.gitkeep",
+      "?? data/no_quotes/.gitkeep",
+      "?? data/raw/pages/.gitkeep",
+      "?? data/raw/texts/.gitkeep",
+      "?? metadata/preparation.csv",
+      "?? metadata/quotations.csv",
+      "?? metadata/sources.csv",
+      "?? pyproject.toml",
+      "?? report/.gitkeep",
+      "?? results/feature_check/.gitkeep",
+      "?? results/quotation_check/.gitkeep",
+      "?? src/check_environment.py",
+      "?? tests/.gitkeep",
+      "?? uv.lock"
+    ]
+  },
+  "input_sha256": {
+    ".gitignore": "3666d0f944585efd55ee6e0629e95fe7bae3e994756d48628ed33aa7a8873aa2",
+    ".python-version": "861b3dd8083d28f336ef70f6755bc399538ddad627b1d095820ca34cb953cf14",
+    "AGENTS.md": "29603e02ba594404e0be55820935b3eeccb9de2a964c124b1edd3f99f5bf9b3b",
+    "README.md": "97a9a1033c421f6f9e06b405cfcfb6a1dd669004986a6b743b949641b99d7ba9",
+    "pyproject.toml": "d23a95cd305a399357de6af25eb80245bc4c2917afabf274de47042af5a56bf6",
+    "uv.lock": "e75b80aff7ba087f107fdbf1e1ca0105002dc67e2cf8f8d9070703e7c8aa1780",
+    "config/research.toml": "c5e3b467d704fe201c8060b3cbdfc11d1e682f08e402a01b2e7dc5bc9efa17d9",
+    "docs/research_plan.md": "028809cdfe7990cb2620dd39b7d74607829e4fafe652fb0c704012c5af4780f4",
+    "metadata/sources.csv": "2e5b0a0fbc52ea68395056ea0577a0d5025fce34614f8267a5fe7abc92049a6e",
+    "metadata/preparation.csv": "55c85ee276dbea4918ffc4837a52e9487220ceb158c03df993d62630863eca12",
+    "metadata/quotations.csv": "360d596e90ab2b0242d9cb99f712167670c7b8968f6b85e7a9b26ece7e866b91",
+    "src/check_environment.py": "7197dfc040cd5eb863ff5bfe5be35392ada14303afe2485b3fc6615b4222206d"
+  },
+  "metadata_record_counts": {
+    "metadata/sources.csv": 0,
+    "metadata/preparation.csv": 0,
+    "metadata/quotations.csv": 0
+  },
+  "settings": {
+    "research": {
+      "question": "Does Federalist No. 49 resemble Hamilton's or Madison's writing more closely in its use of common grammatical words?",
+      "plan_path": "docs/research_plan.md",
+      "plan_sha256": "028809cdfe7990cb2620dd39b7d74607829e4fafe652fb0c704012c5af4780f4",
+      "source_collection": "https://guides.loc.gov/federalist-papers/full-text"
+    },
+    "corpus": {
+      "hamilton": [
+        1,
+        6,
+        21,
+        26,
+        31,
+        59,
+        70,
+        78
+      ],
+      "madison": [
+        10,
+        14,
+        37,
+        39,
+        41,
+        43,
+        46,
+        48
+      ],
+      "questioned": 49
+    },
+    "counting": {
+      "encoding": "utf-8",
+      "lowercase": true,
+      "normalize_curly_apostrophes": true,
+      "token_pattern": "[a-z]+(?:'[a-z]+)*",
+      "expand_contractions": false,
+      "remove_stopwords": false,
+      "retain_quotations": true,
+      "frequency_per_words": 1000,
+      "features": [
+        "the",
+        "a",
+        "an",
+        "and",
+        "or",
+        "but",
+        "of",
+        "to",
+        "in",
+        "on",
+        "at",
+        "by",
+        "for",
+        "from",
+        "with",
+        "as",
+        "that",
+        "which",
+        "this",
+        "these",
+        "it",
+        "is",
+        "be",
+        "not"
+      ]
+    },
+    "comparison": {
+      "method": "mean_standardized_absolute_distance",
+      "profile_weighting": "equal_essay",
+      "standard_deviation": "sample_across_training_essays",
+      "standard_deviation_ddof": 1,
+      "constant_features": "exclude",
+      "no_usable_features": "error",
+      "tie_absolute_tolerance": 1e-12,
+      "tie_label": "inconclusive"
+    },
+    "validation": {
+      "method": "leave_one_essay_out",
+      "fit_scaling_within_each_trial": true,
+      "count_inconclusive_as_correct": false,
+      "run_before_questioned_comparison": true
+    },
+    "robustness": {
+      "feature_check": {
+        "remove_features": [
+          "the",
+          "a",
+          "of",
+          "and"
+        ],
+        "change_total_word_denominator": false,
+        "repeat_validation": true
+      },
+      "quotation_check": {
+        "use_original_features": true,
+        "retain_ambiguous_quotations": true,
+        "replace_removed_spans_with_spaces": true,
+        "recount_total_words": true,
+        "repeat_validation": true
+      }
+    },
+    "interpretation": {
+      "feature_count": 4,
+      "rank_by": "absolute_difference_in_standardized_contributions",
+      "ranking_ties": "alphabetical"
+    }
+  }
+}

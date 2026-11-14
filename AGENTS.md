@@ -16,7 +16,7 @@ Before calculating frequencies, save a dated `docs/research_plan.md` specifying 
 
 ## 2. Organize the working environment
 
-Use the following layout as implementation proceeds. These paths describe required deliverables, not files already supplied:
+Use the following layout. Add source texts and analytical outputs during their corresponding research stages:
 
 | Path | Purpose |
 | --- | --- |
@@ -32,7 +32,7 @@ Use the following layout as implementation proceeds. These paths describe requir
 | `docs/` | Research plan and reproducibility instructions |
 | `report/report.md` | Final report ready for presentation |
 
-Use Python 3 with the standard library where practical. Create an isolated environment with `python3 -m venv .venv` and activate it with `source .venv/bin/activate`. Record `python3 --version`, operating system, script revision, and settings in `results/run_manifest.json`. Pin any added dependencies and document installation and actual execution commands in `README.md`. Keep `.venv/` and credentials outside version control.
+Use Python 3 with uv and the standard library where practical. Create or synchronize the isolated `.venv/` environment with `uv sync --locked`, using the interpreter pinned in `.python-version`. Run commands through `uv run --locked python`; shell activation is optional. Record the Python and uv versions, operating system, script revision, and settings in `results/run_manifest.json`. Keep `pyproject.toml`, `.python-version`, and `uv.lock` in version control. Pin any added dependencies and document actual execution commands in `README.md`. Keep `.venv/`, `.uv-cache/`, and credentials outside version control. Check setup with `uv run --locked python src/check_environment.py`; save new snapshots with its `--manifest` option, preserving earlier records.
 
 Use descriptive `snake_case` names and 4-space indentation in Python. Keep data preparation separate from analysis. Scripts must read raw data without modifying it and produce deterministic outputs. Commit focused changes with imperative subjects, such as `Add essay frequency extraction`. In review descriptions, identify changes to data, methods, and verification.
 
@@ -154,7 +154,7 @@ Save examples with essay numbers and locations in `results/concordances.csv`. Ex
 
 ## 12. Verify the implementation
 
-Use `unittest` and run `python3 -m unittest discover -s tests` once tests exist. Test the consequential rules: apostrophes and whole-word counting, normalization, equal essay weighting, sample standard deviation, omitted constant features, ties, and exclusion of held-out and questioned texts from fitting. Check that changing a held-out essay cannot change its fitted training profiles or scaling.
+Use `unittest` and run `uv run --locked python -m unittest discover -s tests -v` once tests exist. Test the consequential rules: apostrophes and whole-word counting, normalization, equal essay weighting, sample standard deviation, omitted constant features, ties, and exclusion of held-out and questioned texts from fitting. Check that changing a held-out essay cannot change its fitted training profiles or scaling.
 
 Confirm there are exactly 16 reference essays and 1 questioned essay, all required metadata exist, saved raw checksums remain unchanged, and each validation run contains 16 unique trials. Repeating a run on identical inputs must produce identical numerical results. Document actual verification outcomes; do not describe unrun checks as passed.
 

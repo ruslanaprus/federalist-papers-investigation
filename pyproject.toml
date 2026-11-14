@@ -1,0 +1,11 @@
+[project]
+name = "federalist-papers"
+version = "0.1.0"
+description = "A reproducible function-word authorship investigation of Federalist No. 49"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[tool.uv]
+package = false
+cache-dir = ".uv-cache"

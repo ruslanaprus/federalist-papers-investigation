@@ -1,0 +1,61 @@
+# Fixed analytical settings from docs/research_plan.md, version 1.
+# Record methodological amendments separately before changing these settings.
+
+[research]
+question = "Does Federalist No. 49 resemble Hamilton's or Madison's writing more closely in its use of common grammatical words?"
+plan_path = "docs/research_plan.md"
+plan_sha256 = "028809cdfe7990cb2620dd39b7d74607829e4fafe652fb0c704012c5af4780f4"
+source_collection = "https://guides.loc.gov/federalist-papers/full-text"
+
+[corpus]
+hamilton = [1, 6, 21, 26, 31, 59, 70, 78]
+madison = [10, 14, 37, 39, 41, 43, 46, 48]
+questioned = 49
+
+[counting]
+encoding = "utf-8"
+lowercase = true
+normalize_curly_apostrophes = true
+token_pattern = "[a-z]+(?:'[a-z]+)*"
+expand_contractions = false
+remove_stopwords = false
+retain_quotations = true
+frequency_per_words = 1000
+features = [
+    "the", "a", "an", "and", "or", "but", "of", "to", "in", "on", "at", "by",
+    "for", "from", "with", "as", "that", "which", "this", "these", "it", "is",
+    "be", "not",
+]
+
+[comparison]
+method = "mean_standardized_absolute_distance"
+profile_weighting = "equal_essay"
+standard_deviation = "sample_across_training_essays"
+standard_deviation_ddof = 1
+constant_features = "exclude"
+no_usable_features = "error"
+tie_absolute_tolerance = 1e-12
+tie_label = "inconclusive"
+
+[validation]
+method = "leave_one_essay_out"
+fit_scaling_within_each_trial = true
+count_inconclusive_as_correct = false
+run_before_questioned_comparison = true
+
+[robustness.feature_check]
+remove_features = ["the", "a", "of", "and"]
+change_total_word_denominator = false
+repeat_validation = true
+
+[robustness.quotation_check]
+use_original_features = true
+retain_ambiguous_quotations = true
+replace_removed_spans_with_spaces = true
+recount_total_words = true
+repeat_validation = true
+
+[interpretation]
+feature_count = 4
+rank_by = "absolute_difference_in_standardized_contributions"
+ranking_ties = "alphabetical"
