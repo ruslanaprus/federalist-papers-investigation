@@ -6,7 +6,7 @@
 
 > Does Federalist No. 49 resemble Hamilton's or Madison's writing more closely in its use of common grammatical words?
 
-Under the fixed 24-word method, No. 49 is closer to Madison's reference profile. The known-author method correctly classified all 16 reference essays before this comparison was performed. The result provides tentative support for a Madison resemblance within this particular corpus. Both [predefined reliability checks](robustness_checks.md) have since retained this assignment, each with 16 correct validation assignments. Detailed concordance interpretation remains to be completed.
+Under the fixed 24-word method, No. 49 is closer to Madison's reference profile. The known-author method correctly classified all 16 reference essays before this comparison was performed. The result provides tentative support for a Madison resemblance within this particular corpus. Both [predefined reliability checks](robustness_checks.md) have since retained this assignment, each with 16 correct validation assignments. The completed [language inspection](language_inspection.md) connects the leading contributions to shared grammatical constructions, quotations, topic repetition, and counterexamples.
 
 ## Corpus and preparation
 
@@ -58,7 +58,7 @@ These distances are measures of resemblance. They do not provide an authorship p
 
 Under the specified function-word method, No. 49 was closer to Madison's reference profile. The method correctly classified 16 of 16 known-author essays. This supports a tentative resemblance finding within the fixed comparison, while the small classroom sample, possible topic effects, source editing, and unverified wording of the two supplied transcriptions restrict generalization.
 
-The completed [reduced-feature and quotation-removal checks](robustness_checks.md) both retain Madison as the closer profile and correctly classify all 16 references. This establishes stability under those specified changes within the fixed sample; some individual validation comparisons remain close. Concordance inspection is still needed to connect the numerical result to the actual language.
+The completed [reduced-feature and quotation-removal checks](robustness_checks.md) both retain Madison as the closer profile and correctly classify all 16 references. This establishes stability under those specified changes within the fixed sample; some individual validation comparisons remain close. The completed [concordance inspection](language_inspection.md) identifies `on`, `in`, `at`, and `these` as the leading features and documents both supporting patterns and counterexamples without changing the comparison.
 
 ## Reproducibility
 

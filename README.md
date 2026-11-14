@@ -8,7 +8,7 @@ All 17 planned essays are collected, prepared, and counted. Fifteen derive from 
 
 The unchanged [distance method](docs/distance_method.md) correctly classified 16 of 16 reference essays in [leave-one-essay-out validation](docs/validation.md), with 8 correct for each author. No. 49 is closer to Madison's profile: distance about `.691377`, compared with `.920746` for Hamilton. These are resemblance measures, not authorship probabilities. The [comparison report](docs/questioned_comparison.md) gives the measured results and limitations.
 
-Both [predefined reliability checks](docs/robustness_checks.md) are complete. Each retains Madison as the closer profile for No. 49 and correctly classifies all 16 references. Concordance interpretation remains pending. Earlier partial tables and blocked records are preserved under `results/history/partial_corpus_14_november_2026/`, with an archive manifest of checksums.
+Both [predefined reliability checks](docs/robustness_checks.md) are complete. Each retains Madison as the closer profile for No. 49 and correctly classifies all 16 references. The [language inspection](docs/language_inspection.md) is also complete: `on`, `in`, `at`, and `these` lead the fixed contribution ranking, with shared constructions and counterexamples documented. The final presentation report remains to be written. Earlier partial tables and blocked records are preserved under `results/history/partial_corpus_14_november_2026/`, with an archive manifest of checksums.
 
 ## Set up with uv
 
@@ -137,6 +137,20 @@ The normal command without `--verify` creates outputs only when they do not alre
 
 `results/feature_check/` and `results/quotation_check/` contain separate counts, frequencies, validation trials, fitted quantities, and No. 49 comparisons. `results/robustness_summary.json` compares all 3 versions; `results/robustness_manifest.json` records reproducibility fingerprints. Main-analysis outputs remain preserved. Distances from different variants do not measure calibrated changes in evidential strength.
 
+## Inspect the language behind the scores
+
+The predefined ranking selects `on`, `in`, `at`, and `these` for interpretation. The first 3 favor Madison; `these` favors Hamilton. The [language report](docs/language_inspection.md) examines frequencies across every essay, quotations, grammatical uses, topic repetition, and counterexamples. It explains why resemblance to an author average is not an exclusive author signature.
+
+```sh
+uv run --locked python -m src.interpretation --verify
+```
+
+Without `--verify`, the command creates new outputs and refuses to replace existing ones. It verifies the completed main and reliability analyses before extracting contexts. It uses the original tokenizer, not AntConc, and fits no new attribution model.
+
+`results/feature_contributions.csv` ranks all 24 features. `results/concordances.csv` preserves all 1,414 selected-word occurrences with exact character locations, source links, quotation status, and up to 8 words on either side. The 96 annotated examples include every selected-word occurrence in No. 49 and material from every reference essay. Their notes and selection reasons are in `metadata/concordance_examples.csv`.
+
+`results/feature_distribution.csv`, `results/context_patterns.csv`, and `results/interpretation_summary.json` preserve descriptive evidence. Phrase searches and linguistic labels were developed during inspection; they are not additional authorship tests. `results/interpretation_manifest.json` fingerprints inputs, code, tests, and outputs. Earlier numerical results remain preserved.
+
 ## Record evidence consistently
 
 Keep raw downloads unchanged. Do not add guessed values or placeholder essay rows to the CSV logs. Use UTF-8 and proper CSV quoting for passages containing commas or line breaks.
@@ -169,4 +183,4 @@ Run the corpus, preparation, word-rule, frequency, distance, validation, and com
 uv run --locked python -m unittest discover -s tests -v
 ```
 
-The tests check collection, extraction, preparation, tokenization, comparable frequencies, distance arithmetic, validation, and questioned-text comparison. Method tests use invented examples and do not supply empirical validation accuracy or an attribution finding. Final report generation follows interpretation of the completed investigation.
+The tests check collection, extraction, preparation, tokenization, comparable frequencies, distance arithmetic, validation, questioned-text comparison, reliability checks, contribution ranking, and concordance locations. Method tests use invented examples and do not supply empirical validation accuracy or an attribution finding. Final report generation follows interpretation of the completed investigation.

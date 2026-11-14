@@ -40,4 +40,4 @@ The partial collection, 15-essay tables, blocked statuses, relevant code, and pr
 uv run --locked python src/assemble_corpus.py --verify
 ```
 
-The complete corpus has now been prepared and counted. Full 16-trial [validation](validation.md) and the [No. 49 comparison](questioned_comparison.md) followed under the unchanged method. Both [reliability checks](robustness_checks.md) are complete and retain the same assignment. Linguistic interpretation remains pending.
+The complete corpus has now been prepared and counted. Full 16-trial [validation](validation.md) and the [No. 49 comparison](questioned_comparison.md) followed under the unchanged method. Both [reliability checks](robustness_checks.md) are complete and retain the same assignment. The [language inspection](language_inspection.md) is complete, including contexts and counterexamples from the fixed corpus.

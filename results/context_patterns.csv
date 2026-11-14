@@ -1,0 +1,409 @@
+phrase,essay_number,role,count,first_word_in_removed_span,first_word_in_retained_span
+on the other hand,1,hamilton,1,0,0
+on the side of,1,hamilton,0,0,0
+on one side,1,hamilton,0,0,0
+on the same side,1,hamilton,0,0,0
+on this subject,1,hamilton,0,0,0
+on which,1,hamilton,1,0,0
+on whom,1,hamilton,0,0,0
+on its side,1,hamilton,0,0,0
+in time of peace,1,hamilton,0,0,0
+in the hands of,1,hamilton,0,0,0
+in the first place,1,hamilton,0,0,0
+in the next place,1,hamilton,0,0,0
+in proportion to,1,hamilton,0,0,0
+in favor of,1,hamilton,0,0,0
+in order to,1,hamilton,0,0,0
+at the same time,1,hamilton,1,0,0
+at least,1,hamilton,3,0,0
+at once,1,hamilton,0,0,0
+at large,1,hamilton,0,0,0
+at the expense of,1,hamilton,1,0,0
+these advantages,1,hamilton,0,0,0
+these states,1,hamilton,0,0,0
+these circumstances,1,hamilton,0,0,0
+these considerations,1,hamilton,0,0,0
+on the other hand,6,hamilton,0,0,0
+on the side of,6,hamilton,0,0,0
+on one side,6,hamilton,0,0,0
+on the same side,6,hamilton,0,0,0
+on this subject,6,hamilton,1,0,0
+on which,6,hamilton,0,0,0
+on whom,6,hamilton,0,0,0
+on its side,6,hamilton,0,0,0
+in time of peace,6,hamilton,0,0,0
+in the hands of,6,hamilton,0,0,0
+in the first place,6,hamilton,0,0,0
+in the next place,6,hamilton,0,0,0
+in proportion to,6,hamilton,0,0,0
+in favor of,6,hamilton,0,0,0
+in order to,6,hamilton,0,0,0
+at the same time,6,hamilton,1,0,0
+at least,6,hamilton,0,0,0
+at once,6,hamilton,1,0,0
+at large,6,hamilton,0,0,0
+at the expense of,6,hamilton,2,1,0
+these advantages,6,hamilton,0,0,0
+these states,6,hamilton,1,0,0
+these circumstances,6,hamilton,0,0,0
+these considerations,6,hamilton,0,0,0
+on the other hand,10,madison,2,0,0
+on the side of,10,madison,0,0,0
+on one side,10,madison,1,0,0
+on the same side,10,madison,0,0,0
+on this subject,10,madison,0,0,0
+on which,10,madison,0,0,0
+on whom,10,madison,0,0,0
+on its side,10,madison,0,0,0
+in time of peace,10,madison,0,0,0
+in the hands of,10,madison,0,0,0
+in the first place,10,madison,1,0,0
+in the next place,10,madison,1,0,0
+in proportion to,10,madison,3,0,0
+in favor of,10,madison,1,0,0
+in order to,10,madison,2,0,0
+at the same time,10,madison,5,0,0
+at least,10,madison,0,0,0
+at once,10,madison,0,0,0
+at large,10,madison,0,0,0
+at the expense of,10,madison,0,0,0
+these advantages,10,madison,0,0,0
+these states,10,madison,0,0,0
+these circumstances,10,madison,0,0,0
+these considerations,10,madison,0,0,0
+on the other hand,14,madison,0,0,0
+on the side of,14,madison,0,0,0
+on one side,14,madison,1,0,0
+on the same side,14,madison,0,0,0
+on this subject,14,madison,1,0,0
+on which,14,madison,2,0,0
+on whom,14,madison,0,0,0
+on its side,14,madison,0,0,0
+in time of peace,14,madison,0,0,0
+in the hands of,14,madison,0,0,0
+in the first place,14,madison,1,0,0
+in the next place,14,madison,0,0,0
+in proportion to,14,madison,0,0,0
+in favor of,14,madison,1,0,0
+in order to,14,madison,2,0,0
+at the same time,14,madison,2,0,0
+at least,14,madison,0,0,0
+at once,14,madison,0,0,0
+at large,14,madison,0,0,0
+at the expense of,14,madison,0,0,0
+these advantages,14,madison,0,0,0
+these states,14,madison,0,0,0
+these circumstances,14,madison,0,0,0
+these considerations,14,madison,1,0,0
+on the other hand,21,hamilton,0,0,0
+on the side of,21,hamilton,0,0,0
+on one side,21,hamilton,0,0,0
+on the same side,21,hamilton,0,0,0
+on this subject,21,hamilton,0,0,0
+on which,21,hamilton,0,0,0
+on whom,21,hamilton,0,0,0
+on its side,21,hamilton,0,0,0
+in time of peace,21,hamilton,0,0,0
+in the hands of,21,hamilton,1,0,0
+in the first place,21,hamilton,0,0,0
+in the next place,21,hamilton,0,0,0
+in proportion to,21,hamilton,0,0,0
+in favor of,21,hamilton,0,0,0
+in order to,21,hamilton,0,0,0
+at the same time,21,hamilton,1,0,0
+at least,21,hamilton,0,0,0
+at once,21,hamilton,1,0,0
+at large,21,hamilton,1,0,0
+at the expense of,21,hamilton,0,0,0
+these advantages,21,hamilton,0,0,0
+these states,21,hamilton,0,0,0
+these circumstances,21,hamilton,1,0,0
+these considerations,21,hamilton,0,0,0
+on the other hand,26,hamilton,0,0,0
+on the side of,26,hamilton,0,0,0
+on one side,26,hamilton,0,0,0
+on the same side,26,hamilton,0,0,0
+on this subject,26,hamilton,0,0,0
+on which,26,hamilton,0,0,0
+on whom,26,hamilton,0,0,0
+on its side,26,hamilton,0,0,0
+in time of peace,26,hamilton,9,1,0
+in the hands of,26,hamilton,0,0,0
+in the first place,26,hamilton,0,0,0
+in the next place,26,hamilton,0,0,0
+in proportion to,26,hamilton,0,0,0
+in favor of,26,hamilton,1,0,0
+in order to,26,hamilton,0,0,0
+at the same time,26,hamilton,0,0,0
+at least,26,hamilton,1,0,0
+at once,26,hamilton,1,0,0
+at large,26,hamilton,0,0,0
+at the expense of,26,hamilton,0,0,0
+these advantages,26,hamilton,0,0,0
+these states,26,hamilton,1,0,0
+these circumstances,26,hamilton,0,0,0
+these considerations,26,hamilton,0,0,0
+on the other hand,31,hamilton,0,0,0
+on the side of,31,hamilton,1,0,0
+on one side,31,hamilton,0,0,0
+on the same side,31,hamilton,0,0,0
+on this subject,31,hamilton,0,0,0
+on which,31,hamilton,1,0,0
+on whom,31,hamilton,0,0,0
+on its side,31,hamilton,0,0,0
+in time of peace,31,hamilton,0,0,0
+in the hands of,31,hamilton,0,0,0
+in the first place,31,hamilton,0,0,0
+in the next place,31,hamilton,0,0,0
+in proportion to,31,hamilton,0,0,0
+in favor of,31,hamilton,0,0,0
+in order to,31,hamilton,1,0,1
+at the same time,31,hamilton,0,0,0
+at least,31,hamilton,1,0,1
+at once,31,hamilton,0,0,0
+at large,31,hamilton,0,0,0
+at the expense of,31,hamilton,0,0,0
+these advantages,31,hamilton,0,0,0
+these states,31,hamilton,0,0,0
+these circumstances,31,hamilton,0,0,0
+these considerations,31,hamilton,0,0,0
+on the other hand,37,madison,1,0,0
+on the side of,37,madison,0,0,0
+on one side,37,madison,2,0,0
+on the same side,37,madison,0,0,0
+on this subject,37,madison,0,0,0
+on which,37,madison,0,0,0
+on whom,37,madison,0,0,0
+on its side,37,madison,0,0,0
+in time of peace,37,madison,0,0,0
+in the hands of,37,madison,0,0,0
+in the first place,37,madison,0,0,0
+in the next place,37,madison,0,0,0
+in proportion to,37,madison,0,0,0
+in favor of,37,madison,1,0,0
+in order to,37,madison,0,0,0
+at the same time,37,madison,0,0,0
+at least,37,madison,0,0,0
+at once,37,madison,1,0,0
+at large,37,madison,0,0,0
+at the expense of,37,madison,0,0,0
+these advantages,37,madison,0,0,0
+these states,37,madison,0,0,0
+these circumstances,37,madison,0,0,0
+these considerations,37,madison,1,0,0
+on the other hand,39,madison,2,0,0
+on the side of,39,madison,0,0,0
+on one side,39,madison,0,0,0
+on the same side,39,madison,0,0,0
+on this subject,39,madison,0,0,0
+on which,39,madison,3,0,0
+on whom,39,madison,0,0,0
+on its side,39,madison,0,0,0
+in time of peace,39,madison,0,0,0
+in the hands of,39,madison,0,0,0
+in the first place,39,madison,0,0,0
+in the next place,39,madison,0,0,0
+in proportion to,39,madison,0,0,0
+in favor of,39,madison,0,0,0
+in order to,39,madison,1,0,0
+at the same time,39,madison,0,0,0
+at least,39,madison,3,0,0
+at once,39,madison,1,0,0
+at large,39,madison,0,0,0
+at the expense of,39,madison,0,0,0
+these advantages,39,madison,0,0,0
+these states,39,madison,0,0,0
+these circumstances,39,madison,0,0,0
+these considerations,39,madison,0,0,0
+on the other hand,41,madison,0,0,0
+on the side of,41,madison,0,0,0
+on one side,41,madison,0,0,0
+on the same side,41,madison,0,0,0
+on this subject,41,madison,3,0,0
+on which,41,madison,0,0,0
+on whom,41,madison,0,0,0
+on its side,41,madison,0,0,0
+in time of peace,41,madison,1,0,0
+in the hands of,41,madison,0,0,0
+in the first place,41,madison,0,0,0
+in the next place,41,madison,0,0,0
+in proportion to,41,madison,0,0,0
+in favor of,41,madison,0,0,0
+in order to,41,madison,0,0,0
+at the same time,41,madison,1,0,0
+at least,41,madison,1,0,0
+at once,41,madison,1,0,0
+at large,41,madison,0,0,0
+at the expense of,41,madison,0,0,0
+these advantages,41,madison,0,0,0
+these states,41,madison,0,0,0
+these circumstances,41,madison,0,0,0
+these considerations,41,madison,1,0,0
+on the other hand,43,madison,0,0,0
+on the side of,43,madison,0,0,0
+on one side,43,madison,4,0,0
+on the same side,43,madison,2,0,0
+on this subject,43,madison,0,0,0
+on which,43,madison,2,0,0
+on whom,43,madison,0,0,0
+on its side,43,madison,0,0,0
+in time of peace,43,madison,0,0,0
+in the hands of,43,madison,1,0,0
+in the first place,43,madison,0,0,0
+in the next place,43,madison,0,0,0
+in proportion to,43,madison,0,0,0
+in favor of,43,madison,2,0,0
+in order to,43,madison,0,0,0
+at the same time,43,madison,0,0,0
+at least,43,madison,0,0,0
+at once,43,madison,1,0,0
+at large,43,madison,0,0,0
+at the expense of,43,madison,0,0,0
+these advantages,43,madison,0,0,0
+these states,43,madison,0,0,0
+these circumstances,43,madison,0,0,0
+these considerations,43,madison,0,0,0
+on the other hand,46,madison,1,0,0
+on the side of,46,madison,4,0,0
+on one side,46,madison,0,0,0
+on the same side,46,madison,1,0,0
+on this subject,46,madison,1,0,0
+on which,46,madison,1,0,0
+on whom,46,madison,1,0,0
+on its side,46,madison,0,0,0
+in time of peace,46,madison,0,0,0
+in the hands of,46,madison,0,0,0
+in the first place,46,madison,0,0,0
+in the next place,46,madison,0,0,0
+in proportion to,46,madison,0,0,0
+in favor of,46,madison,1,0,0
+in order to,46,madison,0,0,0
+at the same time,46,madison,0,0,0
+at least,46,madison,0,0,0
+at once,46,madison,0,0,0
+at large,46,madison,1,0,0
+at the expense of,46,madison,1,0,0
+these advantages,46,madison,0,0,0
+these states,46,madison,0,0,0
+these circumstances,46,madison,0,0,0
+these considerations,46,madison,0,0,0
+on the other hand,48,madison,0,0,0
+on the side of,48,madison,0,0,0
+on one side,48,madison,0,0,0
+on the same side,48,madison,0,0,0
+on this subject,48,madison,2,0,0
+on which,48,madison,0,0,0
+on whom,48,madison,0,0,0
+on its side,48,madison,0,0,0
+in time of peace,48,madison,0,0,0
+in the hands of,48,madison,1,0,0
+in the first place,48,madison,0,0,0
+in the next place,48,madison,1,0,0
+in proportion to,48,madison,0,0,0
+in favor of,48,madison,0,0,0
+in order to,48,madison,1,0,0
+at the same time,48,madison,2,1,0
+at least,48,madison,0,0,0
+at once,48,madison,2,0,0
+at large,48,madison,0,0,0
+at the expense of,48,madison,0,0,0
+these advantages,48,madison,0,0,0
+these states,48,madison,0,0,0
+these circumstances,48,madison,0,0,0
+these considerations,48,madison,0,0,0
+on the other hand,49,questioned,1,0,0
+on the side of,49,questioned,0,0,0
+on one side,49,questioned,0,0,0
+on the same side,49,questioned,0,0,0
+on this subject,49,questioned,0,0,0
+on which,49,questioned,1,0,0
+on whom,49,questioned,1,0,0
+on its side,49,questioned,1,0,0
+in time of peace,49,questioned,0,0,0
+in the hands of,49,questioned,1,0,0
+in the first place,49,questioned,1,0,0
+in the next place,49,questioned,1,0,0
+in proportion to,49,questioned,1,0,0
+in favor of,49,questioned,1,0,0
+in order to,49,questioned,1,0,0
+at the same time,49,questioned,0,0,0
+at least,49,questioned,0,0,0
+at once,49,questioned,0,0,0
+at large,49,questioned,1,0,0
+at the expense of,49,questioned,1,0,0
+these advantages,49,questioned,1,0,0
+these states,49,questioned,0,0,0
+these circumstances,49,questioned,0,0,0
+these considerations,49,questioned,0,0,0
+on the other hand,59,hamilton,0,0,0
+on the side of,59,hamilton,0,0,0
+on one side,59,hamilton,0,0,0
+on the same side,59,hamilton,0,0,0
+on this subject,59,hamilton,0,0,0
+on which,59,hamilton,0,0,0
+on whom,59,hamilton,0,0,0
+on its side,59,hamilton,0,0,0
+in time of peace,59,hamilton,0,0,0
+in the hands of,59,hamilton,2,0,0
+in the first place,59,hamilton,0,0,0
+in the next place,59,hamilton,0,0,0
+in proportion to,59,hamilton,0,0,0
+in favor of,59,hamilton,0,0,0
+in order to,59,hamilton,0,0,0
+at the same time,59,hamilton,0,0,0
+at least,59,hamilton,0,0,0
+at once,59,hamilton,0,0,0
+at large,59,hamilton,0,0,0
+at the expense of,59,hamilton,0,0,0
+these advantages,59,hamilton,0,0,0
+these states,59,hamilton,0,0,0
+these circumstances,59,hamilton,1,0,0
+these considerations,59,hamilton,0,0,0
+on the other hand,70,hamilton,0,0,0
+on the side of,70,hamilton,0,0,0
+on one side,70,hamilton,0,0,0
+on the same side,70,hamilton,0,0,0
+on this subject,70,hamilton,0,0,0
+on which,70,hamilton,0,0,0
+on whom,70,hamilton,2,0,0
+on its side,70,hamilton,0,0,0
+in time of peace,70,hamilton,0,0,0
+in the hands of,70,hamilton,3,0,0
+in the first place,70,hamilton,0,0,0
+in the next place,70,hamilton,0,0,0
+in proportion to,70,hamilton,0,0,0
+in favor of,70,hamilton,1,0,0
+in order to,70,hamilton,0,0,0
+at the same time,70,hamilton,1,0,0
+at least,70,hamilton,1,0,0
+at once,70,hamilton,0,0,0
+at large,70,hamilton,0,0,0
+at the expense of,70,hamilton,0,0,0
+these advantages,70,hamilton,0,0,0
+these states,70,hamilton,0,0,0
+these circumstances,70,hamilton,0,0,0
+these considerations,70,hamilton,1,0,0
+on the other hand,78,hamilton,0,0,0
+on the side of,78,hamilton,0,0,0
+on one side,78,hamilton,0,0,0
+on the same side,78,hamilton,0,0,0
+on this subject,78,hamilton,0,0,0
+on which,78,hamilton,1,0,0
+on whom,78,hamilton,0,0,0
+on its side,78,hamilton,0,0,0
+in time of peace,78,hamilton,0,0,0
+in the hands of,78,hamilton,0,0,0
+in the first place,78,hamilton,0,0,0
+in the next place,78,hamilton,0,0,0
+in proportion to,78,hamilton,0,0,0
+in favor of,78,hamilton,0,0,0
+in order to,78,hamilton,0,0,0
+at the same time,78,hamilton,0,0,0
+at least,78,hamilton,0,0,0
+at once,78,hamilton,0,0,0
+at large,78,hamilton,0,0,0
+at the expense of,78,hamilton,0,0,0
+these advantages,78,hamilton,0,0,0
+these states,78,hamilton,0,0,0
+these circumstances,78,hamilton,0,0,0
+these considerations,78,hamilton,1,0,0

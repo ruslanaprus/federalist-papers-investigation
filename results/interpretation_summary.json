@@ -1,0 +1,207 @@
+{
+  "stage": "linguistic_context_inspection",
+  "status": "complete",
+  "selected_features": [
+    "on",
+    "in",
+    "at",
+    "these"
+  ],
+  "ranking": "descending abs(c_H - c_M); exact ties alphabetical",
+  "context_window_words_per_side": 8,
+  "essay_count": 17,
+  "concordance_occurrences": 1414,
+  "curated_examples": 96,
+  "selected_features_are_not_a_new_attribution_model": true,
+  "patterns_selected_during_inspection": true,
+  "pattern_counts_are_token_sequences_not_parsed_grammatical_categories": true,
+  "main_signed_gap": 0.22936863766031823,
+  "sum_of_all_mean_gap_contributions": 0.22936863766031806,
+  "selected_four_net_mean_gap_contribution": 0.11541943603538314,
+  "features": {
+    "on": {
+      "by_author": {
+        "hamilton": {
+          "essay_count": 8,
+          "mean": 3.324037958035214,
+          "median": 3.0850472705020495,
+          "minimum": 1.029336078229542,
+          "maximum": 5.6675062972292185,
+          "quotation_check_mean": 3.355727389028142,
+          "quotation_check_minimum": 1.0554089709762533,
+          "quotation_check_maximum": 5.6675062972292185,
+          "word_count": 59,
+          "occurrences_in_removed_spans": 0
+        },
+        "madison": {
+          "essay_count": 8,
+          "mean": 8.57731538135141,
+          "median": 8.256403328379792,
+          "minimum": 6.0020006668889625,
+          "maximum": 12.24177505738332,
+          "quotation_check_mean": 8.56297061340884,
+          "quotation_check_minimum": 6.0020006668889625,
+          "quotation_check_maximum": 12.24177505738332,
+          "word_count": 187,
+          "occurrences_in_removed_spans": 6
+        }
+      },
+      "questioned": {
+        "word": "on",
+        "essay_number": 49,
+        "role": "questioned",
+        "count": 16,
+        "total_words": 1646,
+        "frequency_per_1000": 9.720534629404616,
+        "removed_quotation_count": 0,
+        "retained_quotation_count": 1,
+        "outside_marked_spans_count": 15,
+        "quotation_check_count": 16,
+        "quotation_check_total_words": 1599,
+        "quotation_check_frequency_per_1000": 10.006253908692933
+      },
+      "all_madison_rates_exceed_all_hamilton_rates": true,
+      "same_separation_after_quotation_removal": true,
+      "main_signed_contribution": 1.665874348027113,
+      "quotation_check_signed_contribution": 1.638629037666481
+    },
+    "in": {
+      "by_author": {
+        "hamilton": {
+          "essay_count": 8,
+          "mean": 25.95536058644758,
+          "median": 27.627055286182518,
+          "minimum": 16.3727959697733,
+          "maximum": 32.648762506582415,
+          "quotation_check_mean": 25.994148456530013,
+          "quotation_check_minimum": 16.3727959697733,
+          "quotation_check_maximum": 32.88409703504043,
+          "word_count": 459,
+          "occurrences_in_removed_spans": 5
+        },
+        "madison": {
+          "essay_count": 8,
+          "mean": 20.836033363360627,
+          "median": 19.81015542485001,
+          "minimum": 16.053706946876826,
+          "maximum": 28.012279355333842,
+          "quotation_check_mean": 21.069206573729325,
+          "quotation_check_minimum": 16.6333998669328,
+          "quotation_check_maximum": 28.012279355333842,
+          "word_count": 448,
+          "occurrences_in_removed_spans": 13
+        }
+      },
+      "questioned": {
+        "word": "in",
+        "essay_number": 49,
+        "role": "questioned",
+        "count": 34,
+        "total_words": 1646,
+        "frequency_per_1000": 20.656136087484814,
+        "removed_quotation_count": 1,
+        "retained_quotation_count": 0,
+        "outside_marked_spans_count": 33,
+        "quotation_check_count": 33,
+        "quotation_check_total_words": 1599,
+        "quotation_check_frequency_per_1000": 20.637898686679172
+      },
+      "all_madison_rates_exceed_all_hamilton_rates": false,
+      "same_separation_after_quotation_removal": false,
+      "main_signed_contribution": 0.9998338166320296,
+      "quotation_check_signed_contribution": 0.9552772646235423
+    },
+    "at": {
+      "by_author": {
+        "hamilton": {
+          "essay_count": 8,
+          "mean": 3.400258359962726,
+          "median": 3.5035077097675655,
+          "minimum": 0.9946949602122016,
+          "maximum": 5.052631578947368,
+          "quotation_check_mean": 3.3070897202823515,
+          "quotation_check_minimum": 1.0006671114076051,
+          "quotation_check_maximum": 5.1020408163265305,
+          "word_count": 58,
+          "occurrences_in_removed_spans": 2
+        },
+        "madison": {
+          "essay_count": 8,
+          "mean": 2.156246874944134,
+          "median": 2.2229352288339874,
+          "minimum": 0.7382798080472499,
+          "maximum": 3.257328990228013,
+          "quotation_check_mean": 2.176162605806893,
+          "quotation_check_minimum": 0.7382798080472499,
+          "quotation_check_maximum": 3.257328990228013,
+          "word_count": 46,
+          "occurrences_in_removed_spans": 1
+        }
+      },
+      "questioned": {
+        "word": "at",
+        "essay_number": 49,
+        "role": "questioned",
+        "count": 2,
+        "total_words": 1646,
+        "frequency_per_1000": 1.215066828675577,
+        "removed_quotation_count": 0,
+        "retained_quotation_count": 0,
+        "outside_marked_spans_count": 2,
+        "quotation_check_count": 2,
+        "quotation_check_total_words": 1599,
+        "quotation_check_frequency_per_1000": 1.2507817385866167
+      },
+      "all_madison_rates_exceed_all_hamilton_rates": false,
+      "same_separation_after_quotation_removal": false,
+      "main_signed_contribution": 0.9642118905041657,
+      "quotation_check_signed_contribution": 0.8982233262410646
+    },
+    "these": {
+      "by_author": {
+        "hamilton": {
+          "essay_count": 8,
+          "mean": 1.9470565371885287,
+          "median": 1.7344737983533691,
+          "minimum": 1.263157894736842,
+          "maximum": 3.0880082346886257,
+          "quotation_check_mean": 1.9726504477759654,
+          "quotation_check_minimum": 1.2755102040816326,
+          "quotation_check_maximum": 3.1662269129287597,
+          "word_count": 34,
+          "occurrences_in_removed_spans": 0
+        },
+        "madison": {
+          "essay_count": 8,
+          "mean": 3.2795988703985275,
+          "median": 3.4512256955970075,
+          "minimum": 0.5837711617046117,
+          "maximum": 5.376344086021506,
+          "quotation_check_mean": 3.2106730217269406,
+          "quotation_check_minimum": 0.6653359946773121,
+          "quotation_check_maximum": 5.167958656330749,
+          "word_count": 70,
+          "occurrences_in_removed_spans": 3
+        }
+      },
+      "questioned": {
+        "word": "these",
+        "essay_number": 49,
+        "role": "questioned",
+        "count": 1,
+        "total_words": 1646,
+        "frequency_per_1000": 0.6075334143377885,
+        "removed_quotation_count": 0,
+        "retained_quotation_count": 0,
+        "outside_marked_spans_count": 1,
+        "quotation_check_count": 1,
+        "quotation_check_total_words": 1599,
+        "quotation_check_frequency_per_1000": 0.6253908692933083
+      },
+      "all_madison_rates_exceed_all_hamilton_rates": false,
+      "same_separation_after_quotation_removal": false,
+      "main_signed_contribution": -0.8598535903141128,
+      "quotation_check_signed_contribution": -0.8424371875595589
+    }
+  }
+}
