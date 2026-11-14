@@ -45,3 +45,7 @@ Without `--allow-incomplete`, the collector rejects this partial corpus. The tes
 Recover the complete Library of Congress page for Nos. 21–30 and preserve the new retrieval separately from the failed attempts. Extract Nos. 21 and 26, verify their individual author lines, and extend the source log while retaining earlier collection records. If the page opens in a local browser, save its complete HTML to `data/raw/pages/text-21-30.html` for inspection and extraction.
 
 The fixed corpus will then contain all 17 essays. Do not begin the planned validation with the current reduced reference sample. Text preparation, quotation annotation, frequency calculation, validation, and attribution remain later stages.
+
+## Subsequent preparation
+
+On 14 November 2026, the 15 available essays received consistently prepared body copies. See the [text preparation record](text_preparation.md). This subsequent work preserves the raw collection and does not fill the missing essays or make the fixed corpus complete.

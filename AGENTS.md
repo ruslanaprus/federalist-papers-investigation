@@ -60,6 +60,8 @@ Preserve original downloads and untouched text copies. Decode page markup before
 
 Retain the essay body, historical spelling, and quotations for the main analysis. Do not modernize spelling or rewrite sentences. Investigate apparent transcription problems against the saved source and log any justified correction.
 
+Apply the documented clarification in `docs/research_amendments.md`: exclude separately numbered notes appended after the closing signature, retaining numbered arguments within the main prose. Preserve readable case and apostrophes in `data/clean/` for quotation annotation. Use `normalize_for_counting` in `src/prepare_texts.py` for the already fixed counting normalization. Verify prepared copies and exact edit logs with `uv run --locked python src/prepare_texts.py --verify --allow-incomplete` while the corpus remains incomplete; the explicit flag does not permit attribution with a reduced sample.
+
 For counting, lowercase the text and normalize curly single apostrophes to straight apostrophes. Define a word as a match of `[a-z]+(?:'[a-z]+)*` after normalization. This rule keeps internal apostrophes, splits hyphenated forms, and ignores numbers and punctuation. Do not expand contractions or group different grammatical forms together.
 
 For example, `The theme is clear; it's clear.` contains 6 words. Count `the` once, `is` once, and `it` zero times: `it's` is a separate word. Apply the same rule to both selected-word counts and the total word count in every analysis.

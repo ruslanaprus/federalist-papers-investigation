@@ -4,7 +4,7 @@
 
 This project compares common grammatical words in 8 Hamilton essays, 8 Madison essays, and the questioned No. 49. The [fixed research plan](docs/research_plan.md) defines the corpus and methods. Preserve that plan and record methodological amendments separately.
 
-The working environment is prepared. Corpus collection is incomplete: 15 of the planned 17 essays are saved; Hamilton references Nos. 21 and 26 are still missing because their source page could not be retrieved. See the [collection record](docs/corpus_collection.md). Text preparation, counting, validation, and attribution have not started.
+The working environment is prepared. Corpus collection is incomplete: 15 of the planned 17 essays are saved; Hamilton references Nos. 21 and 26 are still missing because their source page could not be retrieved. The 15 available essays have consistently prepared copies and an exact edit log. See the [collection record](docs/corpus_collection.md) and [text preparation record](docs/text_preparation.md). Counting, validation, and attribution have not started.
 
 ## Set up with uv
 
@@ -42,8 +42,8 @@ Enable Python support in IntelliJ and select the existing interpreter at `.venv/
 | `data/clean/` | Consistently prepared essay bodies |
 | `data/no_quotes/` | Separate copies for the quotation check |
 | `metadata/` | Source, preparation, and quotation records |
-| `src/` | Environment checker, corpus collector, and future analytical scripts |
-| `tests/` | Corpus-integrity tests and future analytical tests |
+| `src/` | Environment checker, corpus collector, text preparer, and future analytical scripts |
+| `tests/` | Corpus and preparation integrity tests; future numerical-method tests |
 | `results/` | Environment record and future main-analysis outputs |
 | `results/feature_check/` | Outputs from the reduced feature set |
 | `results/quotation_check/` | Outputs after identified quotations are removed |
@@ -59,6 +59,16 @@ uv run --locked python src/assemble_corpus.py --verify --allow-incomplete
 ```
 
 The collector rejects missing essays by default. The explicit partial-verification option does not authorize changing the fixed sample or running analysis on fewer reference essays. Recovery instructions and the retrieval limitation are documented in the collection record.
+
+## Prepared copies
+
+`data/clean/` contains readable essay bodies with headers, closing signatures, appended notes, and numeric reader-reference markers removed. Body quotations, historical spelling, case, and apostrophes are retained. Numbered passages within the argument remain. `metadata/preparation.csv` records each changed raw-text span and its reason; `results/preparation_manifest.json` records source and output checksums.
+
+```sh
+uv run --locked python src/prepare_texts.py --verify --allow-incomplete
+```
+
+The shared `normalize_for_counting` function applies the fixed lowercase and apostrophe rules when counting begins. It does not rewrite the readable copies. Quotation annotations should refer to those stable readable files. See the preparation record for the explicit appended-notes rule and its limitation. No quotation-removal copies have been created yet.
 
 ## Record evidence consistently
 
@@ -86,10 +96,10 @@ uv run --locked python src/check_environment.py --manifest results/environment_r
 
 The manifest records actual Python, uv, operating system, Git revision and working-tree state, configuration, and hashes of setup inputs. A Git revision with local changes does not identify the complete source state; the recorded file hashes distinguish those changes. Snapshot creation refuses to overwrite an existing file.
 
-Run the corpus-integrity tests with:
+Run the corpus and preparation integrity tests with:
 
 ```sh
 uv run --locked python -m unittest discover -s tests -v
 ```
 
-The current tests check collection and extraction integrity. Automated tests of the planned numerical method will be added with its implementation. There is no analysis or report-generation command yet.
+The current tests check collection, extraction, and preparation integrity. Automated tests of the planned numerical method will be added with its implementation. There is no analysis or report-generation command yet.
