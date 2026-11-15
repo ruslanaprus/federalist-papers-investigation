@@ -109,7 +109,7 @@ The contextual evidence is compatible with the measured Madison resemblance. **O
 
 This inspection explains plausible linguistic relationships behind the scores; it does not establish their cause. Feature selection followed the predefined ranking, while construction labels and illustrative phrase searches were developed after the results were known. They are descriptive observations, not independently validated discoveries. No grammatical categories were automatically parsed, no significance tests were performed, and no settings were adjusted.
 
-The main 24-word method, its 16 of 16 validation result, and both reliability checks remain unchanged. The small sample, topic and editorial effects, uncertain borrowing, supplied wording of Nos. 21 and 26, and restriction to 2 candidate authors still limit generalization. The final presentation report is the next research stage.
+The main 24-word method, its 16 of 16 validation result, and both reliability checks remain unchanged. The small sample, topic and editorial effects, uncertain borrowing, supplied wording of Nos. 21 and 26, and restriction to 2 candidate authors still limit generalization. The completed [presentation report](../report/report.md) integrates this inspection with the full investigation.
 
 ## Evidence and reproducibility
 

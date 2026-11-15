@@ -110,4 +110,4 @@ For a first run in a copy without `results/verification/`, omit `--verify`. Crea
 uv run --locked python -m unittest discover -s tests -v
 ```
 
-Implementation verification is complete. The next research stage is the final presentation report.
+Implementation verification is complete. The completed [presentation report](../report/report.md) presents the investigation and links this verification evidence.

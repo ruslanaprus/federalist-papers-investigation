@@ -2,13 +2,15 @@
 
 > Does Federalist No. 49 resemble Hamilton's or Madison's writing more closely in its use of common grammatical words?
 
+Read the completed [presentation report](report/report.md), which includes the full results, sources, linguistic examples, limitations, and reproducibility appendix.
+
 This project compares common grammatical words in 8 Hamilton essays, 8 Madison essays, and the questioned No. 49. The [fixed research plan](docs/research_plan.md) defines the corpus and methods. Preserve that plan and record methodological amendments separately.
 
 All 17 planned essays are collected, prepared, and counted. Fifteen derive from archived Library of Congress reader representations; Nos. 21 and 26 are user-supplied transcriptions associated with the requested page. Their full wording was not independently compared with the live edition. See the [collection record](docs/corpus_collection.md), [preparation record](docs/text_preparation.md), and [frequency calculation](docs/frequency_calculation.md).
 
 The unchanged [distance method](docs/distance_method.md) correctly classified 16 of 16 reference essays in [leave-one-essay-out validation](docs/validation.md), with 8 correct for each author. No. 49 is closer to Madison's profile: distance about `.691377`, compared with `.920746` for Hamilton. These are resemblance measures, not authorship probabilities. The [comparison report](docs/questioned_comparison.md) gives the measured results and limitations.
 
-Both [predefined reliability checks](docs/robustness_checks.md) are complete. Each retains Madison as the closer profile for No. 49 and correctly classifies all 16 references. The [language inspection](docs/language_inspection.md) is also complete: `on`, `in`, `at`, and `these` lead the fixed contribution ranking, with shared constructions and counterexamples documented. The final presentation report remains to be written. Earlier partial tables and blocked records are preserved under `results/history/partial_corpus_14_november_2026/`, with an archive manifest of checksums.
+Both [predefined reliability checks](docs/robustness_checks.md) are complete. Each retains Madison as the closer profile for No. 49 and correctly classifies all 16 references. The [language inspection](docs/language_inspection.md) is also complete: `on`, `in`, `at`, and `these` lead the fixed contribution ranking, with shared constructions and counterexamples documented. The [final presentation report](report/report.md) brings these findings together. Earlier partial tables and blocked records are preserved under `results/history/partial_corpus_14_november_2026/`, with an archive manifest of checksums.
 
 The [implementation verification](docs/implementation_verification.md) is complete: all 95 tests passed, independent arithmetic agreed with all 48 validation trials and 3 questioned-essay comparisons, and all 51 data-separation probes passed. Earlier evidence and analytical outputs remain unchanged.
 
@@ -55,7 +57,7 @@ Enable Python support in IntelliJ and select the existing interpreter at `.venv/
 | `results/feature_check/` | Outputs from the reduced feature set |
 | `results/quotation_check/` | Outputs after identified quotations are removed |
 | `docs/` | Original research plan and later documentation |
-| `report/` | Final report, to be written after analysis |
+| `report/` | Completed presentation report and its evidence manifest |
 
 Empty directories contain `.gitkeep` files so their layout can be committed. These files are not corpus texts. Research scripts must select actual essay files rather than treating every directory entry as evidence. Use filenames such as `H_1.txt`, `M_10.txt`, and `Q_49.txt`, without leading zeros.
 
@@ -197,4 +199,4 @@ Run the corpus, preparation, word-rule, frequency, distance, validation, and com
 uv run --locked python -m unittest discover -s tests -v
 ```
 
-The tests check collection, extraction, preparation, tokenization, comparable frequencies, distance arithmetic, validation, questioned-text comparison, reliability checks, contribution ranking, and concordance locations. Method tests use invented examples and do not supply empirical validation accuracy or an attribution finding. Final report generation follows interpretation of the completed investigation.
+The tests check collection, extraction, preparation, tokenization, comparable frequencies, distance arithmetic, validation, questioned-text comparison, reliability checks, contribution ranking, and concordance locations. Method tests use invented examples and do not supply empirical validation accuracy or an attribution finding. The completed [presentation report](report/report.md) preserves this distinction and links the full evidence. Its [evidence manifest](report/evidence_manifest.json) records the document checksum and the verified source state.
