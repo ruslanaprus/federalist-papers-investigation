@@ -1,0 +1,21 @@
+{
+  "stage": "short_presentation_report",
+  "recorded_at": "2026-11-15T09:30:23+02:00",
+  "report_path": "report/short_report.md",
+  "report_sha256": "9647778c3a64baa4509fba9aff05af5f933b341b30186494d3ea834f957dba4f",
+  "full_report_path": "report/report.md",
+  "full_report_sha256": "2eb8769f29099d31d2a2062da9c439bf28dec1a46461cc78611c0f1ec64ed199",
+  "parent_evidence_manifest_path": "report/evidence_manifest.json",
+  "parent_evidence_manifest_sha256": "55dd79340c50bd94b4d204b5da27fc8c4070de97b9f697da243a457b2ae6f2c8",
+  "editorial_checks": {
+    "status": "passed",
+    "corpus_groups": 3,
+    "result_versions": 3,
+    "leading_features": 4,
+    "fixed_word_features": 24,
+    "numeric_tables_checked_against_saved_results": true,
+    "local_links_checked_in_short_report_and_readme": 33,
+    "earlier_report_and_verified_evidence_unchanged": true,
+    "required_dash_and_decimal_styles_checked": true
+  }
+}

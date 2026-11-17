@@ -2,8 +2,6 @@
 
 > Does Federalist No. 49 resemble Hamilton's or Madison's writing more closely in its use of common grammatical words?
 
-Read the completed [presentation report](report/report.md), which includes the full results, sources, linguistic examples, limitations, and reproducibility appendix.
-
 This project compares common grammatical words in 8 Hamilton essays, 8 Madison essays, and the questioned No. 49. The [fixed research plan](docs/research_plan.md) defines the corpus and methods. Preserve that plan and record methodological amendments separately.
 
 All 17 planned essays are collected, prepared, and counted. Fifteen derive from archived Library of Congress reader representations; Nos. 21 and 26 are user-supplied transcriptions associated with the requested page. Their full wording was not independently compared with the live edition. See the [collection record](docs/corpus_collection.md), [preparation record](docs/text_preparation.md), and [frequency calculation](docs/frequency_calculation.md).
