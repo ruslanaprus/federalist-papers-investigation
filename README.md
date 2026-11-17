@@ -12,6 +12,33 @@ Both [predefined reliability checks](docs/robustness_checks.md) are complete. Ea
 
 The [implementation verification](docs/implementation_verification.md) is complete: all 95 tests passed, independent arithmetic agreed with all 48 validation trials and 3 questioned-essay comparisons, and all 51 data-separation probes passed. Earlier evidence and analytical outputs remain unchanged.
 
+## Explore the browser demonstration
+
+The [plain HTML, CSS, and JavaScript demonstration](web/index.html) presents all 13 stages, the complete corpus, word-frequency tables, charts, validation trials, reliability checks, and searchable concordances. Its charcoal navigation and pastel accents follow the adjacent Aria project's palette; the reading area is cream.
+
+Use Node.js 22 or later and pnpm 10.28.2. There are no JavaScript package dependencies:
+
+```sh
+pnpm install --frozen-lockfile --offline
+pnpm dev
+```
+
+Open `http://127.0.0.1:4173`. Set `PORT=4174 pnpm dev` to use another port. Use the selector in stage 6 to explore each predefined analysis. Stage 8 replays the known-author tests; the evidence browser previews complete CSV tables in pages and opens the saved JSON records. The browser independently checks all 48 validation trials and 3 No. 49 comparisons against the saved Python scores. Research records remain read-only.
+
+```sh
+pnpm test     # Check numerical replay, counting, CSV handling, and asset serving
+pnpm build    # Export the page and its evidence to dist/
+pnpm preview  # Serve the exported site locally
+```
+
+`dist/` can be hosted as an ordinary static site, including under a subdirectory. Serve it over HTTP; opening `index.html` with a `file:` URL cannot reliably load the evidence files. The build includes the evidence catalog and original files under `dist/evidence/`. It does not change the Python implementation, analytical results, or source texts. Implementation and verification details are in [web/README.md](web/README.md).
+
+## Continuous deployment to Cloudflare
+
+[GitHub Actions](.github/workflows/ci-cd.yml) checks the website and research implementation on pushes and pull requests. Successful pushes to `main` build and deploy `dist/` to Cloudflare Pages. The first deployment creates the Direct Upload project automatically; pull requests receive checks without deployment.
+
+Use `gh` to add the `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` repository secrets, then push the workflow. The [deployment guide](docs/deployment.md) gives the token permission, setup commands, manual deployment commands, and live-check behavior. Deployment links appear in the successful Actions run; no live deployment is implied by the presence of these files.
+
 ## Set up with uv
 
 Use uv and the Python release pinned in [.python-version](.python-version), currently 3.13.15. The initial setup used uv 0.13.8 on macOS. Runtime scripts use the Python standard library, so there are no external package dependencies.

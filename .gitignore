@@ -28,6 +28,11 @@ __pycache__/
 *$py.class
 /build/
 /dist/
+# Browser demonstration dependencies and pnpm cache
+node_modules/
+.pnpm-store/
+.wrangler/
+.playwright-mcp/
 .eggs/
 *.egg-info/
 *.egg

@@ -1,0 +1,15 @@
+{
+  "name": "federalist-investigation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.28.2",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "node web/server.mjs",
+    "start": "node web/server.mjs",
+    "build": "node web/build.mjs",
+    "preview": "node web/server.mjs --production",
+    "test": "node --test web/tests/*.test.mjs"
+  }
+}
