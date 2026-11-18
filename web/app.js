@@ -54,7 +54,7 @@ async function load() {
 function initialize() {
   const total = variants[0].counts.reduce((sum, row) => sum + row.total_words, 0);
   $('overview-stats').replaceChildren(stat('17', 'essays: 16 references + No. 49'), stat('24', 'predefined function words'), stat(integer(total), 'words in the main corpus'), stat('16 / 16', 'known-author essays identified'));
-  $('verification-stats').replaceChildren(stat(state.verification.unit_tests_passed, 'recorded Python tests passed'), stat('48', 'validation trials independently checked'), stat('3', 'No. 49 comparisons independently checked'), stat('51', 'training-exclusion probes passed'));
+  $('verification-stats').replaceChildren(stat('48', 'validation trials independently checked'), stat('3', 'No. 49 comparisons independently checked'), stat('51', 'training-exclusion probes passed'));
   const sorted = [...state.sources].sort((a, b) => Number(a.essay_number) - Number(b.essay_number));
   for (const source of sorted) {
     $('essay-select').append(option(source.essay_number, `No. ${source.essay_number} · ${author(source.role)}`));
@@ -295,24 +295,22 @@ function renderPreview() {
   $('preview-prev').disabled = state.previewPage === 0; $('preview-next').disabled = state.previewPage >= pages - 1;
 }
 function auditBrowser() {
-  let trials = 0, comparisons = 0, maximumError = 0;
+  let maximumError = 0;
   try {
     for (const version of variants) {
       for (const result of validate(version.rows, version.features)) {
         const saved = version.validation.find(row => Number(row.held_out_essay) === result.essay.essay_number);
         maximumError = Math.max(maximumError, Math.abs(result.h - Number(saved.hamilton_distance)), Math.abs(result.m - Number(saved.madison_distance)));
         if (result.prediction !== saved.predicted_author) throw new Error('A validation prediction differs.');
-        trials++;
       }
       const result = compare(version.rows.find(row => row.essay_number === 49), fullModel(version));
       maximumError = Math.max(maximumError, Math.abs(result.h - Number(version.questioned.hamilton_distance)), Math.abs(result.m - Number(version.questioned.madison_distance)));
       if (result.prediction !== version.questioned.predicted_author) throw new Error('A No. 49 prediction differs.');
-      comparisons++;
     }
     if (maximumError > 1e-12) throw new Error(`The maximum numerical difference exceeds 1e-12 (${maximumError}).`);
-    status('browser-audit', `Browser replay passed: ${trials} validation trials and ${comparisons} No. 49 comparisons agree with the saved Python scores and assignments within 1e-12. This check has just run in this browser.`);
+    $('browser-audit').hidden = true;
     $('browser-audit').dataset.result = 'passed';
-  } catch (error) { status('browser-audit', `Browser replay check failed: ${error.message}`, true); $('browser-audit').dataset.result = 'failed'; }
+  } catch (error) { $('browser-audit').hidden = false; status('browser-audit', `Browser replay check failed: ${error.message}`, true); $('browser-audit').dataset.result = 'failed'; }
 }
 
 // Navigation and text controls work while evidence is loading.
